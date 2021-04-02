@@ -45,4 +45,6 @@ Este proyecto busca desarrollar una aplicación web que combine la actualizació
 # Bibliografía y webgrafía
 Para la elaboración de este proyecto se han consultado los siguientes recursos:
 * [Resolución Vue con Bootstrap5](https://github.com/apgapg/vue_bootstrap_5_sample)
+* [Bootstrap5 sticky navbar with footer](https://getbootstrap.com/docs/5.0/examples/)
+* [Semantic GIT](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
 //TODO
