@@ -3,10 +3,10 @@
 # Introducción y anteproyecto
 
 ## Datos generales:
-**Proyecto:** Aplicación Web para Streetcats Artà
-**Autor:** [M. Rabanales](https://github.com/RiaRabanales)
-**Ciclo formativo:** Desarrollo de Aplicaciones Web
-**Fecha de entrega:** //TODO
+> **Proyecto:** Aplicación Web para Streetcats Artà
+> **Autor:** [M. Rabanales](https://github.com/RiaRabanales)
+> **Ciclo formativo:** Desarrollo de Aplicaciones Web
+> **Fecha de entrega:** //TODO
 
 ## Descripción:
 Este proyecto busca desarrollar una aplicación web que combine la actualización de la [presencia online](http://www.streetcats-arta.es/spanisch/index.html) de la asociación animalista *Streetcats Artà* con la creación de una herramienta que permita unificar y gestionar los diferentes procesos (entre otros: asignación de animales, gestión de donaciones, tablón de anuncios de colaboradores, registro de contratos de adopción, etc.) que se desarrollan ahora mismo sin apenas control.
@@ -21,7 +21,7 @@ Este proyecto busca desarrollar una aplicación web que combine la actualizació
 * Lenguajes: Javascript, HTML5, CSS, Bootstrap 5
 * Frameworks: Vue 3
 * Bases de datos: Firebase
-//TODO compeeltar
+//TODO completar
 
 # Desarrollo de la aplicación
 
@@ -45,6 +45,5 @@ Este proyecto busca desarrollar una aplicación web que combine la actualizació
 # Bibliografía y webgrafía
 Para la elaboración de este proyecto se han consultado los siguientes recursos:
 * [Resolución Vue con Bootstrap5](https://github.com/apgapg/vue_bootstrap_5_sample)
-* [Bootstrap5 sticky navbar with footer](https://getbootstrap.com/docs/5.0/examples/)
 * [Semantic GIT](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
 //TODO

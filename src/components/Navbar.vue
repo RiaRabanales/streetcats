@@ -1,5 +1,5 @@
 <template>
-  <div class="sticky-top">
+  <div class="p-2 border-top border-5 border-primary">
       esto es el navbar
   </div>
 </template>

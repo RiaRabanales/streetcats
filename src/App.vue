@@ -1,7 +1,7 @@
 <template>
-  <div class="container-fluid bg-light p-0">
-    <Navbar />
-    <div class="principal col-sm-10 col-md-8">
+  <div class="base container-fluid bg-light p-0 d-flex flex-column">
+    <Header />
+    <div class="bg-white border border-3 border-primary rounded-3 flex-grow-1 col-sm-10 col-md-8 my-2 my-md-3 align-self-center p-2">
       <router-view />
     </div>
     <Footer />
@@ -9,16 +9,16 @@
 </template>
 
 <script>
-import Navbar from "./components/Navbar.vue";
+import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
 
 export default {
-  components: { Navbar, Footer }
+  components: { Header, Footer }
 };
 </script>
 
 <style>
-.principal {
-  margin: 0 auto;
+.base {
+  min-height: 100vh;
 }
 </style>

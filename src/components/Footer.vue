@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-primary sticky-bottom">
+  <div class="my-2">
       Esto es el footer
   </div>
 </template>
