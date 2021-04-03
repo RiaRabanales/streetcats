@@ -1,6 +1,7 @@
 <template>
   <div class="my-2">
       Esto es el footer
+      Patrocinadores + links
   </div>
 </template>
 

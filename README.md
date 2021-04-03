@@ -13,9 +13,14 @@ Este proyecto busca desarrollar una aplicación web que combine la actualizació
 
 ## Objetivos:
 ### Objetivos de sotfware:
-//TODO
+* Aplicación multiplataforma que facilite el trabajo de los colaboradores en todo momento.
+* Sistema de fácil mantenimiento incluso si el desarrollador original deja de colaborar con la organización.
+//todo ¿?????
 ### Objetivos personales:
-//TODO
+* Aprender y defenderme bien en Vue, framework con el que desarrollo las prácticas.
+* Colaborar con una organización muy próxima a mis valores.
+* Desarrollar una webapp que pueda mostrar en mi portfolio personal.
+//TODO ¿????
 
 ## Tecnologías:
 * Lenguajes: Javascript, HTML5, CSS, Bootstrap 5
@@ -27,8 +32,13 @@ Este proyecto busca desarrollar una aplicación web que combine la actualizació
 
 ## Análisis previo:
 //TODO
-### Modelo relacional //TODO
-### Mock-up de pantallas //TODO
+
+### Modelo relacional
+//TODO
+
+### Mock-up de pantallas
+Este es el diseño básico de la aplicación:
+![Mockup](https://i.ibb.co/QNt9GZT/mockup.jpg)
 
 ## Diseño e implementación:
 //TODO
