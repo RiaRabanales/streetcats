@@ -58,6 +58,7 @@ Este es el diseño básico de la aplicación:
 
 # Bibliografía y webgrafía
 Para la elaboración de este proyecto se han consultado los siguientes recursos:
+* [Vue 3 Cheat Sheet](https://www.vuemastery.com/pdf/Vue-3-Cheat-Sheet.pdf)
 * [Resolución Vue con Bootstrap5](https://github.com/apgapg/vue_bootstrap_5_sample)
 * [Semantic GIT](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
 * Localización: [tutorial v3](https://www.positronx.io/vue-i18n-tutorial-how-to-build-multi-lingual-vue-js-app/), [guía v2](https://phrase.com/blog/posts/ultimate-guide-to-vue-localization-with-vue-i18n/)

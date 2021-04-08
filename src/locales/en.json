@@ -1,3 +1,9 @@
 {
-    "message": "hi i18n !!"
+  "nav": {
+    "home": "Home",
+    "help": "Donations",
+    "about": "About Us",
+    "contact": "Contact",
+    "login": "Helpers' Area"
   }
+}

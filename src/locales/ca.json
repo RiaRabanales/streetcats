@@ -1,3 +1,9 @@
 {
-    "message": "bones i18n !!"
+  "nav": {
+    "home": "Home",
+    "help": "Ajuda",
+    "about": "Sobre Nosaltres",
+    "contact": "Contacte",
+    "login": "Àrea de Col·laboradors"
   }
+}

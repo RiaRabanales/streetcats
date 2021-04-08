@@ -1,3 +1,9 @@
 {
-  "message": "hola i18n !!"
+  "nav": {
+    "home": "Home",
+    "help": "Ayuda",
+    "about": "Sobre Nosotros",
+    "contact": "Contacto",
+    "login": "Área de Colaboradores"
+  }
 }
