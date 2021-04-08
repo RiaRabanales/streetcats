@@ -17,20 +17,20 @@ Este proyecto busca desarrollar una aplicación web que combine la actualizació
 
 ## Objetivos:
 ### Objetivos de sotfware:
-* Aplicación multiplataforma que facilite el trabajo de los colaboradores en todo momento.
-* Sistema de fácil mantenimiento incluso si el desarrollador original deja de colaborar con la organización.
-//todo ¿?????
+* Desarrollar una aplicación de base web (pero adaptable en multiplataforma) que facilite el trabajo de los colaboradores en todo momento.
+* Crear un sistema de fácil mantenimiento incluso si el desarrollador original deja de colaborar con la organización.
+* Facilitar el acceso multilenguaje que permita a la asociación alcanzar todo su público potencial.
+* Emplear las versiones más recientes de las tecnologías utilizadas (vue 3, bootstrap 5, etc.)
 ### Objetivos personales:
+* Completar el proyecto de fin de ciclo con una aplicación que no quede *muerta* una vez presentada.
 * Aprender y defenderme bien en Vue, framework con el que desarrollo las prácticas.
 * Colaborar con una organización muy próxima a mis valores.
 * Desarrollar una webapp que pueda mostrar en mi portfolio personal.
-//TODO ¿????
 
 ## Tecnologías:
 * Lenguajes: Javascript, HTML5, CSS/SCSS, Bootstrap 5
-* Frameworks: Vue 3
-* Bases de datos: Firebase
-//TODO completar
+* Frameworks: Vue 3 con vue-i18n para multilenguaje
+* Bases de datos, *storage* y *hosting*: Firebase
 
 # Desarrollo de la aplicación
 
@@ -45,6 +45,10 @@ Este es el diseño básico de la aplicación:
 ![Mockup](https://i.ibb.co/QNt9GZT/mockup.jpg)
 
 ## Diseño e implementación:
+//todo introducir + empezar
+
+La localización es un punto clave en esta aplicación: la asociación necesita, como mínimo, proyección en español y alemán para ser útil a todos sus colaboradores, y a ser posible también en catalán para favorecer el acceso a ayudas locales de las que en estos momentos carece. Para implementarla se ha utilizado la dependencia vue-I18n v.9, adaptada a Vue 3 y recientemente publicada. //TODO seguir explicando q la base ha sido en inglés y algunas traducciones no están (no es la clave de la práctica)
+
 //TODO
 
 ## Producción:
@@ -61,6 +65,6 @@ Para la elaboración de este proyecto se han consultado los siguientes recursos:
 * [Vue 3 Cheat Sheet](https://www.vuemastery.com/pdf/Vue-3-Cheat-Sheet.pdf)
 * [Resolución Vue con Bootstrap5](https://github.com/apgapg/vue_bootstrap_5_sample)
 * [Semantic GIT](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
-* Localización: [tutorial v3](https://www.positronx.io/vue-i18n-tutorial-how-to-build-multi-lingual-vue-js-app/), [guía v2](https://phrase.com/blog/posts/ultimate-guide-to-vue-localization-with-vue-i18n/)
+* Localización: [tutorial v3](https://www.positronx.io/vue-i18n-tutorial-how-to-build-multi-lingual-vue-js-app/), [guía v2](https://phrase.com/blog/posts/ultimate-guide-to-vue-localization-with-vue-i18n/)
 
 //TODO
