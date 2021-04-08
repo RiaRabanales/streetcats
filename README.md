@@ -8,6 +8,7 @@
 > **Autor:** [M. Rabanales](https://github.com/RiaRabanales)
 
 > **Ciclo formativo:** Desarrollo de Aplicaciones Web
+
 > **Fecha de entrega:** //TODO
 
 
@@ -26,7 +27,7 @@ Este proyecto busca desarrollar una aplicación web que combine la actualizació
 //TODO ¿????
 
 ## Tecnologías:
-* Lenguajes: Javascript, HTML5, CSS, Bootstrap 5
+* Lenguajes: Javascript, HTML5, CSS/SCSS, Bootstrap 5
 * Frameworks: Vue 3
 * Bases de datos: Firebase
 //TODO completar
