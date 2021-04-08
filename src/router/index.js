@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import Donaciones from '../views/Donaciones.vue'
-import Contacto from '../views/Contacto.vue'
+import Help from '../views/Help.vue'
+import Contact from '../views/Contact.vue'
 import Login from '../views/auth/Login.vue'
 import Registro from '../views/auth/Registro.vue'
 
@@ -12,14 +12,14 @@ const routes = [
     component: Home
   },
   {
-    path: '/donaciones',
-    name: 'Donaciones',
-    component: Donaciones
+    path: '/help',
+    name: 'Help',
+    component: Help
   },
   {
-    path: '/contacto',
-    name: 'Contacto',
-    component: Contacto
+    path: '/contact',
+    name: 'Contact',
+    component: Contact
   },
   {
     path: '/login',
