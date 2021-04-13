@@ -41,17 +41,18 @@ import {
 } from "@/config/email";
 
 export default {
-  setup() {
+  setup(props, { emit }) {
     const sendEmail = (e) => {
       emailjs
         .sendForm(EMAILJS_SERVICE, EMAILJS_TEMPLATE, e.target, EMAILJS_USER)
         .then(
           (result) => {
             //TODO quitar mis elementos de consola eventualmente
-            console.log("¡EMAIL ENVIADO!", result.status, result.text);
+            console.log("¡EMAIL ENVIADO!", result.status, result.text)
+            emit('sentMessage', true)
           },
           (error) => {
-            console.log("ERROR AL ENVIAR EMAIL...", error);
+            console.log("ERROR AL ENVIAR EMAIL...", error)
           }
         );
     };

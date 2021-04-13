@@ -22,6 +22,8 @@
     "phone": "Teléfono",
     "phoneWapp": "Introduce tu número de contacto si prefieres que te contestemos via Whatsapp.",
     "message": "Tu mensaje",
-    "submit": "Enviar"
+    "submit": "Enviar",
+    "success": "¡Hecho!",
+    "successText": "Hemos recibido tu mensaje y nos pondremos en contacto contigo en cuanto nos sea posible."
   }
 }

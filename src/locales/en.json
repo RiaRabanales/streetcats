@@ -11,7 +11,7 @@
     "login": "Helpers' Area"
   },
   "home": {
-    "content": "//TODOOOOO",
+    "content": "STREETCATS ARTÀ started back in September 2013 with the same page on Facebook as a private initiative, in order to counteract the ever-growing population of street cats with castration and sterilization actions, and to seek and find help for abandoned cats and kittens a home. The project was founded by Gudrun Hildebrand and Dora López and from January 2014, the activities were completed by two other volunteers, Hede Schütrumpf and Maria Isabel Deià, and they initiated the founding of the association. In cooperation with the VETERCLINIC ARTÀ was started in May 2014, the continuous trapping of street cats. To date, more than 400 cats have been sterilized in the room Artà. More than 70 abandoned cats and kittens could be placed in loving hands. Since January 2015 we are a registered association with the name “ASOCIACIÓN ANIMALISTAS ARTÀ“. Our task is not only sterilization, but also the support of more than 250 street cats in 15 colonies in Arta. This work requires a lot of money for dry food, deworming, pipettes against parasites, as well as vet bills for sick and injured animals.",
     "call": "Help us so we may help!"
   },
   "contact": {
@@ -22,6 +22,8 @@
     "phone": "Phone number",
     "phoneWapp": "Introduce your phone number if you'd rather we got back to you via Whatsapp.",
     "message": "Your message",
-    "submit": "Send"
+    "submit": "Send",
+    "success": "Success!",
+    "successText": "We have received your message and we'll get in touch with you as soon as possible."
   }
 }
