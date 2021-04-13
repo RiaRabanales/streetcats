@@ -9,5 +9,18 @@
     "about": "About Us",
     "contact": "Contact",
     "login": "Helpers' Area"
+  },
+  "home": {
+    "content": "//TODOOOOO",
+    "call": "Help us so we may help!"
+  },
+  "contact": {
+    "title": "Contact",
+    "text": "Please fill in the following fields and we'll get in touch with you as soon as possible.",
+    "name": "Name",
+    "email": "E-mail",
+    "phone": "Phone number",
+    "message": "Message",
+    "submit": "Send"
   }
 }
