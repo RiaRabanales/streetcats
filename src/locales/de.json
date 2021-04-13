@@ -1,4 +1,8 @@
 {
+  "lang": {
+    "name": "de",
+    "img": "../assets/img/Deutsch.png"
+  },
   "nav": {
     "home": "Home",
     "help": "Hilfe",

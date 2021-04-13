@@ -1,4 +1,8 @@
 {
+  "lang": {
+    "name": "English",
+    "img": "../assets/img/en.png"
+  },
   "nav": {
     "home": "Home",
     "help": "Donations",

@@ -1,4 +1,8 @@
 {
+  "lang": {
+    "name": "Català",
+    "img": "../assets/img/ca.png"
+  },
   "nav": {
     "home": "Home",
     "help": "Ajuda",

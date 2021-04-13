@@ -44,6 +44,10 @@ Este proyecto busca desarrollar una aplicación web que combine la actualizació
 Este es el diseño básico de la aplicación:
 ![Mockup](https://i.ibb.co/QNt9GZT/mockup.jpg)
 
+He preferido optar por una paleta de colores prediseñada, ya que necesito un resultado profesional a la vez que agradable. Este ha sido el recurso elegido:
+
+![Paleta](https://i.ibb.co/mHLHXX6/paleta.jpg)
+
 ## Diseño e implementación:
 //todo introducir + empezar
 
