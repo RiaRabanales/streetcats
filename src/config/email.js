@@ -1,0 +1,5 @@
+const EMAILJS_SERVICE = "streetcats"
+const EMAILJS_TEMPLATE = "contact"
+const EMAILJS_USER = "user_yznSPotBVzHVzaQEZMDF7"
+
+export {EMAILJS_SERVICE, EMAILJS_TEMPLATE, EMAILJS_USER}

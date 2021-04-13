@@ -20,7 +20,8 @@
     "name": "Name",
     "email": "E-mail",
     "phone": "Phone number",
-    "message": "Message",
+    "phoneWapp": "Introduce your phone number if you'd rather we got back to you via Whatsapp.",
+    "message": "Your message",
     "submit": "Send"
   }
 }
