@@ -29,7 +29,7 @@ Este proyecto busca desarrollar una aplicación web que combine la actualizació
 
 ## Tecnologías:
 * Lenguajes: Javascript, HTML5, CSS/SCSS, Bootstrap 5
-* Frameworks: Vue 3 con vue-i18n para multilenguaje y emailjs para e-mailing.
+* Frameworks: Vue 3 con vue-i18n para multilenguaje, emailjs para e-mailing, y vue-feather-icons para emplear iconos prediseñados como componentes importados de Vue.
 * Bases de datos, *storage* y *hosting*: Firebase
 
 # Desarrollo de la aplicación
@@ -71,5 +71,6 @@ Para la elaboración de este proyecto se han consultado los siguientes recursos:
 * [Semantic GIT](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
 * Localización: [tutorial v3](https://www.positronx.io/vue-i18n-tutorial-how-to-build-multi-lingual-vue-js-app/), [guía v2](https://phrase.com/blog/posts/ultimate-guide-to-vue-localization-with-vue-i18n/)
 * [E-mailing](https://www.emailjs.com/docs/)
+* [Adaptación de vue-feather-icons para vue 3](https://github.com/zhuowenli/vue-feather-icons)
 
 //TODO
