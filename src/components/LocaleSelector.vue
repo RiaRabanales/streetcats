@@ -1,9 +1,9 @@
 <template>
-  <!-- ver: https://vue-i18n.intlify.dev/guide/essentials/scope.html#global-scope-2 //TODO  
-  /* Para cambiar el background del select; //TODO ver */-->
-  <div class="locale-changer align-self-end mt-2 me-2">
-      <GlobeIcon class="text-dark" />
-      <select v-model="$i18n.locale" class="text-dark border-0 p-1 pe-2">
+  <!-- ver: https://vue-i18n.intlify.dev/guide/essentials/scope.html#global-scope-2 //TODO  -->
+
+  <div id="localeDiv">
+      <ion-icon :icon="icons.earth" />
+      <select v-model="$i18n.locale">
         <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">
           {{ locale }}
         </option>
@@ -12,28 +12,44 @@
 </template>
 
 <script>
-import { GlobeIcon } from "@zhuowenli/vue-feather-icons";
+import { IonIcon } from '@ionic/vue';
+import { earth } from 'ionicons/icons';
+import { ref } from 'vue';
+//TODO para ver que devuelva iconos con bordes
 
 export default {
-  components: { GlobeIcon },
-  //TODO temas banderas
+  components: { IonIcon },
+  setup() {
+    const icons = ref({
+      earth: earth
+    })
+
+    return {
+      icons
+    }
+  }
 };
 </script>
 
 <style scoped>
+#localeDiv {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
 /* Para quitar la flecha del select; scoped porque sólo en este bloque */
-select {
+#localeDiv select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  border: none;
+  padding: 0.4rem;
 }
-
-select::-ms-expand {
+#localeDiv select::-ms-expand {
   display: none;
 }
-
-select:focus {
+#localeDiv select:focus {
   outline: none;
 }
-
 </style>

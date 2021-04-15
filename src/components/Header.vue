@@ -1,19 +1,31 @@
 <template>
-  <div class="d-flex flex-column p-0 m-0 bg-white">
-    <LocaleSelector />
-    <div class="cabecera top-fixed align-self-center">
+  <ion-header class="ion-no-border">
+    <ion-content>
+      <LocaleSelector />
       Aquí va el header con sus imágenes
-    </div>
-    <Navbar />
-  </div>
+    </ion-content>
+    <ion-toolbar>
+      <ion-title>Streetcats Artà</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
 </template>
 
 <script>
+/*
 import Navbar from "./Navbar.vue";
 import LocaleSelector from "./LocaleSelector.vue";
 
 export default {
   components: { Navbar, LocaleSelector },
+};
+*/
+import LocaleSelector from "./LocaleSelector.vue";
+import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/vue';
+
+
+export default {
+  components: { LocaleSelector, IonContent, IonHeader, IonTitle, IonToolbar }
 };
 </script>
 
