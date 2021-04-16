@@ -1,15 +1,20 @@
 <template>
-  <h2 class="text-center">{{ $t("contact.title") }}</h2>
-  <component :is="formComponent" @sentMessage="sentMessage" />
+  <ion-page>
+    <ion-content>
+      <h2 class="text-center">{{ $t("contact.title") }}</h2>
+      <component :is="formComponent" @sentMessage="sentMessage" />
+    </ion-content>
+  </ion-page>
 </template>
 
 <script>
 import Form from "./components/contact/Form.vue";
 import Success from "./components/contact/Success.vue";
 import { computed, ref } from 'vue';
+import { IonPage, IonContent } from "@ionic/vue";
 
 export default {
-  components: { Form, Success },
+  components: { Form, Success, IonPage, IonContent },
   setup() {
     const sentForm = ref(false);
 

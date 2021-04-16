@@ -1,5 +1,5 @@
 <template>
-  <ion-menu side="start" menu-id="menu" content-id="main">
+  <ion-menu content-id="main">
     <ion-content>
       <ion-list v-for="(p, i) in appPages" :key="i">
         <ion-item
@@ -8,7 +8,6 @@
           lines="none"
           detail="false"
           class="hydrated"
-          :class="{ selected: selectedIndex === i }"
         >
           <ion-icon slot="start" :ios="p.iosIcon" :md="p.mdIcon"></ion-icon>
           <ion-label>{{ p.title }}</ion-label>
@@ -27,12 +26,7 @@ import {
   IonItem,
   IonLabel,
   IonList,
-  IonListHeader,
-  IonMenu,
-  IonMenuToggle,
-  IonNote,
-  IonFooter,
-  IonButton,
+  IonMenu
 } from "@ionic/vue";
 import { defineComponent, ref } from "vue";
 import { useRoute } from "vue-router";
@@ -53,15 +47,11 @@ export default {
     IonItem,
     IonLabel,
     IonList,
-    IonListHeader,
-    IonMenu,
-    IonMenuToggle,
-    IonNote,
-    IonFooter,
-    IonButton,
+    IonMenu
   },
   setup() {
-    const appPages = ref([
+    const selectedIndex = ref(0);
+    const appPages = [
       {
         title: "About us",  //TODO ver cómo hago para traducciones en menú
         url: "/home",
@@ -80,7 +70,7 @@ export default {
         iosIcon: paperPlaneOutline,
         mdIcon: paperPlaneSharp,
       },
-    ]);
+    ];
 
     return { appPages };
   },

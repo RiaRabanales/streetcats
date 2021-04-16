@@ -31,12 +31,11 @@
 <script>
 import { IonPage, IonContent, IonIcon } from "@ionic/vue";
 import { defineComponent, ref } from "vue";
-import Footer from "./components/Footer.vue";
 import { paw, bicycle, ribbon } from 'ionicons/icons';
 
 export default defineComponent({
   name: "Home",
-  components: { IonPage, IonContent, IonIcon, Footer },
+  components: { IonPage, IonContent, IonIcon },
   setup() {
     const icons = ref({
       paw: paw,

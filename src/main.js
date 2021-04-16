@@ -20,9 +20,6 @@ import '@ionic/vue/css/text-transformation.css';
 import '@ionic/vue/css/flex-utils.css';
 import '@ionic/vue/css/display.css';
 
-/* Mi CSS propio */
-import '@/theme/custom.css';
-
 const app = createApp(App)
   .use(IonicVue)
   .use(i18n)

@@ -1,6 +1,7 @@
 <template>
   <ion-header class="ion-no-border">
     <ion-toolbar>
+      <ion-menu-toggle><ion-button>Menu</ion-button></ion-menu-toggle>
       <ion-title>Streetcats Artà</ion-title>
       <LocaleSelector />
       <ion-button shape="round" fill="outline" @click="$router.push('login')">
@@ -9,16 +10,14 @@
       </ion-button>
     </ion-toolbar>
   </ion-header>
-
 </template>
 
 <script>
 import LocaleSelector from "./LocaleSelector.vue";
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton } from '@ionic/vue';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonMenuToggle } from '@ionic/vue';
 
 export default {
-  components: { LocaleSelector, IonContent, IonHeader, IonTitle, IonToolbar, IonButton }
-
+  components: { LocaleSelector, IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonMenuToggle }
 };
 </script>
 
