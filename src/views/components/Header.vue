@@ -1,13 +1,13 @@
-<template>
-  <div class="d-flex p-0 m-0 justify-content-between">
-    <p class="d-none d-md-block nav-item h3 me-2 text-dark">
+<template> 
+  <div class="m-0 p-3 bg-light border-bottom border-3 border-primary d-flex justify-content-between">
+    <p class="d-none d-sm-block h3 ms-3 ps-md-3 text-dark">
       Streetcats Artà
     </p>
     <div class="d-flex p-0 m-0 justify-content-end">
-    <LocaleSelector />
+      <LocaleSelector />
       <button
         type="button"
-        class="btn btn-outline-dark border border-dark border-2 rounded-pill"
+        class="btn btn-outline-dark border border-dark border-2 rounded-pill me-1 me-md-2 me-lg-3"
         @click="$router.push('login')"
       >
         {{ $t('nav.login') }}
