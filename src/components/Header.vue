@@ -1,25 +1,35 @@
 <template>
-  <div class="d-flex flex-column p-0 m-0 bg-white">
+  <div class="d-flex p-0 m-0 justify-content-between">
+    <p class="d-none d-md-block nav-item h3 me-2 text-dark">
+      Streetcats Artà
+    </p>
+    <div class="d-flex p-0 m-0 justify-content-end">
     <LocaleSelector />
-    <div class="cabecera top-fixed align-self-center">
-      Aquí va el header con sus imágenes
+      <button
+        type="button"
+        class="btn btn-outline-dark border border-dark border-2 rounded-pill"
+        @click="$router.push('login')"
+      >
+        {{ $t('nav.login') }}
+      </button>
     </div>
-    <Navbar />
   </div>
 </template>
 
 <script>
-import Navbar from "./Navbar.vue";
+import { useRouter } from "vue-router";
 import LocaleSelector from "./LocaleSelector.vue";
 
 export default {
-  components: { Navbar, LocaleSelector },
+  components: { LocaleSelector },
+  setup() {
+    const router = useRouter();
+
+    return { router };
+  },
 };
 </script>
 
 
 <style>
-.cabecera {
-  min-height: 20vh;
-}
 </style>

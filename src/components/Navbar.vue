@@ -1,6 +1,6 @@
 <template>
   <div class="border-top border-5 border-primary">
-    <nav class="navbar navbar-expand-sm navbar-light bg-light p-md-2">
+    <nav class="navbar navbar-expand-sm navbar-light p-md-2">
       <div class="container-fluid">
         <button
           class="navbar-toggler"
