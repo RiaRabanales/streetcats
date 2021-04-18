@@ -1,5 +1,5 @@
 <template>
-  <!-- //TODO multilenguaje -->
+  <!-- //TODO literales multilenguaje -->
   <!-- //TODO validar y confirmar contraseña -->
   <h2 class="text-center">Registro</h2>
   <form class="registerForm p-3">

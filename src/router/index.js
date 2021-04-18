@@ -3,7 +3,7 @@ import Home from '../views/Home.vue'
 import Help from '../views/Help.vue'
 import Contact from '../views/Contact.vue'
 import Login from '../views/Login.vue'
-import Registro from '../views/Registro.vue'
+import Register from '../views/Register.vue'
 import NotFound from '../views/NotFound.vue'
 
 const routes = [
@@ -28,9 +28,9 @@ const routes = [
     component: Login
   },
   {
-    path: '/registro',
-    name: 'Registro',
-    component: Registro
+    path: '/register',
+    name: 'Register',
+    component: Register
   },
   {
     path: '/:catchAll(.*)',

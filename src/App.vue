@@ -3,8 +3,8 @@
     <Header />
     <div class="flex-grow-1 d-flex justify-content-between">
         <Menu />
-        <div class="p-3 flex-grow-1 d-flex justify-content-center align-items-center">
-          <div class="col-12 col-md-11">
+        <div class="p-3 flex-grow-1 d-flex justify-content-center align-items-stretch">
+          <div class="col-12 col-md-11 mt-1 mt-md-2 mt-lg-3 p-md-1">
             <router-view />
           </div>
         </div>
