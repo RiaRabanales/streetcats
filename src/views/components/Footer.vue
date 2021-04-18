@@ -1,10 +1,14 @@
 <template>
   <div class="bg-primary pt-3 px-2 px-md-3 text-white d-flex justify-content-around align-items-center">  
 
-    <p @click="goTo('https://www.facebook.com/Streetcats-Arta-Asociaci%C3%B3n-Animalistas-1414576338758248/')" role="button">
-      <FacebookIcon />
-      <span class="fw-bolder">{{ $t('footer.findus') }}</span>
-      Facebook
+    <p>
+      <span class="fw-bolder me-1">{{ $t('footer.findus') }} </span>
+      <span @click="goTo('https://www.facebook.com/Streetcats-Arta-Asociaci%C3%B3n-Animalistas-1414576338758248/')" role="button">
+      <FacebookIcon /> facebook
+      </span>
+      <span @click="goTo('https://www.instagram.com/')" role="button">
+      <InstagramIcon /> instagram
+      </span>
     </p>
 
     <p role="button">{{ $t('footer.cookies') }}</p>
@@ -19,10 +23,10 @@
 </template>
 
 <script>
-import { FacebookIcon, GithubIcon } from "@zhuowenli/vue-feather-icons";
+import { FacebookIcon, InstagramIcon, GithubIcon } from "@zhuowenli/vue-feather-icons";
 
 export default {
-  components: { FacebookIcon, GithubIcon },
+  components: { FacebookIcon, InstagramIcon, GithubIcon },
 
   setup() {
 

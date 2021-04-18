@@ -11,19 +11,19 @@
             <li class="nav-item mt-md-1 mx-0 p-3 text-nowrap">
               <router-link class="nav-link text-light" :to="{ name: 'Home' }">
                 <InfoIcon />
-                <span v-if="hover" class="mx-2">{{ $t('nav.about') }}</span>
+                <span v-if="hover" class="mx-2 mx-lg-3">{{ $t('nav.about') }}</span>
                 </router-link>
             </li>
             <li class="nav-item mt-md-1 mx-0 p-3 text-nowrap">
               <router-link class="nav-link text-light" :to="{ name: 'Help' }">
-                <ShoppingCartIcon />
-                <span v-if="hover" class="mx-2">{{ $t('nav.help') }}</span>
+                <ShoppingCartIcon class="menuIcon" />
+                <span v-if="hover" class="mx-2 mx-lg-3">{{ $t('nav.help') }}</span>
                 </router-link>
             </li>
             <li class="nav-item mt-md-1 mx-0 p-3 text-nowrap">
               <router-link class="nav-link text-light" :to="{ name: 'Contact' }">
-                <MailIcon />
-                <span v-if="hover" class="mx-2">{{ $t('nav.contact') }}</span>
+                <MailIcon class="menuIcon" />
+                <span v-if="hover" class="mx-2 mx-lg-3">{{ $t('nav.contact') }}</span>
               </router-link>
             </li>
           </ul>
@@ -49,8 +49,12 @@ export default {
 </script>
 
 <style scoped>
-
 nav ul li:hover {
   background: #3C403D;
+}
+
+svg {
+  width: 30px;
+  height: 30px;
 }
 </style>

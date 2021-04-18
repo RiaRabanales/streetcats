@@ -4,6 +4,7 @@ import Help from '../views/Help.vue'
 import Contact from '../views/Contact.vue'
 import Login from '../views/Login.vue'
 import Registro from '../views/Registro.vue'
+import NotFound from '../views/NotFound.vue'
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
     name: 'Registro',
     component: Registro
   },
+  {
+    path: '/:catchAll(.*)',
+    name: 'NotFound',
+    component: NotFound
+  }
 ]
 
 const router = createRouter({

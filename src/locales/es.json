@@ -4,6 +4,7 @@
     "img": "../assets/img/es.png"
   },
   "nav": {
+    "404": "¡Página no encontrada!",
     "home": "Home",
     "help": "Ayuda",
     "about": "Sobre nosotros",
