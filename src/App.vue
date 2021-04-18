@@ -1,19 +1,28 @@
 <template>
-  <div class="base container-fluid bg-light p-0 d-flex flex-column">
+  <div class="base container-fluid bg-white p-0 d-flex flex-column">
     <Header />
-    <div class="bg-white border border-3 border-primary rounded-3 flex-grow-1 col-11 col-md-8 my-2 my-md-3 align-self-center p-3">
-      <router-view />
+    <div class="flex-grow-1 d-flex justify-content-between">
+        <Menu />
+        <div class="p-3 flex-grow-1 d-flex justify-content-center align-items-center">
+          <div class="col-12 col-md-11">
+            <router-view />
+          </div>
+        </div>
+        <div class="d-none d-md-block mx-3 col-1 d-flex flex-column justify-content-start mt-3 pt-md-3">
+          <p>Fotos!</p>
+        </div>
     </div>
     <Footer />
   </div>
 </template>
 
 <script>
-import Header from "./components/Header.vue";
-import Footer from "./components/Footer.vue";
+import Menu from "./views/components/Menu.vue";
+import Header from "./views/components/Header.vue";
+import Footer from "./views/components/Footer.vue";
 
 export default {
-  components: { Header, Footer }
+  components: { Menu, Header, Footer }
 };
 </script>
 

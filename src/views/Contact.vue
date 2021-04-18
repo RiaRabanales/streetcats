@@ -4,8 +4,8 @@
 </template>
 
 <script>
-import Form from "@/components/contact/Form.vue";
-import Success from "@/components/contact/Success.vue";
+import Form from "./components/contact/Form.vue";
+import Success from "./components/contact/Success.vue";
 import { computed, ref } from 'vue';
 
 export default {

@@ -1,13 +1,14 @@
 <template>
   <!-- ver: https://vue-i18n.intlify.dev/guide/essentials/scope.html#global-scope-2 //TODO  
   /* Para cambiar el background del select; //TODO ver */-->
-  <div class="locale-changer align-self-end mt-2 me-2">
-      <GlobeIcon class="text-dark" />
-      <select v-model="$i18n.locale" class="text-dark border-0 p-1 pe-2">
-        <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">
-          {{ locale }}
-        </option>
-      </select>
+  
+  <div class="locale-changer mt-2 me-2 me-md-3 text-dark">
+    <GlobeIcon class="me-1" />
+    <select v-model="$i18n.locale" class="bg-light border-0">
+      <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">
+        {{ locale }}
+      </option>
+    </select>
   </div>
 </template>
 
@@ -16,7 +17,6 @@ import { GlobeIcon } from "@zhuowenli/vue-feather-icons";
 
 export default {
   components: { GlobeIcon },
-  //TODO temas banderas
 };
 </script>
 
