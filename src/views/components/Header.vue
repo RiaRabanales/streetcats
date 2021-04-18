@@ -18,7 +18,7 @@
         <button
           type="button"
           class="btn btn-outline-dark border border-dark border-2 rounded-pill me-1 me-md-2 me-lg-3"
-          @click="$router.push('login')"
+          @click="$router.push('loginlanding')"
         >
           {{ $t('nav.login') }}
         </button>
@@ -29,8 +29,8 @@
 
 <script>
 import { useRouter } from "vue-router";
-import useLogout from "@/utils/firebase/useLogout";
-import getUser from "@/utils/firebase/getUser";
+import useLogout from "@/utils/auth/useLogout";
+import getUser from "@/utils/auth/getUser";
 import LocaleSelector from "./LocaleSelector.vue";
 
 export default {
@@ -42,7 +42,6 @@ export default {
 
     const handleLogout = async () => {
       await logout();
-      console.log("user logged out");
       router.push({ name: "Login" });
     };
 

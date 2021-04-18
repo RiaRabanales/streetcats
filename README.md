@@ -72,5 +72,6 @@ Para la elaboración de este proyecto se han consultado los siguientes recursos:
 * Localización: [tutorial v3](https://www.positronx.io/vue-i18n-tutorial-how-to-build-multi-lingual-vue-js-app/), [guía v2](https://phrase.com/blog/posts/ultimate-guide-to-vue-localization-with-vue-i18n/)
 * [E-mailing](https://www.emailjs.com/docs/)
 * [Adaptación de vue-feather-icons para vue 3](https://github.com/zhuowenli/vue-feather-icons)
+* [Vue 3 Animations by The Net Ninja](https://www.youtube.com/watch?v=RIApQjn9fvw)
 
 //TODO

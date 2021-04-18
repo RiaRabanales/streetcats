@@ -30,13 +30,15 @@
 </template>
 
 <script>
-import useLogin from '@/utils/firebase/useLogin'
+import useLogin from '@/utils/auth/useLogin'
+import { useRouter } from "vue-router";
 import { ref } from 'vue';
 
 export default {
   //TODO
   setup() {
     const { login, pending } = useLogin();
+    const router = useRouter();
 
     const email = ref('');
     const password = ref('');
@@ -45,13 +47,13 @@ export default {
     const handleLogin = async () => {
       try {
         const res = await login(email.value, password.value);
+        router.push({ name: "LoginLanding" });
       } catch(err) {
         pending.value = false;
         //Pueden salir bad requests en la consola y no son un error de mi parte:
         //https://stackoverflow.com/questions/39581590/why-do-i-see-a-400-bad-request-in-my-developer-console-when-sign-in-to-fireb
         if (err.code == "auth/user-not-found") {
-          error.value = '$t{error.user}'
-          //error.value = 'Error en el e-mail de usuario.'; //TODO literales de errores
+          error.value = 'Error en el e-mail de usuario.'; //TODO literales de errores
         } else if (err.code == "auth/wrong-password") {
           error.value = 'Contraseña incorrecta.';
         } else {
