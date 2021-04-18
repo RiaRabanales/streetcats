@@ -6,8 +6,10 @@
   "nav": {
     "404": "¡Página no encontrada!",
     "home": "Home",
+    "cats": "Nuestros gatos",
     "help": "Ayuda",
     "about": "Sobre nosotros",
+    "board": "Tablón de anuncios",
     "contact": "Contacto",
     "login": "Área de Colaboradores"
   },
@@ -16,7 +18,7 @@
     "findus": "Encuéntranos en"
   },
   "home": {
-    "content": "STREETCATS ARTÁ empezó su andadura en septiembre 2013 con una página en Facebook, primeramente como una iniciativa privada de dos personas, para combatir la proliferación indeseada de los gatos callejeros en el municipio de Artà y para buscar hogares a los bebés y gatos abandonados del municipio. A este proyecto, fundado por Gudrun Hildebrand y Dora López, se incorporaron dos voluntarios más, Hede Schütrumpf y Bél Deià, en enero 2014; así iniciaron la fundación de la Asociación en colaboración con VETERCLINIC ARTÀ. Desde mayo de 2014 colaboran con la contínua captura y esterilización de los gatos callejeros de la zona. Hoy en día hemos llegado a ayudar a muchos gatos: llevamos más de 400 gatos esterilizados y hemos encontrado un nuevo hogar a más de 70 gatitos y gatos abandonados. Desde enero de 2015 somos oficialmente asociación con el nombre 'ASOCIACIÓN ANIMALISTAS ARTA'. Nuestra labor no es solamente la captura y esterilización sino también la alimentación y el bienestar de más de 250 gatos en 15 colonias. Esta labor necesita mucho dinero para pienso, desparasitación, pipetas contra gusanos, así como para las facturas del veterinario en caso de animales heridos o enfermos.",
+    "content": "STREETCATS ARTÁ empezó su andadura en septiembre de 2013 con una página en Facebook, primeramente como una iniciativa privada de dos personas, para combatir la proliferación indeseada de los gatos callejeros en el municipio de Artà y para buscar hogares a los gatitos bebés y gatos abandonados del municipio. A este proyecto, fundado por Gudrun Hildebrand y Dora López, se incorporaron dos voluntarios más, Hede Schütrumpf y Bél Deià, en enero 2014; así iniciaron la fundación de la Asociación en colaboración con VETERCLINIC ARTÀ. Desde mayo de 2014 colaboran con la continua captura y esterilización de los gatos callejeros de la zona. Hoy en día hemos llegado a ayudar a muchos gatos: llevamos más de 400 gatos esterilizados y hemos encontrado un nuevo hogar a más de 70 gatitos y gatos abandonados. Desde enero de 2015 somos oficialmente asociación con el nombre 'ASOCIACIÓN ANIMALISTAS ARTA'. Nuestra labor no es solamente la captura y esterilización sino también la alimentación y el bienestar de más de 250 gatos en 15 colonias. Esta labor necesita mucho dinero para pienso, desparasitación, pipetas contra gusanos, así como para las facturas del veterinario en caso de animales heridos o enfermos.",
     "call": "¡Ayúdanos para que podamos ayudar!",
     "sponsors": "Nuestros patrocinadores"
   },

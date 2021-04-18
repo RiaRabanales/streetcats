@@ -6,8 +6,10 @@
   "nav": {
     "404": "Page not found!",
     "home": "Home",
+    "cats": "Our cats",
     "help": "Donations",
     "about": "About us",
+    "board": "Bulletin board",
     "contact": "Contact",
     "login": "Helpers' Area"
   },
