@@ -31,5 +31,8 @@
     "submit": "Send",
     "success": "Success!",
     "successText": "We have received your message and we'll get in touch with you as soon as possible."
+  },
+  "error": {
+    "user": "Wrong user e-mail!"
   }
 }

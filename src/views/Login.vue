@@ -36,13 +36,29 @@ import { ref } from 'vue';
 export default {
   //TODO
   setup() {
-    const { error, login, pending } = useLogin();
+    const { login, pending } = useLogin();
 
     const email = ref('');
     const password = ref('');
+    const error = ref('');
 
     const handleLogin = async () => {
-      const res = await login(email.value, password.value);
+      try {
+        const res = await login(email.value, password.value);
+      } catch(err) {
+        pending.value = false;
+        //Pueden salir bad requests en la consola y no son un error de mi parte:
+        //https://stackoverflow.com/questions/39581590/why-do-i-see-a-400-bad-request-in-my-developer-console-when-sign-in-to-fireb
+        if (err.code == "auth/user-not-found") {
+          error.value = '$t{error.user}'
+          //error.value = 'Error en el e-mail de usuario.'; //TODO literales de errores
+        } else if (err.code == "auth/wrong-password") {
+          error.value = 'Contraseña incorrecta.';
+        } else {
+          console.log(err.code + '  ' + err.message);
+          error.value = 'No se ha podido completar el login.';
+        }
+      }
     };
 
     return { email, password, handleLogin, error, pending }
