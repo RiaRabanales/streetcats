@@ -36,7 +36,7 @@ export default {
 /* Transiciones de rutas */
 .route-enter-from {
   opacity: 0;
-  transform: translateX(-100px);
+  transform: translateX(-20px);
 }
 
 .route-enter-active {

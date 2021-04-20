@@ -1,12 +1,12 @@
 <template>
 <!-- //TODO ver cómo marcar items activos en vue-boots -->
 <!-- //TODO cargar esto dinámicamente -->
-  <div 
-    @mouseenter="extendMenu"
-    @mouseleave="hover=false"
-    class="wrapper d-flex flex-column align-items-stretch py-3 mx-0 bg-primary"
-  >
-    <nav class="menu">
+  <div class="wrapper d-flex flex-column align-items-stretch py-3 mx-0 bg-primary">
+    <nav 
+      class="menu"
+      @mouseenter="hover=true"
+      @mouseleave="hover=false"
+    >
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item mt-md-1 mx-0 p-2 text-nowrap">
           <router-link class="nav-link text-light" :to="{ name: 'Home' }">
@@ -52,16 +52,9 @@ export default {
   components: { InfoIcon, CameraIcon, DollarSignIcon, MonitorIcon, MailIcon },
   setup() {
     const router = useRouter();
-
     const hover = ref(false);
 
-    const extendMenu = () => {
-      console.log('ok')
-      hover.value = true;
-    }
-
-
-    return { router, hover, extendMenu };
+    return { router, hover };
   },
 };
 </script>
