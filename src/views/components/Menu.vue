@@ -2,44 +2,44 @@
 <!-- //TODO ver cómo marcar items activos en vue-boots -->
 <!-- //TODO cargar esto dinámicamente -->
   <div 
-    @mouseover="hover=true"
+    @mouseenter="extendMenu"
     @mouseleave="hover=false"
     class="wrapper d-flex flex-column align-items-stretch py-3 mx-0 bg-primary"
-    >
-      <nav>
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item mt-md-1 mx-0 p-2 text-nowrap">
-              <router-link class="nav-link text-light" :to="{ name: 'Home' }">
-                <InfoIcon />
-                <span v-if="hover" class="mx-2 mx-lg-3">{{ $t('nav.about') }}</span>
-                </router-link>
-            </li>
-            <li class="nav-item mt-md-1 mx-0 p-2 text-nowrap">
-              <router-link class="nav-link text-light" :to="{ name: 'Cats' }">
-                <CameraIcon class="menuIcon" />
-                <span v-if="hover" class="mx-2 mx-lg-3">{{ $t('nav.cats') }}</span>
-              </router-link>
-            </li>
-            <li class="nav-item mt-md-1 mx-0 p-2 text-nowrap">
-              <router-link class="nav-link text-light" :to="{ name: 'Help' }">
-                <DollarSignIcon class="menuIcon" />
-                <span v-if="hover" class="mx-2 mx-lg-3">{{ $t('nav.help') }}</span>
-                </router-link>
-            </li>
-            <li class="nav-item mt-md-1 mx-0 p-2 text-nowrap">
-              <router-link class="nav-link text-light" :to="{ name: 'Board' }">
-                <MonitorIcon class="menuIcon" />
-                <span v-if="hover" class="mx-2 mx-lg-3">{{ $t('nav.board') }}</span>
-              </router-link>
-            </li>
-            <li class="nav-item mt-md-1 mx-0 p-2 text-nowrap">
-              <router-link class="nav-link text-light" :to="{ name: 'Contact' }">
-                <MailIcon class="menuIcon" />
-                <span v-if="hover" class="mx-2 mx-lg-3">{{ $t('nav.contact') }}</span>
-              </router-link>
-            </li>
-          </ul>
-      </nav>
+  >
+    <nav class="menu">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item mt-md-1 mx-0 p-2 text-nowrap">
+          <router-link class="nav-link text-light" :to="{ name: 'Home' }">
+            <InfoIcon />
+            <span v-if="hover" class="menuText mx-2 mx-lg-3">{{ $t('nav.about') }}</span>
+          </router-link>
+        </li>
+        <li class="nav-item mt-md-1 mx-0 p-2 text-nowrap">
+          <router-link class="nav-link text-light" :to="{ name: 'Cats' }">
+            <CameraIcon class="menuIcon" />
+            <span v-if="hover" class="mx-2 mx-lg-3">{{ $t('nav.cats') }}</span>
+          </router-link>
+        </li>
+        <li class="nav-item mt-md-1 mx-0 p-2 text-nowrap">
+          <router-link class="nav-link text-light" :to="{ name: 'Help' }">
+            <DollarSignIcon class="menuIcon" />
+            <span v-if="hover" class="mx-2 mx-lg-3">{{ $t('nav.help') }}</span>
+            </router-link>
+        </li>
+        <li class="nav-item mt-md-1 mx-0 p-2 text-nowrap">
+          <router-link class="nav-link text-light" :to="{ name: 'Board' }">
+            <MonitorIcon class="menuIcon" />
+            <span v-if="hover" class="mx-2 mx-lg-3">{{ $t('nav.board') }}</span>
+          </router-link>
+        </li>
+        <li class="nav-item mt-md-1 mx-0 p-2 text-nowrap">
+          <router-link class="nav-link text-light" :to="{ name: 'Contact' }">
+            <MailIcon class="menuIcon" />
+            <span v-if="hover" class="mx-2 mx-lg-3">{{ $t('nav.contact') }}</span>
+          </router-link>
+        </li>
+      </ul>
+    </nav>
   </div>
 </template>
 
@@ -55,13 +55,20 @@ export default {
 
     const hover = ref(false);
 
-    return { router, hover };
+    const extendMenu = () => {
+      console.log('ok')
+      hover.value = true;
+    }
+
+
+    return { router, hover, extendMenu };
   },
 };
 </script>
 
 <style scoped>
-nav ul li:hover {
+
+.menu ul li:hover {
   background: #3C403D;
 }
 
@@ -69,4 +76,5 @@ svg {
   width: 30px;
   height: 30px;
 }
+
 </style>

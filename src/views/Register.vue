@@ -1,7 +1,7 @@
 <template>
   <!-- //TODO literales multilenguaje -->
   <!-- //TODO validar y confirmar contraseña -->
-  <h2 class="text-center">Registro</h2>
+  <h3>Registro</h3>
   <form class="registerForm p-3">
     <div class="mb-3">
       <label for="name" class="form-label">{{ $t("contact.name") }}:</label>

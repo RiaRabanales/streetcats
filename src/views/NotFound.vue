@@ -1,9 +1,11 @@
 <template>
-  <h2 class="text-center text-primary">
+  <div class="col-12 col-md-11 mt-1 mt-md-2 mt-lg-3 p-md-1">
+    <h3 class="text-center text-primary">
       <AlertOctagonIcon />
       404
-    </h2>
-  <p class="text-center text-dark">{{ $t("nav.404") }}</p>
+    </h3>
+    <p class="text-center text-dark">{{ $t("nav.404") }}</p>
+  </div>
 </template>
 
 <script>

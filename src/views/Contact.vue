@@ -1,12 +1,14 @@
 <template>
-  <h2 class="text-center">{{ $t("contact.title") }}</h2>
-  <component :is="formComponent" @sentMessage="sentMessage" />
+  <div class="col-12 col-md-11 mt-1 mt-md-2 mt-lg-3 p-md-1">
+    <h3>{{ $t("contact.title") }}</h3>
+    <component :is="formComponent" @sentMessage="sentMessage" />
+  </div>
 </template>
 
 <script>
 import Form from "./components/contact/Form.vue";
 import Success from "./components/contact/Success.vue";
-import { computed, ref } from 'vue';
+import { computed, ref } from "vue";
 
 export default {
   components: { Form, Success },
@@ -14,17 +16,17 @@ export default {
     const sentForm = ref(false);
 
     const sentMessage = () => {
-      sentForm.value = true
-    }
+      sentForm.value = true;
+    };
 
     const formComponent = computed(() => {
       //combino computed con componentes dinámicos https://www.telerik.com/blogs/dynamic-components-vue-component
       if (sentForm.value) {
-        return Success  //así devuelvo un componente u otro según si he enviado mensaje antes
+        return Success; //así devuelvo un componente u otro según si he enviado mensaje antes
       } else {
-        return Form
+        return Form;
       }
-    })
+    });
 
     return { sentMessage, formComponent };
   },

@@ -15,7 +15,7 @@
 
     <p @click="goTo('https://github.com/RiaRabanales/streetcats')" role="button">
       &#169;2021
-      <span class="fw-bolder"> Maria R. Gonzalez </span>
+      <span class="fw-bolder"> Ria R. Gonzalez </span>
       <GithubIcon />
     </p>
 

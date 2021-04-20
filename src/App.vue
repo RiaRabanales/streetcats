@@ -4,9 +4,11 @@
     <div class="flex-grow-1 d-flex justify-content-between">
         <Menu />
         <div class="p-3 flex-grow-1 d-flex justify-content-center align-items-stretch">
-          <div class="col-12 col-md-11 mt-1 mt-md-2 mt-lg-3 p-md-1">
-            <router-view />
-          </div>
+          <router-view v-slot="{ Component }">
+            <transition name="route" mode="out-in">
+              <component :is="Component"></component>
+            </transition>
+          </router-view>
         </div>
         <div class="d-none d-md-block mx-3 col-1 d-flex flex-column justify-content-start mt-3 pt-md-3">
           <p>Fotos!</p>
@@ -29,5 +31,24 @@ export default {
 <style>
 .base {
   min-height: 100vh;
+}
+
+/* Transiciones de rutas */
+.route-enter-from {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.route-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.route-leave-to {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+.route-leave-active {
+  transition: all 0.3s ease-out;
 }
 </style>
