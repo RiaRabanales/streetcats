@@ -1,8 +1,7 @@
 .DS_Store
 node_modules
 dist
-src/config/email.js
-src/config/firebase.js
+config
 
 # local env files
 .env.local

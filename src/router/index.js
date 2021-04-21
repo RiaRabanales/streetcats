@@ -1,17 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import Help from '../views/Help.vue'
-import Contact from '../views/Contact.vue'
-import Cats from '../views/Cats.vue'
-import Board from '../views/Board.vue'
-import Login from '../views/Login.vue'
-import LoginLanding from '../views/LoginLanding.vue'
-import Register from '../views/Register.vue'
-import NotFound from '../views/NotFound.vue'
-
-// Guardas de rutas:
 import { projectAuth } from '../config/firebase'
 
+/* Guarda-rutas */
 const requireAuth = (to, from, next) => {
   let user = projectAuth.currentUser;
   if (!user) {
@@ -30,7 +20,7 @@ const requireNoAuth = (to, from, next) => {
   }
 }
 
-// Rutas:
+/* Rutas */
 const routes = [
   {
     path: '/',
@@ -39,49 +29,49 @@ const routes = [
   {
     path: '/home',
     name: 'Home',
-    component: Home
+    component: () => import('@/views/Home.vue')
   },
   {
     path: '/cats',
     name: 'Cats',
-    component: Cats
+    component: () => import('@/views/Cats.vue')
   },
   {
     path: '/help',
     name: 'Help',
-    component: Help
+    component: () => import('@/views/Help.vue')
   },
   {
     path: '/board',
     name: 'Board',
-    component: Board
+    component: () => import('@/views/Board.vue')
   },
   {
     path: '/contact',
     name: 'Contact',
-    component: Contact
+    component: () => import('@/views/Contact.vue')
   },
   {
     path: '/login',
     name: 'Login',
-    component: Login,
+    component: () => import('@/views/Login.vue'),
     beforeEnter: requireNoAuth
   },
   {
     path: '/loginlanding',
     name: 'LoginLanding',
-    component: LoginLanding,
+    component: () => import('@/views/LoginLanding.vue'),
     beforeEnter: requireAuth
   },
   {
     path: '/register',
     name: 'Register',
-    component: Register
+    component: () => import('@/views/Register.vue') //TODO decidir q hago 
   },
   {
     path: '/:catchAll(.*)',
     name: 'NotFound',
-    component: NotFound
+    component: () => import('@/views/NotFound.vue')
   }
 ]
 
