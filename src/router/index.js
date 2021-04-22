@@ -66,7 +66,8 @@ const routes = [
   {
     path: '/register',
     name: 'Register',
-    component: () => import('@/views/Register.vue') //TODO decidir q hago 
+    component: () => import('@/views/Register.vue'),
+    beforeEnter: requireNoAuth
   },
   {
     path: '/:catchAll(.*)',
