@@ -11,6 +11,7 @@
     "@zhuowenli/vue-feather-icons": "^5.0.2",
     "bootstrap": "^5.0.0-beta3",
     "core-js": "^3.6.5",
+    "date-fns": "^2.19.0",
     "emailjs-com": "^2.6.4",
     "firebase": "^8.4.1",
     "vue": "^3.0.0",
