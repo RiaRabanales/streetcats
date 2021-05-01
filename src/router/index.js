@@ -37,6 +37,18 @@ const routes = [
     component: () => import('@/views/Cats.vue')
   },
   {
+    path: '/cats/new',
+    name: 'NewCat',
+    component: () => import('@/views/components/cats/NewCat.vue'),
+    //beforeEnter: requireAuth
+  },
+  {
+    path: '/cats/:id',
+    name: 'SingleCat',
+    component: () => import('@/views/components/cats/SingleCat.vue'),
+    props: true,
+  },
+  {
     path: '/help',
     name: 'Help',
     component: () => import('@/views/Help.vue')

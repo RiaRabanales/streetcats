@@ -1,38 +1,40 @@
 <template>
-  <h4>Añade un nuevo gatete:</h4>
-  <form @submit.prevent="submitCat">
-    <!-- //TODO literales -->
-    <!-- //TODO aspecto, info (qué hace falta rellenar, qué no) -->
-    <label for="name" class="form-label">Nombre del gato:</label>
-    <input type="text" v-model="name" class="form-control" name="name" />
-    <label for="breed" class="form-label">Raza:</label>
-    <input type="text" v-model="breed" class="form-control" name="breed" />
-    <label for="contactPhone" class="form-label">Teléfono de contacto:</label>
-    <input
-      type="text"
-      v-model="contactPhone"
-      class="form-control"
-      name="contactPhone"
-    />
-    <label for="contactMail" class="form-label">E-mail de contacto:</label>
-    <input
-      type="email"
-      v-model="contactMail"
-      class="form-control"
-      name="contactMail"
-    />
-    <div class="mb-3 text-warning">
-      <p v-if="error">
-        {{ error }}
-      </p>
-    </div>
-    <button
-      type="submit"
-      class="mt-1 btn btn-primary border border-primary border-2 rounded-pill text-center"
-    >
-      Publicar gatete
-    </button>
-  </form>
+  <div>
+    <h4>Añade un nuevo gatete:</h4>
+    <form @submit.prevent="submitCat">
+      <!-- //TODO literales -->
+      <!-- //TODO aspecto, info (qué hace falta rellenar, qué no) -->
+      <label for="name" class="form-label">Nombre del gato:</label>
+      <input type="text" v-model="name" class="form-control" name="name" />
+      <label for="breed" class="form-label">Raza:</label>
+      <input type="text" v-model="breed" class="form-control" name="breed" />
+      <label for="contactPhone" class="form-label">Teléfono de contacto:</label>
+      <input
+        type="text"
+        v-model="contactPhone"
+        class="form-control"
+        name="contactPhone"
+      />
+      <label for="contactMail" class="form-label">E-mail de contacto:</label>
+      <input
+        type="email"
+        v-model="contactMail"
+        class="form-control"
+        name="contactMail"
+      />
+      <div class="mb-3 text-warning">
+        <p v-if="error">
+          {{ error }}
+        </p>
+      </div>
+      <button
+        type="submit"
+        class="mt-1 btn btn-primary border border-primary border-2 rounded-pill text-center"
+      >
+        Publicar gatete
+      </button>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -40,11 +42,14 @@ import { ref } from "vue";
 import getUser from "@/utils/auth/getUser";
 import useCollection from "@/utils/collections/useCollection";
 import { timestamp } from "@/config/firebase";
+import { useRouter } from "vue-router";
 
 export default {
   setup() {
     const { user } = getUser;
     const { addDocument, error } = useCollection("cats");
+
+    const router = useRouter();
 
     const name = ref("");
     const breed = ref("");
@@ -66,6 +71,7 @@ export default {
       if (!error.value) {
         //TODO qué hace cuando se añade
         console.log("gatete añadido!");
+        router.push({ name: "Cats" });
       }
     };
 
