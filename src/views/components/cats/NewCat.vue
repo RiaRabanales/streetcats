@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="col-12 col-md-11 mt-1 mt-md-2 mt-lg-3 p-md-1">
     <h4>Añade un nuevo gatete:</h4>
     <form @submit.prevent="submitCat">
       <!-- //TODO literales -->
