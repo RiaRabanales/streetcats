@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { projectAuth } from '../config/firebase'
+//TODO: que en vez de llamar a esto lo plle de la store
 
 /* Guarda-rutas */
 const requireAuth = (to, from, next) => {
