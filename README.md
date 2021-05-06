@@ -56,7 +56,7 @@ La localización es un punto clave en esta aplicación: la asociación necesita,
 //TODO
 
 ## Producción:
-//TODO
+//TODO explicar problemas con guardarrutas en index.js, que es lo apropiado
 
 # Despliegue
 //TODO
@@ -73,5 +73,6 @@ Para la elaboración de este proyecto se han consultado los siguientes recursos:
 * [E-mailing](https://www.emailjs.com/docs/)
 * [Adaptación de vue-feather-icons para vue 3](https://github.com/zhuowenli/vue-feather-icons)
 * [Vue 3 Animations by The Net Ninja](https://www.youtube.com/watch?v=RIApQjn9fvw)
+* [Vuex Auth](https://www.smashingmagazine.com/2020/10/authentication-in-vue-js/)
 
 //TODO

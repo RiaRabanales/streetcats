@@ -81,13 +81,12 @@
 </template>
 
 <script>
-import useSignup from "@/utils/auth/useSignup";
+import { projectAuth } from "@/config/firebase";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 
 export default {
   setup() {
-    const { error, signup } = useSignup();
     const router = useRouter();
 
     const displayName = ref("");
@@ -96,13 +95,25 @@ export default {
     const password2 = ref("");
     //TODO documentar q no puedo añadir phone xq no existe en auth
 
+    const error = ref("");
+
     const register = async () => {
-      error.value = "";
       if (password.value == password2.value) {
-        await signup(email.value, password.value, displayName.value);
+        error.value = "";
+        try {
+          const res = await projectAuth.createUserWithEmailAndPassword(
+            email.value,
+            password.value
+          );
+          //TODO ver por q no me funciona
+          await res.user.updateProfile({ displayName });
+        } catch (err) {
+          console.log(err.message);
+          error.value = err.message;
+        }
         router.push({ name: "LoginLanding" });
       } else {
-        error.value = "Las contraseñas no coinciden"; //TODO literales
+        error.value = "Las contraseñas no coinciden."; //TODO literales
       }
     };
 

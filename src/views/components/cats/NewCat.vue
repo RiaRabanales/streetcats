@@ -1,6 +1,7 @@
 <template>
   <div class="col-12 col-md-11 mt-1 mt-md-2 mt-lg-3 p-md-1">
     <h4>Añade un nuevo gatete:</h4>
+    {{ }}
     <form @submit.prevent="submitCat">
       <!-- //TODO literales -->
       <!-- //TODO aspecto, info (qué hace falta rellenar, qué no) -->
@@ -39,17 +40,17 @@
 
 <script>
 import { ref } from "vue";
-import getUser from "@/utils/auth/getUser";
-import useCollection from "@/utils/collections/useCollection";
+import useCollection from "@/utils/useCollection";
 import { timestamp } from "@/config/firebase";
 import { useRouter } from "vue-router";
+import { useStore } from "vuex";
 
 export default {
   setup() {
-    const { user } = getUser;
     const { addDocument, error } = useCollection("cats");
 
     const router = useRouter();
+    const store = useStore();
 
     const name = ref("");
     const breed = ref("");
@@ -61,7 +62,7 @@ export default {
         name: name.value,
         breed: breed.value,
         //edad, sexo, esterilizado, enfermedades
-        poster: "banana", //user.value.displayName, //TODO porq hasta q no separe user no me lo pilla, ver Newpost
+        poster: store.state.user.displayName,
         contactPhone: contactPhone.value,
         contactMail: contactMail.value,
         createdAt: timestamp(),

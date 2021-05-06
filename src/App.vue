@@ -33,6 +33,10 @@ export default {
   min-height: 100vh;
 }
 
+.add-btn {
+  max-width: 200px;
+}
+
 /* Transiciones de rutas */
 .route-enter-from {
   opacity: 0;

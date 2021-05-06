@@ -31,21 +31,21 @@
 
 <script>
 import { ref } from "vue";
-import getUser from "@/utils/auth/getUser";
-import useCollection from "@/utils/collections/useCollection";
+import { useStore } from "vuex";
+import useCollection from "@/utils/useCollection";
 import { timestamp } from "@/config/firebase";
 
 export default {
   setup() {
-    const { user } = getUser;
     const { addDocument, error } = useCollection("posts");
+    const store = useStore();
 
     const message = ref("");
     const contact = ref("");
 
     const submitPost = async () => {
       const post = {
-        poster: "banana", //user.value.displayName, //TODO porq hasta q no separe user no me lo pilla
+        poster: store.state.user.displayName,
         message: message.value,
         contact: contact.value,
         createdAt: timestamp(),
