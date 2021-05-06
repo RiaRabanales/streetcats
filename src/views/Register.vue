@@ -100,16 +100,20 @@ export default {
     const register = async () => {
       if (password.value == password2.value) {
         error.value = "";
-        projectAuth
-          .createUserWithEmailAndPassword(email.value, password.value)
-          .then(user => {
-            projectAuth.user.updateProfile({
-              displayName: displayName.value,
-            });
-          })
-          .then(router.push({ name: "LoginLanding" }));
+        try {
+          const res = await projectAuth.createUserWithEmailAndPassword(
+            email.value,
+            password.value
+          );
+          //TODO ver por q no me funciona
+          await res.user.updateProfile({ displayName });
+        } catch (err) {
+          console.log(err.message);
+          error.value = err.message;
+        }
+        router.push({ name: "LoginLanding" });
       } else {
-        error.value = "Las contraseñas no coinciden"; //TODO literales
+        error.value = "Las contraseñas no coinciden."; //TODO literales
       }
     };
 

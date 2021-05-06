@@ -69,12 +69,12 @@ export default {
       error.value = "";
       projectAuth
         .signInWithEmailAndPassword(email.value, password.value)
-        .then(router.push({ name: "LoginLanding" }))
         .catch((err) => {
           console.log(err.message);
           error.value = err.message;
           //TODO mostrar el error en pantalla
         });
+      router.push({ name: "LoginLanding" });  //TODO: x q no me hace el rerouting????
     };
 
     return { email, password, handleLogin, error };

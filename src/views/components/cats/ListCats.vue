@@ -1,30 +1,28 @@
 <template>
-  <div v-for="cat in cats" :key="cat.id" class="d-flex justify-content-between flex-wrap">
-    
-    <router-link :to="{ name: 'SingleCat', params: { id: cat.id} }">
-    <!-- //TODO router link 
-    //TODO
-    <div class="thumbnail">
-      <img :src="cat.imgUrl" alt="cat.name" />
+  <div class="d-flex flex-row justify-content-between flex-wrap">
+    <div v-for="cat in cats" :key="cat.id" class="card m-1 p-1">
+      <router-link
+        :to="{ name: 'SingleCat', params: { id: cat.id } }"
+        role="button"
+      >
+        <img src="#" class="card-img-top" alt="cat.name" />
+        <h5 class="card-title text-decoration-none">{{ cat.name }}</h5>
+      </router-link>
     </div>
-    -->
-    <div class="card m-1" style="width: 18rem" role="button">
-      <img src="#" class="card-img-top" alt="cat.name" />
-      <div class="card-body">
-        <h5 class="card-title">{{ cat.name }}</h5>
-        <a href="#" class="card-text text-center">Go somewhere</a>
-      </div>
-    </div>
-    </router-link>
-  
   </div>
 </template>
 
 <script>
+import { EyeIcon } from "@zhuowenli/vue-feather-icons";
+
 export default {
   props: ["cats"],
+  components: { EyeIcon },
 };
 </script>
 
-<style>
+<style scoped>
+.card {
+  width: 200px;
+}
 </style>

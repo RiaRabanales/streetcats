@@ -10,15 +10,13 @@
 
 <script>
 import { computed } from 'vue';
-import { useStore } from 'vuex';
+import { useStore } from 'vuex'; 
 
 export default {
   setup() {
-    const store = useStore();
-
     return { 
-      user: computed(() => store.state.user), 
-      logged: computed(() => store.state.logged)
+      user: computed(() => useStore().state.user), 
+      logged: computed(() => useStore().state.logged)
     };
   }
 };

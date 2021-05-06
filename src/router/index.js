@@ -1,29 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
-import { useStore } from "vuex";
-
-/* Guarda-rutas 
-const requireAuth = (to, from, next) => {
-  let store = useStore();
-  let logged = store.state.logged;
-  if (!logged) {
-    next({ name: 'Login' }) //si no hay usuario redirecciono a login
-  } else {
-    next() //sigue adelante sin problemas
-  }
-}
-
-/*
-const requireNoAuth = (to, from, next) => {
-  let store = useStore();
-  let logged = store.state.user.logged;
-  if (!logged) {
-    next({ name: 'LoginLanding' })
-  } else {
-    next()
-  }
-}
-*/
+import { useStore } from 'vuex';
 
 /* Rutas */
 const routes = [
@@ -45,7 +22,7 @@ const routes = [
     path: '/cats/new',
     name: 'NewCat',
     component: () => import('@/views/components/cats/NewCat.vue'),
-    //beforeEnter: requireAuth
+    meta: { requiresNoAuth: true }
   },
   {
     path: '/cats/:id',
@@ -72,19 +49,19 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: () => import('@/views/Login.vue'),
-    //beforeEnter: requireNoAuth
+    meta: { requiresNoAuth: true }
   },
   {
     path: '/loginlanding',
     name: 'LoginLanding',
     component: () => import('@/views/LoginLanding.vue'),
-    //beforeEnter: requireAuth
+    meta: { requiresAuth: true }
   },
   {
     path: '/register',
     name: 'Register',
     component: () => import('@/views/Register.vue'),
-    //beforeEnter: requireNoAuth
+    meta: { requiresNoAuth: true }
   },
   {
     path: '/:catchAll(.*)',
@@ -97,5 +74,18 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
+
+/* Guarda-rutas 
+import store from '../store'
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth && !store.getters.isAuthenticated )) {
+    next('/login');
+  } else if (to.matched.some(record => record.meta.requiresNoAuth && store.getters.isAuthenticated )) {
+    next('/loginlanding');
+  } else {
+    next();
+  }
+});
+*/
 
 export default router

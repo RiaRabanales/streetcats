@@ -1,4 +1,4 @@
-import { createStore } from 'vuex'
+import Vuex from 'vuex'
 import { ref } from 'vue';
 
 const state = {
@@ -25,7 +25,6 @@ const actions = {
 
   handleUser({ commit }, user) {
     if (user) {
-      console.log(user)
       commit({
         type: 'setUser',
         data: {
@@ -46,11 +45,16 @@ const actions = {
 
 }
 
-const getters = {}
+const getters = {
+  //comprueba si state.user es nulo y devuelve true/false
+  isAuthenticated: state => !!state.user
+}
 
-export default createStore({
+const store = new Vuex.Store({
   state,
   mutations,
   actions,
   getters
-})
+});
+
+export default store;

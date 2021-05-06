@@ -6,11 +6,10 @@
       >
         <span>
           <UserIcon />
-          {{ post.poster }} (
+          {{ post.poster }} 
           <span v-if="post.contact" class="small">
-            {{ post.contact }}
+            ({{ post.contact }})
           </span>
-          )
         </span>
         <span>
           {{ post.message }}

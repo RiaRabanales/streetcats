@@ -37,16 +37,15 @@ import { timestamp } from "@/config/firebase";
 
 export default {
   setup() {
-    const store = useStore();
-    const user = store.state.user;
     const { addDocument, error } = useCollection("posts");
+    const store = useStore();
 
     const message = ref("");
     const contact = ref("");
 
     const submitPost = async () => {
       const post = {
-        poster: "banana", //user.value.displayName, //TODO porq hasta q no separe user no me lo pilla
+        poster: store.state.user.displayName,
         message: message.value,
         contact: contact.value,
         createdAt: timestamp(),

@@ -44,11 +44,11 @@ export default {
 
     const handleLogout = async () => {
         projectAuth.signOut()
-        .then(router.push({ name: 'Login' }))
-        .catch((err) => {
+        .catch(err => {
           console.log(err.message);
           error.value = err.message;
-        })
+        });
+        router.push({ name: 'Home' });
     };
 
     return { 
