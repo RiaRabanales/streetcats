@@ -4,18 +4,22 @@
     <h3>Hola, {{ user.displayName }}</h3>
     <!--//TODO revisar x q no me está haciendo los cambios-->
     <!--//TODO todo lo que puedes hacer -->
-    <p>//TODO blablahblah</p>
+    <p>//TODO</p>
   </div>
 </template>
 
 <script>
-import getUser from "@/utils/auth/getUser"
+import { computed } from 'vue';
+import { useStore } from 'vuex';
 
 export default {
   setup() {
-    const user = getUser();
+    const store = useStore();
 
-    return { user };
+    return { 
+      user: computed(() => store.state.user), 
+      logged: computed(() => store.state.logged)
+    };
   }
 };
 </script>

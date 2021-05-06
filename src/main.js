@@ -13,8 +13,10 @@ import '@/scss/custom.scss';
 import { projectAuth } from './config/firebase';
 
 let app;
-projectAuth.onAuthStateChanged(() => {
+projectAuth.onAuthStateChanged(user => {
     if (!app) {
         app = createApp(App).use(store).use(i18n).use(router).mount('#app');
     }
+    store.dispatch('handleUser', user);
+    //con esto actualizo mi usuario en el store cuando hay cambios
 });

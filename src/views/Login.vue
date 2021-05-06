@@ -53,36 +53,27 @@
 </template>
 
 <script>
-import { projectAuth } from '@/config/firebase'
+import { projectAuth } from "@/config/firebase";
 import { useRouter } from "vue-router";
 import { ref } from "vue";
 
 export default {
-  //TODO
   setup() {
     const router = useRouter();
 
     const email = ref("");
     const password = ref("");
-    const error = null;
+    const error = ref("");
 
     const handleLogin = async () => {
+      error.value = "";
       projectAuth
         .signInWithEmailAndPassword(email.value, password.value)
-        .then((user) => {
-          console.log(user);
-          /* Llamo a la mutación del store con este payload
-        context.commit({
-          type: 'setUser',
-          user: user
-        })
-        //TODO error a null
-        */
-        })
         .then(router.push({ name: "LoginLanding" }))
         .catch((err) => {
           console.log(err.message);
           error.value = err.message;
+          //TODO mostrar el error en pantalla
         });
     };
 

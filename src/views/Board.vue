@@ -28,7 +28,7 @@
 <script>
 import NewPost from "./components/board/NewPost.vue";
 import ListPosts from "./components/board/ListPosts.vue";
-import getCollection from "@/utils/collections/getCollection";
+import getCollection from "@/utils/getCollection";
 import { formatDistanceToNow } from "date-fns";
 import { computed, ref } from "vue";
 

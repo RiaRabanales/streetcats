@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import getDocument from "@/utils/collections/getDocument";
+import getDocument from "@/utils/getDocument";
 
 export default {
   props: ["id"],

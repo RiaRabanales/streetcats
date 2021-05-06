@@ -1,25 +1,29 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { projectAuth } from '../config/firebase'
-//TODO: que en vez de llamar a esto lo plle de la store
+import Home from '@/views/Home.vue'
+import { useStore } from "vuex";
 
-/* Guarda-rutas */
+/* Guarda-rutas 
 const requireAuth = (to, from, next) => {
-  let user = projectAuth.currentUser;
-  if (!user) {
+  let store = useStore();
+  let logged = store.state.logged;
+  if (!logged) {
     next({ name: 'Login' }) //si no hay usuario redirecciono a login
   } else {
     next() //sigue adelante sin problemas
   }
 }
 
+/*
 const requireNoAuth = (to, from, next) => {
-  let user = projectAuth.currentUser;
-  if (user) {
+  let store = useStore();
+  let logged = store.state.user.logged;
+  if (!logged) {
     next({ name: 'LoginLanding' })
   } else {
     next()
   }
 }
+*/
 
 /* Rutas */
 const routes = [
@@ -30,7 +34,7 @@ const routes = [
   {
     path: '/home',
     name: 'Home',
-    component: () => import('@/views/Home.vue')
+    component: Home   //No debo hacer lazyloading al primero
   },
   {
     path: '/cats',
@@ -68,19 +72,19 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: () => import('@/views/Login.vue'),
-    beforeEnter: requireNoAuth
+    //beforeEnter: requireNoAuth
   },
   {
     path: '/loginlanding',
     name: 'LoginLanding',
     component: () => import('@/views/LoginLanding.vue'),
-    beforeEnter: requireAuth
+    //beforeEnter: requireAuth
   },
   {
     path: '/register',
     name: 'Register',
     component: () => import('@/views/Register.vue'),
-    beforeEnter: requireNoAuth
+    //beforeEnter: requireNoAuth
   },
   {
     path: '/:catchAll(.*)',

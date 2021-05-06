@@ -39,14 +39,15 @@
 
 <script>
 import { ref } from "vue";
-import getUser from "@/utils/auth/getUser";
-import useCollection from "@/utils/collections/useCollection";
+import { useStore } from "vuex";
+import useCollection from "@/utils/useCollection";
 import { timestamp } from "@/config/firebase";
 import { useRouter } from "vue-router";
 
 export default {
   setup() {
-    const { user } = getUser;
+    const store = useStore();
+    const user = store.state.user;
     const { addDocument, error } = useCollection("cats");
 
     const router = useRouter();

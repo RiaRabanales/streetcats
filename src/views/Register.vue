@@ -95,27 +95,19 @@ export default {
     const password2 = ref("");
     //TODO documentar q no puedo añadir phone xq no existe en auth
 
-    const error = null;
+    const error = ref("");
 
     const register = async () => {
       if (password.value == password2.value) {
+        error.value = "";
         projectAuth
           .createUserWithEmailAndPassword(email.value, password.value)
-          .then((currentUser) => {
-            projectAuth.currentUser.updateProfile({
+          .then(user => {
+            projectAuth.user.updateProfile({
               displayName: displayName.value,
             });
           })
-          //TODO .then (actualizar store)
           .then(router.push({ name: "LoginLanding" }));
-      } else {
-        error.value = "Las contraseñas no coinciden"; //TODO literales
-      }
-
-      error.value = "";
-      if (password.value == password2.value) {
-        await signup(email.value, password.value, displayName.value);
-        router.push({ name: "LoginLanding" });
       } else {
         error.value = "Las contraseñas no coinciden"; //TODO literales
       }

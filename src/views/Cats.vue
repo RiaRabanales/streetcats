@@ -23,7 +23,7 @@
 
 <script>
 import ListCats from "./components/cats/ListCats.vue";
-import getCollection from "@/utils/collections/getCollection";
+import getCollection from "@/utils/getCollection";
 
 export default {
   name: "Cats",
