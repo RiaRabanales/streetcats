@@ -1,4 +1,4 @@
-import Vuex from 'vuex'
+import { createStore } from 'vuex'
 import { ref } from 'vue';
 
 const state = {
@@ -50,11 +50,9 @@ const getters = {
   isAuthenticated: state => !!state.user
 }
 
-const store = new Vuex.Store({
+export const store = createStore({
   state,
   mutations,
   actions,
   getters
 });
-
-export default store;

@@ -75,8 +75,8 @@ const router = createRouter({
   routes
 })
 
-/* Guarda-rutas 
-import store from '../store'
+/* Guarda-rutas */
+import { store } from '../store'
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth && !store.getters.isAuthenticated )) {
     next('/login');
@@ -86,6 +86,5 @@ router.beforeEach((to, from, next) => {
     next();
   }
 });
-*/
 
 export default router

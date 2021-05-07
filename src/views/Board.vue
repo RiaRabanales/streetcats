@@ -1,7 +1,7 @@
 <template>
   <div class="col-12 col-md-11 mt-1 mt-md-2 mt-lg-3 p-md-1">
     <!-- //TODO literales -->
-    <h3>Tablón de Anuncios</h3>
+    <h3>{{ $t("nav.board") }}</h3>
 
     <!--//TODO css , TODO mensaje si no hay nada -->
     <div v-if="computedDocuments">
