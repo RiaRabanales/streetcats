@@ -20,12 +20,22 @@
         {{ error }}
       </p>
     </div>
-    <button
+    <div class="d-flex justify-content-around">
+      <button
       type="submit"
       class="mt-1 btn btn-primary border border-primary border-2 rounded-pill text-center"
     >
       Post-it!
     </button>
+    <button
+      type="reset"
+      @click="cancelPost"
+      class="mt-1 btn btn-primary border border-primary border-2 rounded-pill text-center"
+    >
+      Cancelar
+    </button>
+    </div>
+    
   </form>
 </template>
 
@@ -36,7 +46,7 @@ import useCollection from "@/utils/useCollection";
 import { timestamp } from "@/config/firebase";
 
 export default {
-  setup() {
+  setup(props, { emit }) {
     const { addDocument, error } = useCollection("posts");
     const store = useStore();
 
@@ -55,10 +65,15 @@ export default {
       if (!error.value) {
         message.value = "";
         contact.value = "";
+        emit('hideForm');
       }
     };
 
-    return { message, contact, submitPost, error };
+    const cancelPost = () => {
+      emit('hideForm');
+    }
+
+    return { message, contact, submitPost, cancelPost, error };
   },
 };
 </script>

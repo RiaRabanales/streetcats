@@ -32,6 +32,12 @@
             <span v-if="hover" class="mx-2 mx-lg-3">{{ $t('nav.board') }}</span>
           </router-link>
         </li>
+        <li v-if="isAuth" class="nav-item mt-md-1 mx-0 p-2 text-nowrap">
+          <router-link class="nav-link text-light" :to="{ name: 'Docs' }">
+            <FolderIcon class="menuIcon" />
+            <span v-if="hover" class="mx-2 mx-lg-3">{{ $t('nav.docs') }}</span>
+          </router-link>
+        </li>
         <li class="nav-item mt-md-1 mx-0 p-2 text-nowrap">
           <router-link class="nav-link text-light" :to="{ name: 'Contact' }">
             <MailIcon class="menuIcon" />
@@ -44,17 +50,20 @@
 </template>
 
 <script>
-import { useRouter } from "vue-router";
-import { InfoIcon, CameraIcon, DollarSignIcon, MonitorIcon, MailIcon } from "@zhuowenli/vue-feather-icons";
+import { useRouter } from 'vue-router';
+import { InfoIcon, CameraIcon, DollarSignIcon, MonitorIcon, FolderIcon, MailIcon } from '@zhuowenli/vue-feather-icons';
 import { ref } from 'vue';
+import { store } from '@/store/index'
 
 export default {
-  components: { InfoIcon, CameraIcon, DollarSignIcon, MonitorIcon, MailIcon },
+  components: { InfoIcon, CameraIcon, DollarSignIcon, MonitorIcon, FolderIcon, MailIcon },
   setup() {
     const router = useRouter();
     const hover = ref(false);
 
-    return { router, hover };
+    const isAuth = store.getters.isAuthenticated;
+
+    return { router, hover, isAuth };
   },
 };
 </script>

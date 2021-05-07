@@ -105,7 +105,7 @@ export default {
             email.value,
             password.value
           );
-          //TODO ver por q no me funciona
+          //TODO ver por q no me funciona; creo q si me lo pilla pero no me lo engancha en la store a tiempo
           await res.user.updateProfile({ displayName });
         } catch (err) {
           console.log(err.message);

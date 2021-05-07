@@ -8,28 +8,35 @@
       <ListPosts :posts="computedDocuments" />
     </div>
 
-    <button
-      v-if="logged && !showNewPostForm"
-      @click="showNewPostForm = true"
-      class="add-btn mt-3 btn btn-primary border border-primary border-2 rounded-pill text-center"
-    >
-      publicar nuevo post
-    </button>
-    <!-- //TODO animaciones -->
-    <div v-if="showNewPostForm" class="m-1 my-md-3">
-      <NewPost />
-      <!--//TODO emit para que al publicar nuevo post showNewPostForm se haga falso -->
-    </div>
+    <transition name="buttonpost" mode="out-in">
+      <div v-if="logged && !showNewPostForm" class="d-flex justify-content-center">
+        <button
+          @click="showNewPostForm = true"
+          class="add-btn mt-3 btn btn-primary border border-primary border-2 rounded-pill text-center"
+        >
+          publicar nuevo post
+        </button>
+      </div>
+    </transition>
+
+    <transition name="newpost" mode="out-in">
+      <div v-if="showNewPostForm" class="m-1 my-md-3">
+        <NewPost @hideForm="showNewPostForm = false" />
+      </div>
+    </transition>
   </div>
 </template>
 
 <script>
-import NewPost from "./components/board/NewPost.vue";
-import ListPosts from "./components/board/ListPosts.vue";
-import getCollection from "@/utils/getCollection";
-import { formatDistanceToNow } from "date-fns";
-import { computed, ref } from "vue";
-import { useStore } from "vuex";
+import getCollection from '@/utils/getCollection';
+import { formatDistanceToNow } from 'date-fns';
+import { computed, ref, defineAsyncComponent } from 'vue';
+import { useStore } from 'vuex';
+import ListPosts from './components/board/ListPosts.vue';
+import {  } from 'vue'
+const NewPost = defineAsyncComponent(() =>
+  import('./components/board/NewPost.vue')
+)
 
 export default {
   components: { NewPost, ListPosts },
@@ -58,5 +65,27 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+/* Animaciones de formulario de nuevo mensaje */
+.newpost-enter-from,
+.newpost-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.newpost-enter-active,
+.newpost-leave-active {
+  transition: all 0.5s ease;
+}
+
+.buttonpost-enter-from,
+.buttonpost-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.buttonpost-enter-active,
+.buttonpost-leave-active {
+  transition: all 0.3s ease;
+}
 </style>
