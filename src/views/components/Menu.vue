@@ -52,7 +52,7 @@
 <script>
 import { useRouter } from 'vue-router';
 import { InfoIcon, CameraIcon, DollarSignIcon, MonitorIcon, FolderIcon, MailIcon } from '@zhuowenli/vue-feather-icons';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { store } from '@/store/index'
 
 export default {
@@ -61,6 +61,7 @@ export default {
     const router = useRouter();
     const hover = ref(false);
 
+    //TODO no me está haciendo el hot-reload¿???
     const isAuth = store.getters.isAuthenticated;
 
     return { router, hover, isAuth };
