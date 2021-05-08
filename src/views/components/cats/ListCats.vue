@@ -5,7 +5,7 @@
         :to="{ name: 'SingleCat', params: { id: cat.id } }"
         role="button"
       >
-        <img src="#" class="card-img-top" alt="cat.name" />
+        <img :src="cat.imageUrl" class="card-img-top" alt="cat.name" />
         <h5 class="card-title text-decoration-none">{{ cat.name }}</h5>
       </router-link>
     </div>

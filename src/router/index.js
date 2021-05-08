@@ -22,7 +22,7 @@ const routes = [
     path: '/cats/new',
     name: 'NewCat',
     component: () => import('@/views/components/cats/NewCat.vue'),
-    meta: { requiresNoAuth: true }
+    meta: { requiresAuth: true }
   },
   {
     path: '/cats/:id',

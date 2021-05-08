@@ -6,8 +6,7 @@
     <div v-if="cat">
       <div class="d-flex justify-content-between">
         <div class="cat-img col-3 col-md-4">
-          aquí irá la foto //TODO
-          <!--  <img :src="cat.img" :alt="cat.name" />  -->
+          <img :src="cat.imageUrl" alt="cat.name" class="cat-photo" />
         </div>
         <div class="cat-details flex-grow-1">
           <ul class="list-group list-group-flush">
@@ -48,4 +47,7 @@ export default {
 </script>
 
 <style scoped>
+.cat-photo {
+  max-width: 100%;
+}
 </style>

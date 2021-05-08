@@ -1,7 +1,7 @@
 <template>
   <div class="col-12 col-md-11 mt-1 mt-md-2 mt-lg-3 p-md-1">
     <h4>Añade un nuevo gatete:</h4>
-    {{ }}
+
     <form @submit.prevent="submitCat">
       <!-- //TODO literales -->
       <!-- //TODO aspecto, info (qué hace falta rellenar, qué no) -->
@@ -9,6 +9,13 @@
       <input type="text" v-model="name" class="form-control" name="name" />
       <label for="breed" class="form-label">Raza:</label>
       <input type="text" v-model="breed" class="form-control" name="breed" />
+
+      <label for="image" class="form-label">Foto:</label>
+      <input type="file" class="form-control" @change="handleImage" name="image" />
+      <div class="mb-3 text-warning">
+        <p v-if="imageError"> {{ imageError }} </p>
+      </div>
+
       <label for="contactPhone" class="form-label">Teléfono de contacto:</label>
       <input
         type="text"
@@ -39,36 +46,60 @@
 </template>
 
 <script>
-import { ref } from "vue";
-import useCollection from "@/utils/useCollection";
-import { timestamp } from "@/config/firebase";
-import { useRouter } from "vue-router";
-import { useStore } from "vuex";
+import { ref } from 'vue';
+import useCollection from '@/utils/useCollection';
+import useStorage from '@/utils/useStorage';
+import { timestamp } from '@/config/firebase';
+import { useRouter } from 'vue-router';
+import { useStore } from 'vuex';
 
 export default {
   setup() {
-    const { addDocument, error } = useCollection("cats");
+    const { addDocument, error } = useCollection('cats');
+    const { filePath, url, uploadImage } = useStorage();
 
     const router = useRouter();
     const store = useStore();
 
-    const name = ref("");
-    const breed = ref("");
-    const contactPhone = ref("");
-    const contactMail = ref("");
+    const name = ref('');
+    const breed = ref('');
+    const contactPhone = ref('');
+    const contactMail = ref('');
+
+    const image = ref(null);
+    const imageError = ref(null);
+    const imageTypes = ['image/png', 'image/jpeg', 'image/jpg', 'image/gif'];
+    const handleImage = (e) => {
+      let imageFile = e.target.files[0];
+
+      if (imageFile && imageTypes.includes(imageFile.type)) {
+        //TODO literales error
+        image.value = imageFile;
+        imageError.value = null;
+      } else {
+        image.value = null;
+        imageError.value = 'Error! Wrong file type.'
+      }
+    };
 
     const submitCat = async () => {
+      if (image.value) {
+        await uploadImage(image.value);
+      }
+
       const cat = {
         name: name.value,
         breed: breed.value,
-        //edad, sexo, esterilizado, enfermedades
+        //TODO edad, sexo, esterilizado, enfermedades
         poster: store.state.user.displayName,
         contactPhone: contactPhone.value,
         contactMail: contactMail.value,
         createdAt: timestamp(),
+        imageUrl: url.value
       };
 
-      await addDocument(cat);
+      await addDocument(cat)
+
       if (!error.value) {
         //TODO qué hace cuando se añade
         console.log("gatete añadido!");
@@ -76,7 +107,7 @@ export default {
       }
     };
 
-    return { name, breed, contactPhone, contactMail, submitCat, error };
+    return { name, breed, contactPhone, contactMail, handleImage, submitCat, error, imageError };
   },
 };
 </script>
