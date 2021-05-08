@@ -61,8 +61,9 @@ export default {
     const router = useRouter();
     const hover = ref(false);
 
-    //TODO no me está haciendo el hot-reload¿???
-    const isAuth = store.getters.isAuthenticated;
+    const isAuth = computed(() => {
+      return store.state.logged;
+    });
 
     return { router, hover, isAuth };
   },

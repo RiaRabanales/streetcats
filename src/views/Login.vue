@@ -67,14 +67,14 @@ export default {
 
     const handleLogin = async () => {
       error.value = "";
-      projectAuth
+      await projectAuth
         .signInWithEmailAndPassword(email.value, password.value)
         .catch((err) => {
           console.log(err.message);
           error.value = err.message;
           //TODO mostrar el error en pantalla
         });
-      router.push({ name: "LoginLanding" });  //TODO: x q no me hace el rerouting????
+      router.push({ name: "LoginLanding" });
     };
 
     return { email, password, handleLogin, error };
