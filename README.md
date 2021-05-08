@@ -57,6 +57,7 @@ La localización es un punto clave en esta aplicación: la asociación necesita,
 
 ## Producción:
 //TODO explicar problemas con guardarrutas en index.js, que es lo apropiado
+//TODO explicar basura del cors q me bloquea las descargas
 
 # Despliegue
 //TODO
@@ -74,5 +75,6 @@ Para la elaboración de este proyecto se han consultado los siguientes recursos:
 * [Adaptación de vue-feather-icons para vue 3](https://github.com/zhuowenli/vue-feather-icons)
 * [Vue 3 Animations by The Net Ninja](https://www.youtube.com/watch?v=RIApQjn9fvw)
 * [Vuex Auth](https://www.smashingmagazine.com/2020/10/authentication-in-vue-js/)
+* [Hooks en Vue3](https://learnvue.co/2020/12/how-to-use-lifecycle-hooks-in-vue3/#composition-api)
 
 //TODO
