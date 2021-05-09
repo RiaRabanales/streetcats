@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-primary pt-3 px-2 px-md-3 text-white d-flex justify-content-around align-items-center">  
+  <div class="app-footer bg-primary pt-3 px-2 px-md-3 text-white d-flex justify-content-around align-items-center">  
 
     <p>
       <span class="fw-bolder me-1">{{ $t('footer.findus') }} </span>
@@ -39,3 +39,11 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.app-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+</style>

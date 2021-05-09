@@ -1,7 +1,7 @@
 <template>
   <!-- //TODO literales multilenguaje -->
   <!-- //TODO validar y confirmar contraseña -->
-  <div class="col-12 col-md-11 mt-1 mt-md-2 mt-lg-3 p-md-1">
+  <div class="mt-1 mt-md-2 mt-lg-3 p-md-1">
     <h3>Registro</h3>
     <form @submit.prevent="register" class="registerForm p-3">
       <div class="mb-3">

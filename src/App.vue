@@ -2,17 +2,13 @@
   <div class="base container-fluid bg-white p-0 d-flex flex-column">
     <Header />
     <div class="flex-grow-1 d-flex justify-content-between">
-        <Menu />
-        <div class="p-3 flex-grow-1 d-flex justify-content-center align-items-stretch">
-          <router-view v-slot="{ Component }">
-            <transition name="route" mode="out-in">
-              <component :is="Component"></component>
-            </transition>
-          </router-view>
-        </div>
-        <div class="d-none d-md-block mx-3 col-1 d-flex flex-column justify-content-start mt-3 pt-md-3">
-          <p>Fotos!</p>
-        </div>
+      <Menu />
+      <router-view v-slot="{ Component }" class="p-2 p-md-3 flex-grow-1">
+        <transition name="route" mode="out-in">
+          <component :is="Component"></component>
+        </transition>
+      </router-view>
+      <SidePortraits class="d-none d-md-block col-2 p1 py-md-2 py-lg-3" />
     </div>
     <Footer />
   </div>
@@ -22,9 +18,10 @@
 import Menu from "./views/components/Menu.vue";
 import Header from "./views/components/Header.vue";
 import Footer from "./views/components/Footer.vue";
+import SidePortraits from "./views/components/SidePortraits.vue";
 
 export default {
-  components: { Menu, Header, Footer }
+  components: { Menu, Header, Footer, SidePortraits },
 };
 </script>
 
