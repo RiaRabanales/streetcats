@@ -92,6 +92,7 @@ export default {
         breed: breed.value,
         //TODO edad, sexo, esterilizado, enfermedades
         poster: store.state.user.displayName,
+        posterUid: store.state.user.uid,
         contactPhone: contactPhone.value,
         contactMail: contactMail.value,
         createdAt: timestamp(),

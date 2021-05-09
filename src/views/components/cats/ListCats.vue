@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex flex-row justify-content-between flex-wrap">
-    <div v-for="cat in cats" :key="cat.id" class="card m-1 p-1">
+    <div v-for="cat in cats" :key="cat.id" class="card m-1 p-1" style="width: 15rem;">
       <router-link
         :to="{ name: 'SingleCat', params: { id: cat.id } }"
         role="button"

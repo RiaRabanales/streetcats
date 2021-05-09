@@ -23,7 +23,6 @@ const useStorage = () => {
         }
     }
 
-        //TODO replantear
     const deleteImage = async (filePath) => {
         const storageRef = projectStorage.ref(filePath.value);
 
