@@ -56,6 +56,7 @@ export default {
     const submitPost = async () => {
       const post = {
         poster: store.state.user.displayName,
+        posterUid: store.state.user.uid,
         message: message.value,
         contact: contact.value,
         createdAt: timestamp(),

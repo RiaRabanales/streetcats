@@ -5,11 +5,20 @@
 
     <!--//TODO css , TODO mensaje si no hay nada -->
     <div v-if="computedDocuments">
-      <ListPosts :posts="computedDocuments" />
+      <div
+        v-for="post in computedDocuments"
+        :key="post.id"
+        class="d-flex flex-column p-2 my-2 border"
+      >
+        <SinglePost :post="post" />
+      </div>
     </div>
 
     <transition name="buttonpost" mode="out-in">
-      <div v-if="logged && !showNewPostForm" class="d-flex justify-content-center">
+      <div
+        v-if="logged && !showNewPostForm"
+        class="d-flex justify-content-center"
+      >
         <button
           @click="showNewPostForm = true"
           class="add-btn mt-3 btn btn-primary border border-primary border-2 rounded-pill text-center"
@@ -28,18 +37,18 @@
 </template>
 
 <script>
-import getCollection from '@/utils/getCollection';
-import { formatDistanceToNow } from 'date-fns';
-import { computed, ref, defineAsyncComponent } from 'vue';
-import { useStore } from 'vuex';
-import ListPosts from './components/board/ListPosts.vue';
-import {  } from 'vue'
+import getCollection from "@/utils/getCollection";
+import { formatDistanceToNow } from "date-fns";
+import { computed, ref, defineAsyncComponent } from "vue";
+import { useStore } from "vuex";
+import SinglePost from "./components/board/SinglePost.vue";
+import {} from "vue";
 const NewPost = defineAsyncComponent(() =>
-  import('./components/board/NewPost.vue')
-)
+  import("./components/board/NewPost.vue")
+);
 
 export default {
-  components: { NewPost, ListPosts },
+  components: { NewPost, SinglePost },
   setup() {
     const showNewPostForm = ref(false);
     const { error, documents } = getCollection("posts");
