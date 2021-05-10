@@ -8,7 +8,6 @@
           <component :is="Component"></component>
         </transition>
       </router-view>
-      <SidePortraits class="d-none d-md-block col-2 p1 py-md-2 py-lg-3" />
     </div>
     <Footer />
   </div>
@@ -18,10 +17,9 @@
 import Menu from "./views/components/Menu.vue";
 import Header from "./views/components/Header.vue";
 import Footer from "./views/components/Footer.vue";
-import SidePortraits from "./views/components/SidePortraits.vue";
 
 export default {
-  components: { Menu, Header, Footer, SidePortraits },
+  components: { Menu, Header, Footer },
 };
 </script>
 

@@ -1,32 +1,37 @@
 <template>
-  <div class="mt-1 mt-md-2 mt-lg-3 p-md-1">
-    <h3>Documentos</h3>
-    <!-- //TODO literales -->
-    <p>
-      En esta sección podrás descargarte diferentes documentos relativos al
-      cuidado, la adopción y la acogida de nuestros gatitos.
-    </p>
-    <div v-for="document in documents" :key="document.id">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">{{ document.name }}</h5>
-          <p class="card-text">Idioma: {{ document.language }}</p>
-          <button
-            @click="handleDownload(document.url, document.name, document.type)"
-            class="btn btn-primary border border-primary border-2 rounded-pill text-center"
-          >
-            Download {{ document.type }}
-          </button>
+  <div class="p-0 m-0 d-flex justify-content-between">
+    <div class="mt-1 mt-md-2 mt-lg-3 p-md-1 col-12 col-md-9 col-lg-10">
+      <h3>Documentos</h3>
+      <!-- //TODO literales -->
+      <p>
+        En esta sección podrás descargarte diferentes documentos relativos al
+        cuidado, la adopción y la acogida de nuestros gatitos.
+      </p>
+      <div v-for="document in documents" :key="document.id">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ document.name }}</h5>
+            <p class="card-text">Idioma: {{ document.language }}</p>
+            <button
+              @click="handleDownload(document.url, document.name, document.type)"
+              class="btn btn-primary border border-primary border-2 rounded-pill text-center"
+            >
+              Download {{ document.type }}
+            </button>
+          </div>
         </div>
       </div>
     </div>
+    <SidePortraits class="d-none d-md-block col-2 p1 py-md-2" />
   </div>
 </template>
 
 <script>
 import { projectStorage } from "@/config/firebase";
+import SidePortraits from "./components/SidePortraits.vue";
 
 export default {
+  components: { SidePortraits },
   setup() {
     const documents = [
       {

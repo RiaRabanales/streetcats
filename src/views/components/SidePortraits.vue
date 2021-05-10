@@ -1,28 +1,38 @@
 <template>
-<!-- //TODO no me coge el d-flex -->
-  <div class="pe-0 me-0">
-    <img src="@/assets/img/cat02.png" alt="cat" class="cat-portrait d-block ms-2 ms-lg-3 col-10 col-lg-9" />
-    <img src="@/assets/img/cat01.png" alt="cat" class="cat-portrait d-block ms-2 ms-lg-3 col-10 col-lg-9" />
-    <img src="@/assets/img/cat04.png" alt="cat" class="cat-portrait d-block ms-2 ms-lg-3 col-10 col-lg-9" />
+  <!-- //TODO no me coge el d-flex -->
+  <div class="mt-0">
+    <div 
+      v-for="portrait in randomPortraits" 
+      :key="portrait.url" 
+      class="d-flex justify-content-end align-items-start px-2 px-lg-3"
+      style="height:32%;"
+    >
+      <img
+        :src="portrait.url"
+        :alt="portrait.description"
+        class="cat-portraits"
+      />
+    </div>
   </div>
 </template>
 
 <script>
+import { store } from "@/store/index";
+import { useRoute } from "vue-router";
+import { computed } from "vue";
+
 export default {
   setup() {
-    const portraits = [
-      { url: "@/assets/img/cat01.png", description: "A white baby!" },
-      { url: "@/assets/img/cat02.png", description: "A rescued lady." },
-      { url: "@/assets/img/cat03.png", description: "A star!" },
-      { url: "@/assets/img/cat04.png", description: "Xafardereta" },
-    ];
-    //TODO que se carguen de forma dinámica
-  },
+    return { randomPortraits: store.getters.getPortraits };
+  }
 };
 </script>
 
 <style scoped>
-.cat-portrait {
-    max-height: 25vh;
+.cat-portraits {
+  width: 90%;
+  height: auto; 
+  min-width: 150px; 
+  object-fit: contain;
 }
 </style>

@@ -1,38 +1,47 @@
 <template>
-  <div class="mt-1 mt-md-2 mt-lg-3 p-md-1">
-    <h3>{{ $t("nav.about") }}</h3>
-    <div class="home p-3">
-      <p class="content">{{ $t("home.content") }}</p>
-      <p class="content call text-uppercase fw-bolder pb-lg-3">{{ $t("home.call") }}</p>
+  <div class="p-0 m-0 d-flex justify-content-between">
+    <div class="m-1 mt-md-2 mt-lg-3 p-md-1 col-12 col-md-9 col-lg-10">
+      <h3>{{ $t("nav.about") }}</h3>
+      <div class="home p-3">
+        <p class="content">{{ $t("home.content") }}</p>
+        <p class="content call text-uppercase fw-bolder pb-lg-3">{{ $t("home.call") }}</p>
 
-      <div class="border-top border-3 border-primary my-3"></div>
+        <div class="border-top border-3 border-primary my-3"></div>
 
-      <div class="m-3 p-1 pt-lg-3">
-        <p class="fw-bolder">{{ $t('home.sponsors') }}:</p>
-        <div class="d-flex justify-content-around flex-wrap">
-          <p @click="goTo('https://www.roxybikemallorca.com/')" class="p-0 m-0 mt-1 mx-2" role="button">
-            <SmileIcon />
-            Roxybike Mallorca
-          </p>
-          <p @click="goTo('https://www.tiergesundheitsberatung.org/')" class="p-0 m-0 mt-1 mx-2" role="button">
-            <HeartIcon />
-            Tierschutz- und Tiergesundheitsberatung Anja Külkens
-          </p>
-          <p @click="goTo('https://www.linkedin.com/in/maria-r-gonz%C3%A1lez-555204205/')" class="p-0 m-0 mt-1 mx-2" role="button">
-            <StarIcon />
-            Ria R. Gonzalez Webapps
-          </p>
+        <div class="m-2 mt-3 p-1 pt-lg-3">
+          <p class="fw-bolder">{{ $t('home.sponsors') }}:</p>
+          <div class="mt-2 d-flex flex-column justify-content-around flex-wrap">
+            <p @click="goTo('https://www.roxybikemallorca.com/')" class="p-0 m-0 mt-1 mx-2" role="button">
+              <SmileIcon />
+              <span class="fw-bolder">Roxybike</span> Mallorca
+            </p>
+            <p @click="goTo('https://www.tiergesundheitsberatung.org/')" class="p-0 m-0 mt-1 mx-2" role="button">
+              <HeartIcon />
+              Tierschutz- und Tiergesundheitsberatung <span class="fw-bolder">Anja Külkens</span>
+            </p>
+            <p @click="goTo('https://www.linkedin.com/in/maria-r-gonz%C3%A1lez-555204205/')" class="p-0 m-0 mt-1 mx-2" role="button">
+              <StarIcon />
+              <span class="fw-bolder">Ria R. Gonzalez</span> Webapps
+            </p>
+            <p @click="goTo('https://www.freepik.com/vectors/frame')" class="p-0 m-0 mt-1 mx-2" role="button">
+              <LayersIcon />
+              Vectors by <span class="fw-bolder">Starline</span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
+
+    <SidePortraits class="d-none d-md-block col-2 p1 py-md-2" />
   </div>
 </template>
 
 <script>
-import { HeartIcon, SmileIcon, StarIcon } from "@zhuowenli/vue-feather-icons";
+import { HeartIcon, SmileIcon, StarIcon, LayersIcon } from "@zhuowenli/vue-feather-icons";
+import SidePortraits from "./components/SidePortraits.vue";
 
 export default {
-  components: { HeartIcon, SmileIcon, StarIcon },
+  components: { HeartIcon, SmileIcon, StarIcon, LayersIcon, SidePortraits },
 
   setup() {
 
