@@ -76,5 +76,6 @@ Para la elaboración de este proyecto se han consultado los siguientes recursos:
 * [Vue 3 Animations by The Net Ninja](https://www.youtube.com/watch?v=RIApQjn9fvw)
 * [Vuex Auth](https://www.smashingmagazine.com/2020/10/authentication-in-vue-js/)
 * [Hooks en Vue3](https://learnvue.co/2020/12/how-to-use-lifecycle-hooks-in-vue3/#composition-api)
+* [ Animación 'shake' básica](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_shake)
 
 //TODO
