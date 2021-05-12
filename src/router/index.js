@@ -46,6 +46,12 @@ const routes = [
     component: () => import('@/views/Contact.vue')
   },
   {
+    path: '/contracts',
+    name: 'Contracts',
+    component: () => import('@/views/Contracts.vue'),
+    meta: { requiresAdmin: true }
+  },
+  {
     path: '/login',
     name: 'Login',
     component: () => import('@/views/Login.vue'),
@@ -88,6 +94,8 @@ router.beforeEach((to, from, next) => {
     next('/login');
   } else if (to.matched.some(record => record.meta.requiresNoAuth && store.getters.isAuthenticated )) {
     next('/loginlanding');
+  } else if (to.matched.some(record => record.meta.requiresAdmin && !store.getters.isAdmin )) {
+    next('/home');
   } else {
     next();
   }

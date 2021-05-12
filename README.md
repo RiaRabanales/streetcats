@@ -78,4 +78,4 @@ Para la elaboración de este proyecto se han consultado los siguientes recursos:
 * [Hooks en Vue3](https://learnvue.co/2020/12/how-to-use-lifecycle-hooks-in-vue3/#composition-api)
 * [ Animación 'shake' básica](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_shake)
 
-//TODO
+//TODO tb registro de contratos

@@ -70,6 +70,11 @@ const getters = {
       }
     } while (builtPortraits.length < 3);
     return builtPortraits;
+  },
+
+  getAdmin: state => {  //TODO plantear sacar esto de aquí
+    let admins = ['patata@frita.es'];
+    return admins.includes(state.user.email) ? true : false;
   }
 }
 
