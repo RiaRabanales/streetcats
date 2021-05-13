@@ -7,8 +7,8 @@
         En esta sección podrás descargarte diferentes documentos relativos al
         cuidado, la adopción y la acogida de nuestros gatitos.
       </p>
-      <div v-for="document in documents" :key="document.id">
-        <div class="card">
+      <div v-for="document in documents" :key="document.id" class="d-flex flex-wrap">
+        <div class="card col-12 col-md-4 col-lg-3">
           <div class="card-body">
             <h5 class="card-title">{{ document.name }}</h5>
             <p class="card-text">Idioma: {{ document.language }}</p>

@@ -38,7 +38,7 @@
             <span v-if="hover" class="mx-2 mx-lg-3">{{ $t('nav.docs') }}</span>
           </router-link>
         </li>
-        <li v-if="store.getters.isAdmin" class="nav-item mt-md-1 mx-0 p-2 text-nowrap">
+        <li v-if="isAuth" class="nav-item mt-md-1 mx-0 p-2 text-nowrap">
           <router-link class="nav-link text-light" :to="{ name: 'Contracts' }">
             <ArchiveIcon class="menuIcon" />
             <span v-if="hover" class="mx-2 mx-lg-3">Contracts</span> <!--//TODO -->
@@ -71,7 +71,13 @@ export default {
       return store.state.logged;
     });
 
-    return { router, hover, isAuth };
+    const isAdmin = () => {   //TODO porq no me lo pilla
+      store.getters.isAdmin
+    };
+
+    //TODO gatos y anuncios no me pilla la lectura, ver firebase_rules
+
+    return { router, hover, isAuth, isAdmin };
   },
 };
 </script>

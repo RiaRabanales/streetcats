@@ -28,10 +28,18 @@
             data-bs-parent="#accordionExample"
           >
             <div class="accordion-body">
-
-
-                
-                //TODO COMPLETAAAAR
+              <form @submit.prevent="submitContract">
+                <label for="file" class="form-label">Documento que refleja la firma del contrato:</label>
+                <input
+                  type="file"
+                  class="form-control"
+                  @change="handleFile"
+                  name="file"
+                />
+                <div class="mb-3 text-warning">
+                  <p v-if="fileError">{{ fileError }}</p>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -55,14 +63,28 @@
             data-bs-parent="#accordionExample"
           >
             <div class="accordion-body">
-              <div class="card" for="contract in contracts" :key="contract.id">
-                <div class="card-body">
-                    <!--//TODO añadir botón de descarga -->
+              <div
+                class="card"
+                v-for="contract in contracts"
+                :key="contract.id"
+              >
+                <div
+                  class="card-body d-flex justify-content-around align-items-center"
+                >
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Firmante: {{ contract.party }}</li>
-                    <li class="list-group-item">Gato: {{ contract.cat }}</li> <!--plantear como lista, en un contrato puede haber varios gatos-->
-                    <li class="list-group-item">Fecha de firma: {{ contract.date }}</li>
+                    <li class="list-group-item">
+                      Firmante: {{ contract.party }}
+                    </li>
+                    <li class="list-group-item">Gato: 
+                      <span v-for="item in contract.cat" :key="item.id" class="me-2">{{ item }}</span> 
+                    </li>
+                    <li class="list-group-item">
+                      Fecha de firma: {{ contract.date }}
+                    </li>
                   </ul>
+                  <button class="btn btn-primary" style="max-height: 2.5rem">
+                    Descargar
+                  </button>
                 </div>
               </div>
             </div>
@@ -75,13 +97,30 @@
 </template>
 
 <script>
+import { ref } from 'vue';
 import SidePortraits from "./components/SidePortraits.vue";
 
 export default {
   components: { SidePortraits },
   setup() {
-    const contracts = [];
-    return { contracts };
+    const fileError = ref('');
+    const contracts = [
+      {
+        id: "2",
+        party: "una persona",
+        cat: ["anduino"],
+        date: new Date().toString(),
+      }]
+
+      const handleFile = () => {
+        console.log('entra en handlefile')
+      }
+
+      const submitContract = () => {
+        console.log('entra en envio de contratos')
+      }
+
+    return { contracts, handleFile, submitContract, fileError };
   },
 };
 </script>
