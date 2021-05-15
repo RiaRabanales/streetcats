@@ -10,7 +10,7 @@
   <span>
     {{ post.message }}
   </span>
-  <span class="small"> Publicado hace {{ post.createdAt }} </span>
+  <span class="small"> {{ $t('board.published') }}: {{ post.createdAt.toDate().toLocaleString() }} </span>
 </template>
 
 <script>

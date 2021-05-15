@@ -3,13 +3,13 @@ service cloud.firestore {
   match /databases/{database}/documents {
     match /posts/{document=**} {
       allow read: if request.time < timestamp.date(2021, 11, 11);
-      allow create: if request.auth != null;
-      allow delete, update: if request.auth.uid == resource.data.userId;
+      allow create, delete: if request.auth != null;
+      allow update: if request.auth.uid == resource.data.userId;
     }
     match /cats/{document=**} {
       allow read: if request.time < timestamp.date(2021, 11, 11);
-      allow create: if request.auth != null;
-      allow delete, update: if request.auth.uid == resource.data.userId;
+      allow create, delete: if request.auth != null;
+      allow update: if request.auth.uid == resource.data.userId;
     }
     match /contracts/{document=**} {
       allow read, create: if request.auth != null;

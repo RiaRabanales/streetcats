@@ -1,22 +1,19 @@
 <template>
   <div class="p-0 m-0 d-flex justify-content-between">
     <div class="mt-1 mt-md-2 mt-lg-3 p-md-1 col-12 col-md-9 col-lg-10">
-      <h3>Documentos</h3>
-      <!-- //TODO literales -->
-      <p>
-        En esta sección podrás descargarte diferentes documentos relativos al
-        cuidado, la adopción y la acogida de nuestros gatitos.
-      </p>
+      <h3>{{ $t('nav.docs') }}</h3>
+      <p>{{ $t('docs.message') }}</p>
       <div v-for="document in documents" :key="document.id" class="d-flex flex-wrap">
         <div class="card col-12 col-md-4 col-lg-3">
-          <div class="card-body">
+          <div class="card-body d-flex flex-column align-items-center justify-content-between">
             <h5 class="card-title">{{ document.name }}</h5>
-            <p class="card-text">Idioma: {{ document.language }}</p>
+            <p class="card-text">{{ $t('docs.language') }}: {{ document.language }}</p>
+            <!-- //TODO adaptar literal lenguaje -->
             <button
               @click="handleDownload(document.url, document.name, document.type)"
               class="btn btn-primary border border-primary border-2 rounded-pill text-center"
             >
-              Download {{ document.type }}
+              {{ $t('docs.download') }} .{{ document.type }}
             </button>
           </div>
         </div>
@@ -35,7 +32,7 @@ export default {
   setup() {
     const documents = [
       {
-        name: "neutering",
+        name: "Neutering guide",
         language: "en",
         type: "pdf",
         url: "gs://streetcats-f248d.appspot.com/docs/neutering.pdf",

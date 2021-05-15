@@ -3,7 +3,7 @@
     <!-- //TODO literales -->
     <!-- //TODO aspecto -->
     <label for="message" class="form-label"
-      >Deja tu mensaje en el tablón:</label
+      >{{ $t('board.message') }}:</label
     >
     <textarea
       v-model="message"
@@ -12,7 +12,7 @@
       required
     ></textarea>
     <label for="contact" class="form-label"
-      >Si quieres, deja un número de teléfono o email de contacto:</label
+      >{{ $t('board.contact') }}:</label
     >
     <input type="text" v-model="contact" class="form-control" name="contact" />
     <div class="mb-3 text-warning">
@@ -25,14 +25,14 @@
       type="submit"
       class="mt-1 btn btn-primary border border-primary border-2 rounded-pill text-center"
     >
-      Post-it!
+      {{ $t('board.publish') }}
     </button>
     <button
       type="reset"
       @click="cancelPost"
       class="mt-1 btn btn-primary border border-primary border-2 rounded-pill text-center"
     >
-      Cancelar
+      {{ $t('board.cancel') }}
     </button>
     </div>
     

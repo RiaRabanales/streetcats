@@ -17,7 +17,7 @@
   },
   "footer": {
     "cookies": "Cookie policy",
-    "findus": "Find us in"
+    "findus": "Find us!"
   },
   "home": {
     "content": "STREETCATS ARTÀ started back in September 2013 with the same page on Facebook as a private initiative, in order to counteract the ever-growing population of street cats with castration and sterilization actions, and to seek and find help for abandoned cats and kittens a home. The project was founded by Gudrun Hildebrand and Dora López and from January 2014, the activities were completed by two other volunteers, Hede Schütrumpf and Maria Isabel Deià, and they initiated the founding of the association. In cooperation with the VETERCLINIC ARTÀ was started in May 2014, the continuous trapping of street cats. To date, more than 400 cats have been sterilized in the room Artà. More than 70 abandoned cats and kittens could be placed in loving hands. Since January 2015 we are a registered association with the name “ASOCIACIÓN ANIMALISTAS ARTÀ“. Our task is not only sterilization, but also the support of more than 250 street cats in fifteen colonies in Arta. This work requires a lot of money for dry food, deworming, pipettes against parasites, as well as vet bills for sick and injured animals.",
@@ -35,5 +35,34 @@
     "submit": "Send",
     "success": "Success!",
     "successText": "We have received your message and we'll get in touch with you as soon as possible."
+  },
+  "cats": {
+    "error": "Something has gone wrong - we seem to have misplaced our cats. Oops!",
+    "add": "Add a cat"
+  },
+  "board": {
+    "new": "Publish a new post",
+    "published": "Published on/at",
+    "message": "Leave a new message on our public board",
+    "contact": "If you so wish, write down a phone number or e-mail address through which to contact you about this message.",
+    "publish": "Publish",
+    "cancel": "Cancel"
+  },
+  "docs": {
+    "message": "In this section you'll be able to download different documents regarding adopting and taking care of our cats.",
+    "language": "Language",
+    "download": "Download"
+  },
+  "contracts": {
+    "title": "Contracts Library",
+    "message": "In this section you'll be able to upload, check and download all contracts signed by Streetcats.",
+    "upload": "Upload a new contract",
+    "party": "Signing party",
+    "cat": "Adopted cat",
+    "doc": "Contract document file (.pdf)",
+    "uploadbutton": "Save document file",
+    "viewdocs": "View all saved contracts",
+    "date": "Uploaded on/at",
+    "download": "Download"
   }
 }

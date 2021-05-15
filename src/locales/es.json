@@ -35,5 +35,34 @@
     "submit": "Enviar",
     "success": "¡Hecho!",
     "successText": "Hemos recibido tu mensaje y nos pondremos en contacto contigo en cuanto nos sea posible."
+  },
+  "cats": {
+    "error": "¡ERROR! ¡Que se nos han perdido los gatos!",
+    "add": "Añade otro gato"
+  },
+  "board": {
+    "new": "Publicar un post nuevo",
+    "published": "Momento de publicación",
+    "message": "Deja tu mensaje en el tablón",
+    "contact": "Si quieres, deja un número de teléfono o email de contacto",
+    "publish": "Publicar",
+    "cancel": "Cancelar"
+  },
+  "docs": {
+    "message": "En esta sección podrás descargarte diferentes documentos relativos al cuidado, la adopción y la acogida de nuestros gatitos.",
+    "language": "Idioma",
+    "download": "Descargar"
+  },
+  "contracts": {
+    "title": "Repositorio de contratos",
+    "message": "En esta sección puedes almacenar, consultar y descargar los contratos de acogida y adopción firmados.",
+    "upload": "Subir un nuevo contrato",
+    "party": "Parte firmante",
+    "cat": "Gato adoptado/acogido",
+    "doc": "Documento que refleja la firma del contrato (en formato .pdf)",
+    "uploadbutton": "Guardar documento",
+    "viewdocs": "Ver todos los contratos guardados",
+    "date": "Fecha de firma",
+    "download": "Descargar"
   }
 }

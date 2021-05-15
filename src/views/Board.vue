@@ -5,9 +5,9 @@
       <h3>{{ $t("nav.board") }}</h3>
 
       <!--//TODO css , TODO mensaje si no hay nada -->
-      <div v-if="computedDocuments">
+      <div v-if="documents">
         <div
-          v-for="post in computedDocuments"
+          v-for="post in documents"
           :key="post.id"
           class="d-flex flex-column p-2 my-2 border"
         >
@@ -24,7 +24,7 @@
             @click="showNewPostForm = true"
             class="add-btn mt-3 btn btn-primary border border-primary border-2 rounded-pill text-center"
           >
-            publicar nuevo post
+            {{ $t("board.new") }}
           </button>
         </div>
       </transition>
@@ -58,21 +58,10 @@ export default {
     const showNewPostForm = ref(false);
     const { error, documents } = getCollection("posts");
 
-    //aquí trabajo el formato de fecha si hay docs
-    const computedDocuments = computed(() => {
-      if (documents.value) {
-        return documents.value.map((doc) => {
-          let time = formatDistanceToNow(doc.createdAt.toDate());
-          //TODO localización del fns
-          return { ...doc, createdAt: time };
-        });
-      }
-    });
-
     return {
       showNewPostForm,
       error,
-      computedDocuments,
+      documents,
       logged: computed(() => useStore().state.logged),
     };
   },

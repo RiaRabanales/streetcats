@@ -4,10 +4,7 @@
       <h3>{{ $t("nav.cats") }}</h3>
 
       <div class="mb-3">
-        <div v-if="error" class="error">
-          ¡ERROR! ¡Que se nos han perdido los gatos!
-        </div>
-        <!-- //TODO literales -->
+        <div v-if="error" class="error">{{ $t('cats.error') }}</div>
         <div v-if="documents">
           <ListCats :cats="documents" />
         </div>
@@ -17,7 +14,7 @@
           :to="{ name: 'NewCat' }"
           class="add-btn mt-3 btn btn-primary border border-primary border-2 rounded-pill text-center"
         >
-          Add a cat!
+          {{ $t('cats.add') }}
         </router-link>
       </div>
     </div>

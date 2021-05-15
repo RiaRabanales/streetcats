@@ -1,12 +1,8 @@
 <template>
   <div class="p-0 m-0 d-flex">
     <div class="mt-1 mt-md-2 mt-lg-3 p-md-1 col-12 col-md-9 col-lg-10">
-      <h3>Repositorio de contratos</h3>
-      <!-- //TODO literales -->
-      <p>
-        En esta sección puedes almacenar los contratos de acogida y adopción
-        firmados.
-      </p>
+      <h3>{{ $t("contracts.title") }}</h3>
+      <p>{{ $t("contracts.message") }}</p>
       <div class="accordion" id="accordionExample">
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
@@ -18,7 +14,7 @@
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              Subir nuevo contrato
+              {{ $t("contracts.upload") }}
             </button>
           </h2>
           <div
@@ -30,32 +26,31 @@
             <div class="accordion-body">
               <form @submit.prevent="submitContract" class="d-flex flex-wrap">
                 <div class="col-12 col-md-6 px-1">
-                  <label for="contractParty" class="form-label"
-                    >Firmante:</label
-                  >
+                  <label for="contractParty" class="form-label">{{ $t("contracts.party") }}:</label>
                   <input
                     type="text"
                     v-model="contractParty"
                     class="form-control"
                     name="contractParty"
+                    required
                   />
                 </div>
 
                 <div class="col-12 col-md-6">
-                  <label for="contractCat" class="form-label"
-                    >Gato adoptado/acogido:</label
+                  <label for="contractCat" class="form-label">{{ $t("contracts.cat") }}:</label
                   >
                   <input
                     type="text"
                     v-model="contractCat"
                     class="form-control"
                     name="contractCat"
+                    required
                   />
                 </div>
 
                 <div class="col-12 pt-1 pt-md-2">
                   <label for="file" class="form-label"
-                    >Documento que refleja la firma del contrato:</label
+                    >{{ $t("contracts.doc") }}:</label
                   >
                   <input
                     type="file"
@@ -68,7 +63,7 @@
                   </div>
                 </div>
 
-                <button class="btn btn-outline-dark">Subir</button>
+                <button class="btn btn-outline-dark">{{ $t("contracts.uploadbutton") }}</button>
               </form>
             </div>
           </div>
@@ -83,7 +78,7 @@
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              Ver todos los contratos guardados
+              {{ $t("contracts.viewdocs") }}
             </button>
           </h2>
           <div
@@ -102,17 +97,13 @@
                   class="card-body d-flex justify-content-around align-items-center"
                 >
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                      Firmante: {{ contract.party }}
-                    </li>
-                    <li class="list-group-item">Gato: {{ contract.cat }}</li>
-                    <li class="list-group-item">
-                      Fecha de firma: {{ contract.createdAt.toDate().toLocaleString() }}
-                    </li>
+                    <li class="list-group-item">{{ $t("contracts.party") }}: {{ contract.party }}</li>
+                    <li class="list-group-item">{{ $t("contracts.cat") }}:: {{ contract.cat }}</li>
+                    <li class="list-group-item">{{ $t("contracts.date") }}: {{ contract.createdAt.toDate().toLocaleString() }}</li>
                   </ul>
                   <button class="btn btn-primary" style="max-height: 2.5rem">
                     <!-- //TODO que se descargue al clicar -->
-                    Descargar
+                    {{ $t("contracts.download") }}
                   </button>
                 </div>
               </div>
@@ -140,8 +131,6 @@ export default {
     const { addDocument, error } = useCollection("contracts");
     const { url, filePath, uploadFile } = useStorage();
     const { documents } = getCollection("contracts");
-
-    console.log(documents)
 
     const contractParty = ref("");
     const contractCat = ref("");
