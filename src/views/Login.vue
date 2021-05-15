@@ -80,7 +80,9 @@ export default {
           error.value = err.message;
           //TODO mostrar el error en pantalla
         });
-      router.push({ name: "LoginLanding" });
+      if (error.value = "") {
+        router.push({ name: "LoginLanding" });
+      } 
     };
 
     return { email, password, handleLogin, error };

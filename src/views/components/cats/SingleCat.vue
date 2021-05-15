@@ -79,15 +79,19 @@ export default {
   props: ["id"], //esto es la id del gato
   components: { MailIcon, PhoneCallIcon, CheckIcon, XIcon, SidePortraits },
   setup(props) {
-    const { deleteImage } = useStorage();
     const router = useRouter();
 
     // toma el objeto document pero le cambia el nombre a gato
     const { error, document: cat } = getDocument("cats", props.id);
 
     const ownerMatch = computed(() => {
-      return store.state.user.uid === cat.value.posterUid;
+      if (store.state.logged) {
+        return store.state.user.uid === cat.value.posterUid;
+      };
+      return false;
     });
+
+    const deleteImage = useStorage();
 
     const deleteCat = async () => {
       let catRef = projectFirestore.collection("cats").doc(props.id);

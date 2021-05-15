@@ -2,7 +2,11 @@ import { ref } from 'vue'
 import { projectStorage } from '@/config/firebase'
 import { store } from '@/store/index'
 
-const userUid = store.state.user.uid;
+const userUid = ref('');
+
+if (store.state.logged) {
+    userUid.value = store.state.user.uid;
+}
 
 const useStorage = () => {
     const error = ref(null);
@@ -10,7 +14,7 @@ const useStorage = () => {
     const filePath = ref(null); //ruta donde guardo el archivo en storage
 
     const uploadImage = async (file) => {
-        filePath.value = `cats/${userUid}/${file.name}`;
+        filePath.value = `cats/${userUid.value}/${file.name}`;
 
         const storageRef = projectStorage.ref(filePath.value);
 
@@ -34,7 +38,23 @@ const useStorage = () => {
         }
     }
 
-    return { url, filePath, uploadImage, deleteImage, error};
+    const uploadFile = async (file) => {
+        //TODO si me da tiempo, refactorizar
+        filePath.value = `contracts/${file.name}`;
+
+        const storageRef = projectStorage.ref(filePath.value);
+
+        try {
+            const res = await storageRef.put(file);
+            url.value = await res.ref.getDownloadURL();
+            console.log('url: '+ url.value)
+        } catch(err) {
+            console.log(err.message);
+            error.value = err.message
+        }
+    }
+
+    return { url, filePath, uploadImage, deleteImage, uploadFile };
 }
 
 export default useStorage;

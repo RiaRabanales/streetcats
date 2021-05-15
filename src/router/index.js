@@ -46,6 +46,12 @@ const routes = [
     component: () => import('@/views/Contact.vue')
   },
   {
+    path: '/contracts',
+    name: 'Contracts',
+    component: () => import('@/views/Contracts.vue'),
+    meta: { requiresAdmin: true }
+  },
+  {
     path: '/login',
     name: 'Login',
     component: () => import('@/views/Login.vue'),
@@ -84,7 +90,11 @@ const router = createRouter({
 /* Guarda-rutas */
 import { store } from '../store'
 router.beforeEach((to, from, next) => {
-  if (to.matched.some(record => record.meta.requiresAuth && !store.getters.isAuthenticated )) {
+  if (to.matched.some(record => record.meta.requiresAdmin) && !store.getters.isAuthenticated) {
+    next('/login');
+  } else if (to.matched.some(record => record.meta.requiresAdmin) && !store.state.admins.includes(store.state.user.email)) {
+    next('/loginlanding');  //TODO comprobar funcionamiento
+  } else if (to.matched.some(record => record.meta.requiresAuth && !store.getters.isAuthenticated )) {
     next('/login');
   } else if (to.matched.some(record => record.meta.requiresNoAuth && store.getters.isAuthenticated )) {
     next('/loginlanding');

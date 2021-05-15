@@ -12,19 +12,19 @@
           <p class="fw-bolder">{{ $t('home.sponsors') }}:</p>
           <div class="mt-2 d-flex flex-column justify-content-around flex-wrap">
             <p @click="goTo('https://www.roxybikemallorca.com/')" class="p-0 m-0 mt-1 mx-2" role="button">
-              <SmileIcon />
+              <SmileIcon class="mx-2 mx-lg-3" />
               <span class="fw-bolder">Roxybike</span> Mallorca
             </p>
             <p @click="goTo('https://www.tiergesundheitsberatung.org/')" class="p-0 m-0 mt-1 mx-2" role="button">
-              <HeartIcon />
+              <HeartIcon class="mx-2 mx-lg-3" />
               Tierschutz- und Tiergesundheitsberatung <span class="fw-bolder">Anja Külkens</span>
             </p>
             <p @click="goTo('https://www.linkedin.com/in/maria-r-gonz%C3%A1lez-555204205/')" class="p-0 m-0 mt-1 mx-2" role="button">
-              <StarIcon />
+              <StarIcon class="mx-2 mx-lg-3" />
               <span class="fw-bolder">Ria R. Gonzalez</span> Webapps
             </p>
             <p @click="goTo('https://www.freepik.com/vectors/frame')" class="p-0 m-0 mt-1 mx-2" role="button">
-              <LayersIcon />
+              <LayersIcon class="mx-2 mx-lg-3" />
               Vectors by <span class="fw-bolder">Starline</span>
             </p>
           </div>

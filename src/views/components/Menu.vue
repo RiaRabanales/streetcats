@@ -38,6 +38,12 @@
             <span v-if="hover" class="mx-2 mx-lg-3">{{ $t('nav.docs') }}</span>
           </router-link>
         </li>
+        <li v-if="isAdmin" class="nav-item mt-md-1 mx-0 p-2 text-nowrap">
+          <router-link class="nav-link text-light" :to="{ name: 'Contracts' }">
+            <ArchiveIcon class="menuIcon" />
+            <span v-if="hover" class="mx-2 mx-lg-3">{{ $t('nav.contracts') }}</span> <!--//TODO -->
+          </router-link>
+        </li>
         <li class="nav-item mt-md-1 mx-0 p-2 text-nowrap">
           <router-link class="nav-link text-light" :to="{ name: 'Contact' }">
             <MailIcon class="menuIcon" />
@@ -51,12 +57,12 @@
 
 <script>
 import { useRouter } from 'vue-router';
-import { InfoIcon, CameraIcon, DollarSignIcon, MonitorIcon, FolderIcon, MailIcon } from '@zhuowenli/vue-feather-icons';
+import { InfoIcon, CameraIcon, DollarSignIcon, MonitorIcon, FolderIcon, MailIcon, ArchiveIcon } from '@zhuowenli/vue-feather-icons';
 import { computed, ref } from 'vue';
 import { store } from '@/store/index'
 
 export default {
-  components: { InfoIcon, CameraIcon, DollarSignIcon, MonitorIcon, FolderIcon, MailIcon },
+  components: { InfoIcon, CameraIcon, DollarSignIcon, MonitorIcon, FolderIcon, MailIcon, ArchiveIcon },
   setup() {
     const router = useRouter();
     const hover = ref(false);
@@ -65,7 +71,14 @@ export default {
       return store.state.logged;
     });
 
-    return { router, hover, isAuth };
+    const isAdmin = computed(() => {
+      if (store.state.logged) {
+        return store.state.admins.includes(store.state.user.email);
+      }
+      return false;
+    });
+
+    return { router, hover, isAuth, isAdmin };
   },
 };
 </script>

@@ -126,6 +126,7 @@
             name="contactMail"
           />
         </div>
+        
         <div class="mb-3 text-warning">
           <p v-if="error">
             {{ error }}
