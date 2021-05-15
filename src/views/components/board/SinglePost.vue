@@ -24,7 +24,10 @@ export default {
   props: ["post"],
   setup(props) {
     const ownerMatch = computed((posterUid) => {
-      return store.state.user.uid === props.post.posterUid;
+      if (store.state.logged) {
+        return store.state.user.uid === props.post.posterUid;
+      } 
+      return false;
     });
 
     const deletePost = async () => {

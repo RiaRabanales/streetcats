@@ -38,10 +38,10 @@
             <span v-if="hover" class="mx-2 mx-lg-3">{{ $t('nav.docs') }}</span>
           </router-link>
         </li>
-        <li v-if="isAuth" class="nav-item mt-md-1 mx-0 p-2 text-nowrap">
+        <li v-if="isAdmin" class="nav-item mt-md-1 mx-0 p-2 text-nowrap">
           <router-link class="nav-link text-light" :to="{ name: 'Contracts' }">
             <ArchiveIcon class="menuIcon" />
-            <span v-if="hover" class="mx-2 mx-lg-3">Contracts</span> <!--//TODO -->
+            <span v-if="hover" class="mx-2 mx-lg-3">{{ $t('nav.contracts') }}</span> <!--//TODO -->
           </router-link>
         </li>
         <li class="nav-item mt-md-1 mx-0 p-2 text-nowrap">
@@ -71,11 +71,12 @@ export default {
       return store.state.logged;
     });
 
-    const isAdmin = () => {   //TODO porq no me lo pilla
-      store.getters.isAdmin
-    };
-
-    //TODO gatos y anuncios no me pilla la lectura, ver firebase_rules
+    const isAdmin = computed(() => {
+      if (store.state.logged) {
+        return store.state.admins.includes(store.state.user.email);
+      }
+      return false;
+    });
 
     return { router, hover, isAuth, isAdmin };
   },

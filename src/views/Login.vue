@@ -81,7 +81,6 @@ export default {
           //TODO mostrar el error en pantalla
         });
       if (error.value = "") {
-        
         router.push({ name: "LoginLanding" });
       } 
     };

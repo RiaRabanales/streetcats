@@ -60,6 +60,7 @@ La localización es un punto clave en esta aplicación: la asociación necesita,
 //TODO explicar basura del cors q me bloquea las descargas
 
 # Despliegue
+El proyecto se ha desplegado en Firebase, completando los sistemas de almacenamiento, autorización y bases de datos.
 //TODO
 
 # Resultados y conclusiones

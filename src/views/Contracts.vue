@@ -1,5 +1,5 @@
 <template>
-  <div class="p-0 m-0 d-flex justify-content-between">
+  <div class="p-0 m-0 d-flex">
     <div class="mt-1 mt-md-2 mt-lg-3 p-md-1 col-12 col-md-9 col-lg-10">
       <h3>Repositorio de contratos</h3>
       <!-- //TODO literales -->
@@ -28,17 +28,46 @@
             data-bs-parent="#accordionExample"
           >
             <div class="accordion-body">
-              <form @submit.prevent="submitContract">
-                <label for="file" class="form-label">Documento que refleja la firma del contrato:</label>
-                <input
-                  type="file"
-                  class="form-control"
-                  @change="handleFile"
-                  name="file"
-                />
-                <div class="mb-3 text-warning">
-                  <p v-if="fileError">{{ fileError }}</p>
+              <form
+                @submit.prevent="submitContract"
+                class="d-flex flex-wrap"
+              >
+                <div class="col-12 col-md-6 px-1">
+                  <label for="contractParty" class="form-label">Firmante:</label>
+                  <input
+                    type="text"
+                    v-model="contractParty"
+                    class="form-control"
+                    name="contractParty"
+                  />
                 </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="contractCat" class="form-label">Gato(s):</label>
+                  <input
+                    type="email"
+                    v-model="contractCat"
+                    class="form-control"
+                    name="contractCat"
+                  />
+                </div>
+
+                <div class="col-12 pt-1 pt-md-2">
+                  <label for="file" class="form-label"
+                    >Documento que refleja la firma del contrato:</label
+                  >
+                  <input
+                    type="file"
+                    class="form-control"
+                    @change="handleFile"
+                    name="file"
+                  />
+                  <div class="mb-3 text-warning">
+                    <p v-if="fileError">{{ fileError }}</p>
+                  </div>
+                </div>
+                
+                <button class="btn btn-outline-dark">Subir</button>
               </form>
             </div>
           </div>
@@ -75,8 +104,14 @@
                     <li class="list-group-item">
                       Firmante: {{ contract.party }}
                     </li>
-                    <li class="list-group-item">Gato: 
-                      <span v-for="item in contract.cat" :key="item.id" class="me-2">{{ item }}</span> 
+                    <li class="list-group-item">
+                      Gato:
+                      <span
+                        v-for="item in contract.cat"
+                        :key="item.id"
+                        class="me-2"
+                        >{{ item }}</span
+                      >
                     </li>
                     <li class="list-group-item">
                       Fecha de firma: {{ contract.date }}
@@ -97,28 +132,32 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref } from "vue";
 import SidePortraits from "./components/SidePortraits.vue";
 
 export default {
   components: { SidePortraits },
   setup() {
-    const fileError = ref('');
+    const contractParty = ref("");
+    const contractCat = ref("");
+    //TODO añadir para convertir en lista
+    const fileError = ref("");
     const contracts = [
       {
         id: "2",
         party: "una persona",
         cat: ["anduino"],
         date: new Date().toString(),
-      }]
+      },
+    ];
 
-      const handleFile = () => {
-        console.log('entra en handlefile')
-      }
+    const handleFile = () => {
+      console.log("entra en handlefile");
+    };
 
-      const submitContract = () => {
-        console.log('entra en envio de contratos')
-      }
+    const submitContract = () => {
+      console.log("entra en envio de contratos");
+    };
 
     return { contracts, handleFile, submitContract, fileError };
   },

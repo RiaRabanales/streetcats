@@ -2,7 +2,11 @@ import { ref } from 'vue'
 import { projectStorage } from '@/config/firebase'
 import { store } from '@/store/index'
 
-const userUid = store.state.user.uid;
+const userUid = '';
+
+if (store.state.logged) {
+    userUid = store.state.user.uid;
+}
 
 const useStorage = () => {
     const error = ref(null);
