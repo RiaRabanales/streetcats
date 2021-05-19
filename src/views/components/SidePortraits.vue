@@ -1,5 +1,4 @@
 <template>
-  <!-- //TODO no me coge el d-flex -->
   <div class="mt-0">
     <div 
       v-for="portrait in randomPortraits" 

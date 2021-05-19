@@ -39,7 +39,6 @@ const useStorage = () => {
     }
 
     const uploadFile = async (file) => {
-        //TODO si me da tiempo, refactorizar
         filePath.value = `contracts/${file.name}`;
 
         const storageRef = projectStorage.ref(filePath.value);

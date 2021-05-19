@@ -1,13 +1,11 @@
 <template>
   <div class="p-0 m-0 d-flex justify-content-between">
     <div class="mt-1 mt-md-2 mt-lg-3 p-md-1 col-12 col-md-9 col-lg-10">
-      <h4>Añade un nuevo gatete:</h4>
+      <h4>{{ $t('cats.addnew') }}:</h4>
 
       <form @submit.prevent="submitCat" class="row p-2 p-lg-3 pb-3 mb-3">
-        <!-- //TODO literales -->
-        <!-- //TODO aspecto, info (qué hace falta rellenar, qué no) -->
         <div class="col-12">
-          <label for="name" class="form-label">Nombre del gato:</label>
+          <label for="name" class="form-label">{{ $t('cats.name') }}:</label>
           <input
             type="text"
             v-model="name"
@@ -18,23 +16,23 @@
         </div>
 
         <div class="col-12 py-2 pt-md-3">
-          <label class="form-label col-12">Estado:</label>
+          <label class="form-label col-12">{{ $t('cats.status') }}:</label>
           <span class="form-check col-12 d-flex flex-column flex-md-row justify-content-between ms-3">
             <span class="px-3">
               <input class="form-check-input" type="radio" name="streetcat" id="streetcat" value="streetcat" v-model="state" />
-              <label class="form-check-label" for="streetcat"> en la calle </label>
+              <label class="form-check-label" for="streetcat"> {{ $t('cats.statusstreet') }} </label>
             </span>
             <span class="px-3">
               <input class="form-check-input" type="radio" name="atcenter" id="atcenter" value="atcenter" v-model="state" />
-              <label class="form-check-label" for="atcenter"> en el centro de Streetcats </label>
+              <label class="form-check-label" for="atcenter"> {{ $t('cats.statuscenter') }} </label>
             </span>
             <span class="px-3">
               <input class="form-check-input" type="radio" name="fostered" id="fostered" value="fostered" v-model="state" />
-              <label class="form-check-label" for="fostered"> en acogida privada </label>
+              <label class="form-check-label" for="fostered"> {{ $t('cats.statusfostered') }} </label>
             </span>
             <span class="px-3">
               <input class="form-check-input" type="radio" name="adopted" id="adopted" value="adopted" v-model="state" />
-              <label class="form-check-label" for="adopted"> ¡adoptado! </label>
+              <label class="form-check-label" for="adopted"> {{ $t('cats.statusadopted') }} </label>
             </span>
           </span>
         </div>
@@ -42,35 +40,35 @@
         <div class="col-12 mb-2 mb-md-3 mx-3 d-flex flex-column-reverse">
           <div class="form-check mx-3">
             <input v-model="neutered" class="form-check-input" type="checkbox" id="neutered" />
-            <label class="form-check-label" for="neutered"> Esterilizado </label>
+            <label class="form-check-label" for="neutered"> {{ $t('cats.neutered') }} </label>
           </div>
           <div v-if="state!=='adopted'" class="form-check mx-3">
               <input v-model="toBeAdopted" class="form-check-input" type="checkbox" id="toBeAdopted" />
-              <label class="form-check-label" for="toBeAdopted"> Buscando familia </label>
+              <label class="form-check-label" for="toBeAdopted"> {{ $t('cats.statuslooking') }} </label>
             </div>
         </div>
 
         <div class="col-12">
-          <label for="breed" class="form-label">Raza:</label>
-          <input type="text" v-model="breed" class="form-control" name="breed" />
+          <label for="breed" class="form-label">{{ $t('cats.breed') }}:</label>
+          <input type="text" v-model="breed" class="form-control" name="breed" required />
         </div>
 
         <div class="col-12 col-md-4 pt-1 pt-md-3 mb-2 mb-md-3">
           <div class="form-check d-flex flex-column p-0 m-0">
-            <label class="form-label">Género:</label>
+            <label class="form-label">{{ $t('cats.gender') }}:</label>
             <span class="mx-3 px-3">
               <input class="form-check-input" type="radio" name="gender" id="male" value="male" v-model="gender" />
-              <label class="form-check-label" for="male"> masculino </label>
+              <label class="form-check-label" for="male"> {{ $t('cats.male') }} </label>
             </span>
             <span class="mx-3 px-3">
               <input class="form-check-input" type="radio" name="gender" id="female" value="female" v-model="gender" />
-              <label class="form-check-label" for="female"> femenino </label>
+              <label class="form-check-label" for="female"> {{ $t('cats.female') }} </label>
             </span>
           </div>
         </div>
 
         <div class="col-2 col-md-1 pt-1 pt-md-3 text-md-end">
-          <label for="image" class="form-label">Foto:</label>
+          <label for="image" class="form-label">{{ $t('cats.picture') }}:</label>
         </div>
 
         <div class="col-10 col-md-7 pt-1 pt-md-3">
@@ -86,11 +84,10 @@
         </div>
 
         <div class="col-12">
-          <label for="observations" class="form-label">Comentarios:</label>
+          <label for="observations" class="form-label">{{ $t('cats.comments') }}:</label>
           <textarea
             v-model="observations"
             class="form-control"
-            placeholder="Aprovecha para dejar algún comentario sobre este gatito..."
             id="observations"
             style="height: 3.3rem"
           ></textarea>
@@ -98,16 +95,16 @@
 
         <div class="col-12 py-2 mt-2 mt-md-3 border-top border-primary border-3">
           <p class="small text-dark">
-            Si quieres que otros usuarios puedan contactar contigo en relación a
+             {{ $t('cats.contactstart') }}
             <span v-if="name">{{ name }}</span>
-            <span v-else>este gatito</span>
-            rellena los siguientes campos:
+            <span v-else>{{ $t('cats.contactcat') }}</span>
+            {{ $t('cats.contactend') }}:
           </p>
         </div>
 
         <div class="col-12 col-md-6">
           <label for="contactPhone" class="form-label"
-            >Teléfono de contacto:</label
+            >{{ $t('cats.contactphone') }}:</label
           >
           <input
             type="text"
@@ -118,7 +115,7 @@
         </div>
 
         <div class="col-12 col-md-6">
-          <label for="contactMail" class="form-label">E-mail de contacto:</label>
+          <label for="contactMail" class="form-label">{{ $t('cats.contactmail') }}:</label>
           <input
             type="email"
             v-model="contactMail"
@@ -137,7 +134,7 @@
           class="mt-1 mb-3 pb-3 btn btn-primary border border-primary border-2 rounded-pill text-center cat-button"
           style="max-width: 180px"
         >
-          Publicar gatete
+          {{ $t('cats.save') }}
         </button>
       </form>
     </div>
@@ -219,7 +216,6 @@ export default {
 
       if (!error.value) {
         router.push({ name: "Cats" });
-        //console.log(cat);
       }
     };
 

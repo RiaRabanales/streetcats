@@ -32,7 +32,7 @@ export default {
 
     const deletePost = async () => {
       let postRef = projectFirestore.collection("posts").doc(props.post.id);
-      await postRef.delete().catch((err) => console.log(err.message)); //TODO tratamiento de errores
+      await postRef.delete().catch((err) => console.log(err.message));
     };
     //TODO animación para borrado bonito
 

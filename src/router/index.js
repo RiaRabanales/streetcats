@@ -93,7 +93,7 @@ router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAdmin) && !store.getters.isAuthenticated) {
     next('/login');
   } else if (to.matched.some(record => record.meta.requiresAdmin) && !store.state.admins.includes(store.state.user.email)) {
-    next('/loginlanding');  //TODO comprobar funcionamiento
+    next('/loginlanding');
   } else if (to.matched.some(record => record.meta.requiresAuth && !store.getters.isAuthenticated )) {
     next('/login');
   } else if (to.matched.some(record => record.meta.requiresNoAuth && store.getters.isAuthenticated )) {

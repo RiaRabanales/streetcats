@@ -11,9 +11,8 @@
           class="btn btn-outline-dark border border-dark border-2 rounded-pill me-1 me-md-2 me-lg-3"
           @click="handleLogout"
         >
-          Logout
+          {{ $t('auth.logout') }}
         </button>
-        <!--//TODO literales -->
       </div>
       <div v-else>
         <button

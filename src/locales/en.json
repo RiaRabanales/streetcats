@@ -38,7 +38,32 @@
   },
   "cats": {
     "error": "Something has gone wrong - we seem to have misplaced our cats. Oops!",
-    "add": "Add a cat"
+    "add": "Add a cat",
+    "addnew": "Add a new cat",
+    "details": "Cat Information",
+    "name": "Name",
+    "status": "Status",
+    "statusstreet": "on the streets",
+    "statuscenter": "at our Streetcats center",
+    "statusfostered": "privately fostered",
+    "statusadopted": "adopted!",
+    "statuslooking": "Looking for a family",
+    "breed": "Breed",
+    "gender": "Gender",
+    "male": "male",
+    "female": "female",
+    "neutered": "Neutered",
+    "picture": "Image",
+    "contactstart": "If you wish for other users to contact you regarding ",
+    "contactcat": "this cat",
+    "contactend": "please fill in the following fields.",
+    "contactphone": "Contact phone number",
+    "contactmail": "Contact e-mail",
+    "comments": "Other comments",
+    "contact": "For more details get in touch with ",
+    "save": "Save",
+    "delete": "Delete",
+    "more": "More cats"
   },
   "board": {
     "new": "Publish a new post",
@@ -46,7 +71,8 @@
     "message": "Leave a new message on our public board",
     "contact": "If you so wish, write down a phone number or e-mail address through which to contact you about this message.",
     "publish": "Publish",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "empty": "Oops! There are no messages in this board."
   },
   "docs": {
     "message": "In this section you'll be able to download different documents regarding adopting and taking care of our cats.",
@@ -64,5 +90,20 @@
     "viewdocs": "View all saved contracts",
     "date": "Uploaded on/at",
     "download": "Download"
+  },
+  "auth": {
+    "login": "Login to our Helpers' Area",
+    "register": "Register to Streetcats",
+    "name": "Username",
+    "email": "E-mail",
+    "password": "Password",
+    "password2": "Confirm your password",
+    "enter": "Enter",
+    "nologin": "Not registered to Streetcats yet?",
+    "doregister": "Register",
+    "noregister": "Already registered to Streetcats?",
+    "logout": "Log out",
+    "greeting": "Hey there",
+    "landing": "You can now add new animals to our database, download documents, post messages to our board, and many other things!"
   }
 }

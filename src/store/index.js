@@ -24,6 +24,10 @@ const mutations = {
     state.user = changedUser.data;
   },
 
+  setDisplayName(state, name) {
+    state.user.displayName = name.data;
+  },
+
   setLogged(state) {
     state.logged = true;
   },

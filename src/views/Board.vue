@@ -1,10 +1,8 @@
 <template>
   <div class="p-0 m-0 d-flex justify-content-between">
     <div class="mt-1 mt-md-2 mt-lg-3 p-md-1 col-12 col-md-9 col-lg-10">
-      <!-- //TODO literales -->
       <h3>{{ $t("nav.board") }}</h3>
 
-      <!--//TODO css , TODO mensaje si no hay nada -->
       <div v-if="documents">
         <div
           v-for="post in documents"
@@ -13,6 +11,9 @@
         >
           <SinglePost :post="post" />
         </div>
+      </div>
+      <div v-else>
+        {{ $t("board.empty") }}
       </div>
 
       <transition name="buttonpost" mode="out-in">

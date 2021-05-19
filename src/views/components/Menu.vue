@@ -1,6 +1,4 @@
 <template>
-<!-- //TODO ver cómo marcar items activos en vue-boots -->
-<!-- //TODO cargar esto dinámicamente -->
   <div class="wrapper d-flex flex-column align-items-stretch py-3 mx-0 bg-primary">
     <nav 
       class="menu"
@@ -41,7 +39,7 @@
         <li v-if="isAdmin" class="nav-item mt-md-1 mx-0 p-2 text-nowrap">
           <router-link class="nav-link text-light" :to="{ name: 'Contracts' }">
             <ArchiveIcon class="menuIcon" />
-            <span v-if="hover" class="mx-2 mx-lg-3">{{ $t('nav.contracts') }}</span> <!--//TODO -->
+            <span v-if="hover" class="mx-2 mx-lg-3">{{ $t('nav.contracts') }}</span>
           </router-link>
         </li>
         <li class="nav-item mt-md-1 mx-0 p-2 text-nowrap">

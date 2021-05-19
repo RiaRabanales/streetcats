@@ -1,13 +1,12 @@
 <template>
   <div class="p-0 m-0 d-flex justify-content-between">
-  <!-- //TODO literales multilenguaje -->
-  <!-- //TODO validar y confirmar contraseña -->
+    <!-- //TODO validar y confirmar contraseña -->
     <div class="mt-1 mt-md-2 mt-lg-3 p-md-1 col-12 col-md-9 col-lg-10">
-      <h3>Registro</h3>
+      <h3>{{ $t("auth.register") }}</h3>
       <form @submit.prevent="register" class="registerForm p-3">
         <div class="mb-3">
           <label for="displayName" class="form-label"
-            >{{ $t("contact.name") }}:</label
+            >{{ $t("auth.name") }}:</label
           >
           <input
             v-model="displayName"
@@ -18,7 +17,9 @@
           />
         </div>
         <div class="mb-3">
-          <label for="email" class="form-label">{{ $t("contact.email") }}:</label>
+          <label for="email" class="form-label"
+            >{{ $t("auth.email") }}:</label
+          >
           <input
             v-model="email"
             type="email"
@@ -29,7 +30,7 @@
         </div>
         <div class="mb-3 d-flex">
           <div class="col-6 pe-1">
-            <label for="password" class="form-label">Contraseña:</label>
+            <label for="password" class="form-label">{{ $t("auth.password") }}:</label>
             <input
               v-model="password"
               type="password"
@@ -40,7 +41,7 @@
           </div>
           <div class="col-6">
             <label for="password2" class="form-label"
-              >Confirma la constraseña:</label
+              >{{ $t("auth.password2") }}:</label
             >
             <input
               v-model="password2"
@@ -54,7 +55,6 @@
         <div class="mb-3 text-warning">
           <p v-if="error">
             {{ error }}
-            <!-- //TODO faltan errores de auth -->
           </p>
         </div>
 
@@ -64,17 +64,15 @@
               type="submit"
               class="btn btn-primary border border-primary border-2 rounded-pill text-center"
             >
-              Regístrate
+              {{ $t("auth.doregister") }}
             </button>
-            <!-- //TODO replantearme pendings -->
           </div>
-          <!--//TODO literales multilenguaje-->
           <router-link
             class="mt-2 text-dark small"
             role="button"
             :to="{ name: 'Login' }"
           >
-            ¿Ya tienes cuenta de socio?
+            {{ $t("auth.noregister") }}
           </router-link>
         </div>
       </form>
@@ -87,6 +85,7 @@
 import { projectAuth } from "@/config/firebase";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
+import { store } from '@/store/index'
 import SidePortraits from "./components/SidePortraits.vue";
 
 export default {
@@ -106,24 +105,24 @@ export default {
       if (password.value == password2.value) {
         error.value = "";
         try {
-          const res = await projectAuth.createUserWithEmailAndPassword(
-            email.value,
-            password.value
-          );
-          //TODO ver por q no me funciona; creo q si me lo pilla pero no me lo engancha en la store a tiempo
-          await res.user.updateProfile({ displayName });
+          const userCredentials = await projectAuth.createUserWithEmailAndPassword(email.value, password.value);
+          const user = userCredentials.user;
+          await user.updateProfile({ displayName: displayName.value });
+          store.commit({
+            type: "setDisplayName",
+            data: displayName.value,
+          });
         } catch (err) {
           console.log(err.message);
           error.value = err.message;
-        }
+        };
         router.push({ name: "LoginLanding" });
       } else {
         error.value = "Las contraseñas no coinciden."; //TODO literales
       }
     };
 
-    //TODO falta adaptar a sendVerificationEmail
-    //TODO falta password reset mail https://firebase.google.com/docs/auth/web/manage-users#send_a_password_reset_email
+    //TODO falta adaptar a sendVerificationEmail y falta password reset mail https://firebase.google.com/docs/auth/web/manage-users#send_a_password_reset_email
 
     return { displayName, email, password, password2, error, register };
   },

@@ -1,21 +1,21 @@
 <template>
   <div class="p-0 m-0 d-flex justify-content-between">
     <div class="mt-1 mt-md-2 mt-lg-3 p-md-1 col-12 col-md-9 col-lg-10">
-      <h3>Login</h3>
+      <h3>{{ $t("auth.login") }}</h3>
       <form class="loginForm p-3" @submit.prevent="handleLogin">
         <div class="mb-3">
-          <label for="email" class="form-label">{{ $t("contact.email") }}:</label>
+          <label for="email" class="form-label">{{ $t("auth.email") }}:</label>
           <input
             type="email"
             v-model="email"
             class="form-control"
             name="email"
             required
-          />
+          /> 
         </div>
 
         <div class="mb-3">
-          <label for="password" class="form-label">Contraseña:</label>
+          <label for="password" class="form-label">{{ $t("auth.name") }}:</label>
           <input
             type="password"
             v-model="password"
@@ -27,7 +27,7 @@
 
         <div class="mb-3 text-warning">
           <p v-if="error">
-            {{ error }}
+            {{ error }} <!--//TODO literales multilenguaje de error-->
           </p>
         </div>
 
@@ -37,16 +37,16 @@
               type="submit"
               class="btn btn-primary border border-primary border-2 rounded-pill text-center"
             >
-              Login
+              {{ $t("auth.enter") }}
             </button>
           </div>
-          <!--//TODO literales multilenguaje-->
+          
           <router-link
             class="mt-2 text-dark small"
             role="button"
             :to="{ name: 'Register' }"
           >
-            ¿No tienes cuenta de socio?
+            {{ $t("auth.nologin") }}
           </router-link>
         </div>
       </form>
@@ -73,16 +73,12 @@ export default {
 
     const handleLogin = async () => {
       error.value = "";
-      await projectAuth
-        .signInWithEmailAndPassword(email.value, password.value)
+      let user = await projectAuth.signInWithEmailAndPassword(email.value, password.value)
         .catch((err) => {
           console.log(err.message);
           error.value = err.message;
-          //TODO mostrar el error en pantalla
         });
-      if (error.value = "") {
-        router.push({ name: "LoginLanding" });
-      } 
+      router.push({ name: "LoginLanding" });
     };
 
     return { email, password, handleLogin, error };

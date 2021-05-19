@@ -1,7 +1,5 @@
 <template>
   <form @submit.prevent="submitPost">
-    <!-- //TODO literales -->
-    <!-- //TODO aspecto -->
     <label for="message" class="form-label"
       >{{ $t('board.message') }}:</label
     >

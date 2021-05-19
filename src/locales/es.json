@@ -38,7 +38,32 @@
   },
   "cats": {
     "error": "¡ERROR! ¡Que se nos han perdido los gatos!",
-    "add": "Añade otro gato"
+    "add": "Añade otro gato",
+    "addnew": "Añade un nuevo gato",
+    "details": "Detalles del gato",
+    "name": "Nombre del gato",
+    "status": "Estado",
+    "statusstreet": "en la calle",
+    "statuscenter": "en el centro de Streetcats",
+    "statusfostered": "en acogida privada",
+    "statusadopted": "¡adoptado!",
+    "statuslooking": "Buscando familia",
+    "breed": "Raza",
+    "gender": "Género",
+    "male": "macho",
+    "female": "hembra",
+    "neutered": "Esterilizado",
+    "picture": "Imagen",
+    "contactstart": "Si quieres que otros usuarios puedan contactar contigo en relación a ",
+    "contactcat": "este gatito",
+    "contactend": " rellena los siguientes campos.",
+    "contactphone": "Teléfono de contacto",
+    "contactmail": "E-mail de contacto",
+    "comments": "Observaciones",
+    "contact": "Para más detalles, contacta con",
+    "save": "Guardar",
+    "delete": "Borrar",
+    "more": "Otros gatos"
   },
   "board": {
     "new": "Publicar un post nuevo",
@@ -46,7 +71,8 @@
     "message": "Deja tu mensaje en el tablón",
     "contact": "Si quieres, deja un número de teléfono o email de contacto",
     "publish": "Publicar",
-    "cancel": "Cancelar"
+    "cancel": "Cancelar",
+    "empty": "¡Vaya! Parece que no hay mensajes en el tablón."
   },
   "docs": {
     "message": "En esta sección podrás descargarte diferentes documentos relativos al cuidado, la adopción y la acogida de nuestros gatitos.",
@@ -64,5 +90,20 @@
     "viewdocs": "Ver todos los contratos guardados",
     "date": "Fecha de firma",
     "download": "Descargar"
+  },
+  "auth": {
+    "login": "Login al Área de Colaboradores",
+    "register": "Registro de nuevo usuario de Streetcats",
+    "name": "Nombre de usuario",
+    "email": "E-mail",
+    "password": "Contraseña",
+    "password2": "Comprobación de contraseña",
+    "enter": "Entrar",
+    "nologin": "¿Todavía no eres colaborador de Streetcats?",
+    "doregister": "Regístrate",
+    "noregister": "¿Ya tienes cuenta de colaborador de Streetcats?",
+    "logout": "Log out",
+    "greeting": "¡Hola",
+    "landing": "Como colaborador de Streetcats Artà ya puedes realizar todas las operaciones que quieras en nuestra aplicación: consultar y descargar documentos, añadir gatos a nuestra página, publicar noticias en el tablón de anuncios..."
   }
 }

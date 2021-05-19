@@ -47,7 +47,7 @@ export default {
         .sendForm(EMAILJS_SERVICE, EMAILJS_TEMPLATE, e.target, EMAILJS_USER)
         .then(
           (result) => {
-            //TODO quitar mis elementos de consola eventualmente
+            //Mantengo esto en consola para facilitar la comprensión a la entrega del proyecto.
             console.log("¡EMAIL ENVIADO!", result.status, result.text)
             emit('sentMessage', true)
           },
