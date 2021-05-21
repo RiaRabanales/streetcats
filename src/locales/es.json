@@ -109,5 +109,11 @@
     "logout": "Log out",
     "greeting": "¡Hola",
     "landing": "Como colaborador de Streetcats Artà ya puedes realizar todas las operaciones que quieras en nuestra aplicación: consultar y descargar documentos, añadir gatos a nuestra página, publicar noticias en el tablón de anuncios..."
+  },
+  "error": {
+    "general": "Se ha producido un error. Inténtalo de nuevo.",
+    "diffpasswords": "Las contraseñas no coinciden.",
+    "nouser": "Este usuario no está registrado.",
+    "nopassword": "La contraseña no es válida para este usuario."
   }
 }

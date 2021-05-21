@@ -27,7 +27,9 @@
 
         <div class="mb-3 text-warning">
           <p v-if="error">
-            {{ error }} <!--//TODO literales multilenguaje de error-->
+            <span v-if="error == 'nouser'">{{ $t("error.nouser") }}</span>
+            <span v-if="error == 'nopassword'">{{ $t("error.nopassword") }}</span>
+            <span v-if="error == 'general'">{{ $t("error.general") }}</span>    <!-- //TODO revisar -->
           </p>
         </div>
 
@@ -41,11 +43,7 @@
             </button>
           </div>
           
-          <router-link
-            class="mt-2 text-dark small"
-            role="button"
-            :to="{ name: 'Register' }"
-          >
+          <router-link class="mt-2 text-dark small" role="button" :to="{ name: 'Register' }">
             {{ $t("auth.nologin") }}
           </router-link>
         </div>
@@ -76,7 +74,13 @@ export default {
       let user = await projectAuth.signInWithEmailAndPassword(email.value, password.value)
         .catch((err) => {
           console.log(err.message);
-          error.value = err.message;
+          if (err.message = "There is no user record corresponding to this identifier. The user may have been deleted.") {
+            error.value = "nouser";
+          } else if (err.message = "The password is invalid or the user does not have a password.") {
+            error.value = "nopassword";
+          } else {
+            error.value = "general";
+          }
         });
       router.push({ name: "LoginLanding" });
     };

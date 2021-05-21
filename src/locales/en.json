@@ -109,5 +109,11 @@
     "logout": "Log out",
     "greeting": "Hey there",
     "landing": "You can now add new animals to our database, download documents, post messages to our board, and many other things!"
+  },
+  "error": {
+    "general": "Error! Please try again.",
+    "diffpasswords": "Your passwords don't match. Try again.",
+    "nouser": "There is no user record corresponding to this identifier.",
+    "nopassword": "The password is invalid or the user does not have a password."
   }
 }

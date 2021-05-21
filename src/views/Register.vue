@@ -40,9 +40,7 @@
             />
           </div>
           <div class="col-6">
-            <label for="password2" class="form-label"
-              >{{ $t("auth.password2") }}:</label
-            >
+            <label for="password2" class="form-label">{{ $t("auth.password2") }}:</label>
             <input
               v-model="password2"
               type="password"
@@ -54,7 +52,8 @@
 
         <div class="mb-3 text-warning">
           <p v-if="error">
-            {{ error }}
+            <span v-if="error == 'general'">{{ $t("error.general") }}</span>
+            <span v-if="error == 'diffpasswords'">{{ $t("error.diffpasswords") }}</span>
           </p>
         </div>
 
@@ -97,7 +96,6 @@ export default {
     const email = ref("");
     const password = ref("");
     const password2 = ref("");
-    //TODO documentar q no puedo añadir phone xq no existe en auth
 
     const error = ref("");
 
@@ -113,12 +111,13 @@ export default {
             data: displayName.value,
           });
         } catch (err) {
+          // veré el error devuelto por firebase en consola, pero en pantalla el texto será más genérico.
           console.log(err.message);
-          error.value = err.message;
+          error.value = "general";
         };
         router.push({ name: "LoginLanding" });
       } else {
-        error.value = "Las contraseñas no coinciden."; //TODO literales
+        error.value = "diffpasswords";
       }
     };
 
