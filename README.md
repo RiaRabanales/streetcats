@@ -9,7 +9,7 @@
 
 > **Ciclo formativo:** Desarrollo de Aplicaciones Web
 
-> **Fecha de entrega:** //TODO
+> **Fecha de entrega:** mayo/junio 2021.
 
 
 ## Descripción:
@@ -68,19 +68,40 @@ He preferido optar por una paleta de colores prediseñada, ya que necesito un re
 ![Paleta](https://i.ibb.co/mHLHXX6/paleta.jpg)
 
 ## Diseño e implementación:
-//todo introducir + empezar
+El primer paso en este diseño ha sido generar un esqueleto de la aplicación con un sistema de rutas viable y una página genérica con información sobre la asociación. Esta página ha quedado reflejada en '/home'.
+
+Hecho esto he tenido que considerar el acceso a estas rutas según los diferentes tipos de usuarios. He optado por incluir tres tipos de usuarios de la aplicación:
+1. Usuarios genéricos: no están registrados, y sólo pueden realizar actividades genéricas de consulta de animales y envío de e-mails de contacto. Son necesarios porque cubren la necesidad de 'presencia online' del proyecto.
+2. Usuarios registrados: pueden hacer *log in* en el área de colaboradores, lo que les permite acceder a funcionalidades más específicas.
+3. Usuarios administradores: coinciden con los gestores de la asociación y tienen acceso a la funcionalidad completa de la aplicación.
+
+Los diferentes usuarios verán más o menos opciones en los menús según sus permisos, y serán redireccionados a páginas genéricas si intentan acceder a páginas a las que teóricamente no pueden.
+
+Decidido esto he tenido que plantear las diferentes funcionalidades que quiero desarrollar en la aplicación:
+* Registro y acceso/login/logout de usuarios.
+* CRUD de gatos: permite guardar, acceder, consultar y eliminar una lista de gatos de la asociación; cualquier colaborador puede añadir animales, facilitando el acceso a esta base de datos a los gatos recogidos directamente en acogida y que no pasan por el centro de la asociación.
+* Contacto: formulario que centraliza el contacto de usuarios (tanto registrados como no) con la asociación; al rellenarse se envía un e-mail a la dirección de administrador preestablecida.
+* Tablón de anuncios: para que los usuarios y colaboradores puedan informarse de datos relacionados con Streetcats, el cuidado de los animales, o cualquier otro tema similar. Todos los usuarios pueden consultar el tablón, pero sólo los usuarios registrados pueden publicar. Un mensaje sólo podrá ser borrado por el propio usuario que lo publicó, o, lógicamente, por un administrador.
+* Sección de documentos de descarga: exclusiva para usuarios registrados, permite descargar documentos. Esta funcionalidad ha sido especialmente solicitada por la asociación, que ha tenido dificultades para hacer llegar contratos y otros documentos a sus colaboradores durante la pandemia.
+* Repositorio de contratos: permite almacenar en la nube copias de todos los contratos de adopción y acogida que firma la asociación; también ha sido especialmente solicitada a fin de evitar su potencial pérdida, como ya ha sucedido en ocasiones anteriores.
+* Donaciones: dado que la asociación quiere reorganizar su sistema de donaciones, se ha decidido no desarrollar (por ahora) esta funcionalidad y dejarla meramente explicativa.
+
 
 La localización es un punto clave en esta aplicación: la asociación necesita, como mínimo, proyección en español y alemán para ser útil a todos sus colaboradores, y a ser posible también en catalán para favorecer el acceso a ayudas locales de las que en estos momentos carece. Para implementarla se ha utilizado la dependencia vue-I18n v.9, adaptada a Vue 3 y recientemente publicada. La base se ha preparado en inglés, que es además el lenguaje *default* para aquellos lenguajes que no tienen traducción en la aplicación, y aunque se han incluido literales para otros idiomas, especialmente el español, faltan muchas traducciones al catalán y al alemán. Como este proyecto es de programación y no de traducción, y para completarlas hace falta la colaboración de gente de la propia Asociación, he decidido no añadir estos literales a la entrega. El proceso está, en cualquier caso, perfectamente acabado.
 
-//TODO
-
 ## Producción:
-//TODO explicar problemas con guardarrutas en index.js, que es lo apropiado
-//TODO explicar basura del cors q me bloquea las descargas
+Teniendo el diseño anterior claramente establecido y un framework básico funcional ha sido relativamente sencillo desarrollar la aplicación. Se han desarrollado las funcionalidades de forma secuencial, empezando por el proceso de autenticación (del que dependen los detalles de varias de las funcionalidades) y procurando desarrollar primero el esqueleto de la funcionalidad y luego ir añadiéndole los detalles.
+
+//TODO explicar store, explicar problemas con guardarrutas en index.js, que es lo apropiado
 
 # Despliegue
-El proyecto se ha desplegado en Firebase, completando los sistemas de almacenamiento, autorización y bases de datos.
-//TODO
+El proyecto se ha desplegado en Firebase Hosting, completando los sistemas de almacenamiento, autorización y bases de datos. La estructura general de todo esto se planteó al empezar el proyecto, cuando inicié el proyecto en Firebase con el comando 'firebase init' en el front.
+
+Antes de desplegar ha sido necesario preparar el proyecto en la carpeta /dist; esto se ha hecho directamente con el comando 'npm run build'. Hecho esto se ha desplegado y actualizando, siempre después de *rebuild*) con el comando 'firebase deploy'.
+
+Por seguridad he establecido requisitos de acceso en bases de datos y storages, y he limitado el acceso a la API key a llamadas provenientes del dominio de mi aplicación a través de [la consola de Google APIs](http://console.developers.google.com/), como se recomienda para los proyectos desplegados en Firebase Hosting.
+
+El proyecto está desplegado en: https://streetcats-f248d.web.app
 
 # Resultados y conclusiones
 //TODO

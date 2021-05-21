@@ -4,13 +4,17 @@
       <h3>{{ $t('nav.docs') }}</h3>
       <p>{{ $t('docs.message') }}</p>
       <div v-for="document in documents" :key="document.id" class="d-flex flex-wrap">
-        <div class="card col-12 col-md-4 col-lg-3">
+        <div class="card col-12 col-md-4 col-lg-3 mb-2">
           <div class="card-body d-flex flex-column align-items-center justify-content-between">
             <h5 class="card-title">{{ document.name }}</h5>
-            <p class="card-text">{{ $t('docs.language') }}: {{ document.language }}</p>
-            <!-- //TODO adaptar literal lenguaje -->
+            <p class="card-text">{{ $t('docs.language') }}:
+              <span v-if="document.language=='es'"> {{ $t('lang.es') }}</span>
+              <span v-if="document.language=='en'"> {{ $t('lang.en') }}</span>
+              <span v-if="document.language=='ca'"> {{ $t('lang.ca') }}</span>
+              <span v-if="document.language=='de'"> {{ $t('lang.de') }}</span>
+            </p>
             <button
-              @click="handleDownload(document.url, document.name, document.type)"
+              @click="handleDownload(document.url, document.filename, document.type)"
               class="btn btn-primary border border-primary border-2 rounded-pill text-center"
             >
               {{ $t('docs.download') }} .{{ document.type }}
@@ -33,15 +37,22 @@ export default {
     const documents = [
       {
         name: "Neutering guide",
+        filename: "neutering",
         language: "en",
         type: "pdf",
         url: "gs://streetcats-f248d.appspot.com/docs/neutering.pdf",
       },
+      {
+        name: "Ejemplo de contrato de adopción",
+        filename: "ejemplocontratoadopcion",
+        language: "es",
+        type: "pdf",
+        url: "gs://streetcats-f248d.appspot.com/docs/ejemplocontratoadopcion.pdf",
+      },
     ];
 
-    const handleDownload = async (docUrl, docName, docType) => {
-
-      projectStorage.ref('docs/' + docName + '.' + docType).getDownloadURL()
+    const handleDownload = async (docUrl, docFilename, docType) => {
+      projectStorage.ref('docs/' + docFilename + '.' + docType).getDownloadURL()
         .then((url) => {
           var xhr = new XMLHttpRequest();
           xhr.responseType = "blob";
@@ -49,14 +60,14 @@ export default {
             var blob = xhr.response;
             const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
-            link.download = docName + '.' + docType;
-            link.click(); //para q me lo dercargue tengo q clicar programáticamente
+            link.download = docFilename + '.' + docType;
+            link.click();   //para q me lo descargue tengo q clicar programáticamente
           };
           xhr.open("GET", url);
           xhr.send();
         })
         .catch((error) => {
-          // Handle any errors //TODO ver https://firebase.google.com/docs/storage/web/download-files#:~:text=To%20download%20a%20file%2C%20first,an%20object%20in%20Cloud%20Storage.
+          console.log(error.message);
         });
     };
 

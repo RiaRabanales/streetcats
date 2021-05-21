@@ -1,7 +1,11 @@
 {
   "lang": {
     "name": "English",
-    "img": "../assets/img/en.png"
+    "img": "../assets/img/en.png",
+    "en": "English",
+    "es": "Spanish",
+    "de": "German",
+    "ca": "Catalan"
   },
   "nav": {
     "404": "Page not found!",

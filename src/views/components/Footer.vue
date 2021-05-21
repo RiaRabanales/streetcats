@@ -20,7 +20,7 @@
       </span>
     </p>
 
-    <p role="button">{{ $t("footer.cookies") }}</p>
+    <p role="button" class="d-none d-md-block">{{ $t("footer.cookies") }}</p>
 
     <p @click="goTo('https://github.com/RiaRabanales/streetcats')" role="button" class="d-block">
         &#169;2021

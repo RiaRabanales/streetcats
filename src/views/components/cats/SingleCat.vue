@@ -50,10 +50,7 @@
               >
                 {{ $t('cats.delete') }}
               </button>
-              <router-link
-                :to="{ name: 'Cats' }"
-                class="mt-3 mx-2 btn btn-primary p-2 text-center"
-              >
+              <router-link :to="{ name: 'Cats' }" class="mt-3 mx-2 btn btn-primary p-2 text-center">
                 {{ $t('cats.more') }}
               </router-link>
             </div>
