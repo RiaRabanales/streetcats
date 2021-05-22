@@ -3,18 +3,21 @@
     <div class="mt-1 mt-md-2 mt-lg-3 p-md-1 col-12 col-md-9 col-lg-10">
       <h3>{{ $t("nav.board") }}</h3>
 
-      <div v-if="documents">
-        <div
-          v-for="post in documents"
-          :key="post.id"
-          class="d-flex flex-column p-2 my-2 border"
-        >
-          <SinglePost :post="post" />
+      <transition name="postSwitch" mode="out-in">
+        <div v-if="documents">
+          <transition-group tag="div"
+            v-for="post in documents"
+            :key="post.id"
+            class="d-flex flex-column p-2 my-2 border"
+            appear
+          >
+            <SinglePost :post="post" />
+          </transition-group>
         </div>
-      </div>
-      <div v-else>
-        {{ $t("board.empty") }}
-      </div>
+        <div v-else>
+          {{ $t("board.empty") }}
+        </div>
+      </transition>
 
       <transition name="buttonpost" mode="out-in">
         <div
@@ -70,7 +73,7 @@ export default {
 </script>
 
 <style scoped>
-/* Animaciones de formulario de nuevo mensaje */
+/* Transiciones de formulario de nuevo mensaje */
 .newpost-enter-from,
 .newpost-leave-to {
   opacity: 0;
@@ -92,4 +95,20 @@ export default {
 .buttonpost-leave-active {
   transition: all 0.3s ease;
 }
+
+/* Transiciones de la lista de mensajes */
+.switchPost-enter-from,
+.switchPost-leave-to {
+  opacity: 0;
+  transform: translateY(20px)
+}
+
+.switchPost-enter-active {
+  transition: all 0.5s ease;
+}
+
+.switchPost-leave-active {
+  transition: all 0.3s ease;
+}
+
 </style>

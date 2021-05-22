@@ -34,7 +34,6 @@ export default {
       let postRef = projectFirestore.collection("posts").doc(props.post.id);
       await postRef.delete().catch((err) => console.log(err.message));
     };
-    //TODO animación para borrado bonito
 
     return { ownerMatch, deletePost };
   },
