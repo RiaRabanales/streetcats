@@ -39,7 +39,7 @@
                   <label for="file" class="form-label">{{ $t("contracts.doc") }}:</label>
                   <input type="file" class="form-control" @change="handleFile" name="file" />
                   <div class="mb-3 text-warning">
-                    <p v-if="fileError">{{ fileError }}</p>
+                    <p v-if="fileError">{{ $t("error.filetypepdf") }}</p>
                   </div>
                 </div>
 
@@ -106,19 +106,18 @@ export default {
 
     const file = ref(null);
     const fileTypes = ["application/pdf"];
-    const fileError = ref("");
+    const fileError = ref(false);
     const fileName = ref("");
     const handleFile = (e) => {
       let fileToUpload = e.target.files[0];
 
       if (fileToUpload && fileTypes.includes(fileToUpload.type)) {
-        //TODO literales error
         file.value = fileToUpload;
-        fileError.value = "";
+        fileError.value = false;
         fileName.value = fileToUpload.name;
       } else {
         file.value = null;
-        fileError.value = "Error! Wrong file type: needs to be PDF.";
+        fileError.value = true;
       }
     };
 

@@ -27,7 +27,7 @@ const getCollection = (collection) => {
         //sustituye a un try catch
         console.log(err.message);
         documents.value = null;
-        error.value = '¡Gatos perdidos! ¡ERROR!'    //TODO literales
+        error.value = 'nodocs'
     });
 
     //se activa cuando el componente en que está montado hace unmount; así cierro listeners

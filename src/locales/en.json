@@ -119,6 +119,7 @@
     "diffpasswords": "Your passwords don't match. Try again.",
     "nouser": "There is no user record corresponding to this identifier.",
     "nopassword": "The password is invalid or the user does not have a password.",
-    "filetype": "Error! Wrong file type."
+    "filetype": "Error! Wrong file type.",
+    "filetypepdf": "Error! Wrong file type: needs to be PDF."
   }
 }

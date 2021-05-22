@@ -119,6 +119,7 @@
     "diffpasswords": "Las contraseñas no coinciden.",
     "nouser": "Este usuario no está registrado.",
     "nopassword": "La contraseña no es válida para este usuario.",
-    "filetype": "Error en el tipo de archivo subido."
+    "filetype": "Error en el tipo de archivo subido.",
+    "filetypepdf": "Error en el tipo de archivo subido (PDF requerido)"
   }
 }
