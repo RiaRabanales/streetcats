@@ -107,7 +107,10 @@
     "nologin": "Not registered to Streetcats yet?",
     "doregister": "Register",
     "noregister": "Already registered to Streetcats?",
+    "reset": "Reset your password.",
+    "send": "Send",
     "logout": "Log out",
+    "resetinfo": "Your request is being processed. Please check your e-mail tray. You will be redirected to the main page in a short while.",
     "greeting": "Hey there",
     "landing": "You can now add new animals to our database, download documents, post messages to our board, and many other things!"
   },

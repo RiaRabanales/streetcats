@@ -1,6 +1,5 @@
 <template>
   <div class="p-0 m-0 d-flex justify-content-between">
-    <!-- //TODO validar y confirmar contraseña -->
     <div class="mt-1 mt-md-2 mt-lg-3 p-md-1 col-12 col-md-9 col-lg-10">
       <h3>{{ $t("auth.register") }}</h3>
       <form @submit.prevent="register" class="registerForm p-3">
@@ -59,10 +58,7 @@
 
         <div class="text-center">
           <div>
-            <button
-              type="submit"
-              class="btn btn-primary border border-primary border-2 rounded-pill text-center"
-            >
+            <button type="submit" class="btn btn-primary border border-primary border-2 rounded-pill text-center">
               {{ $t("auth.doregister") }}
             </button>
           </div>
@@ -70,6 +66,7 @@
             class="mt-2 text-dark small"
             role="button"
             :to="{ name: 'Login' }"
+            style="text-decoration:none;"
           >
             {{ $t("auth.noregister") }}
           </router-link>
@@ -121,12 +118,9 @@ export default {
       }
     };
 
-    //TODO falta adaptar a sendVerificationEmail y falta password reset mail https://firebase.google.com/docs/auth/web/manage-users#send_a_password_reset_email
+    //TODO falta adaptar a sendVerificationEmail https://firebase.google.com/docs/auth/web/manage-users#send_a_password_reset_email
 
     return { displayName, email, password, password2, error, register };
   },
 };
 </script>
-
-<style>
-</style>

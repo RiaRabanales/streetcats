@@ -76,6 +76,12 @@ const routes = [
     meta: { requiresNoAuth: true }
   },
   {
+    path: '/reset',
+    name: 'Reset',
+    component: () => import('@/views/Reset.vue'),
+    meta: { requiresNoAuth: true }
+  },
+  {
     path: '/:catchAll(.*)',
     name: 'NotFound',
     component: () => import('@/views/NotFound.vue')

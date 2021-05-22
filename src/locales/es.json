@@ -107,7 +107,10 @@
     "nologin": "¿Todavía no eres colaborador de Streetcats?",
     "doregister": "Regístrate",
     "noregister": "¿Ya tienes cuenta de colaborador de Streetcats?",
+    "reset": "¿Olvidaste tu contraseña?",
+    "send": "Enviar",
     "logout": "Log out",
+    "resetinfo": "Tu solicitud está siendo procesada; por favor comprueba tu e-mail. En breve será redirigido a la página principal.",
     "greeting": "¡Hola",
     "landing": "Como colaborador de Streetcats Artà ya puedes realizar todas las operaciones que quieras en nuestra aplicación: consultar y descargar documentos, añadir gatos a nuestra página, publicar noticias en el tablón de anuncios..."
   },
