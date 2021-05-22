@@ -15,7 +15,7 @@
         </div>
 
         <div class="mb-3">
-          <label for="password" class="form-label">{{ $t("auth.name") }}:</label>
+          <label for="password" class="form-label">{{ $t("auth.password") }}:</label>
           <input
             type="password"
             v-model="password"
@@ -43,8 +43,12 @@
             </button>
           </div>
           
-          <router-link class="mt-2 text-dark small" role="button" :to="{ name: 'Register' }">
+          <router-link class="d-block mt-2 text-dark small" role="button" :to="{ name: 'Register' }" style="text-decoration:none;">
             {{ $t("auth.nologin") }}
+          </router-link>
+
+          <router-link class="d-block text-primary mt-2 text-dark small" role="button" :to="{ name: 'Reset' }" style="text-decoration:none;">
+            {{ $t("auth.reset") }}
           </router-link>
         </div>
       </form>
@@ -73,10 +77,11 @@ export default {
       error.value = "";
       let user = await projectAuth.signInWithEmailAndPassword(email.value, password.value)
         .catch((err) => {
-          console.log(err.message);
-          if (err.message = "There is no user record corresponding to this identifier. The user may have been deleted.") {
+          console.log('(Error ' + err.code + ') ' + err.message);
+          console.log(err.code)
+          if (err.code = "auth/user-not-found") {
             error.value = "nouser";
-          } else if (err.message = "The password is invalid or the user does not have a password.") {
+          } else if (err.code = "auth/wrong-password") {
             error.value = "nopassword";
           } else {
             error.value = "general";
@@ -89,6 +94,3 @@ export default {
   },
 };
 </script>
-
-<style>
-</style>

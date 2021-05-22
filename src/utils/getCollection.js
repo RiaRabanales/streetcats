@@ -7,7 +7,7 @@ const getCollection = (collection) => {
     const error = ref(null);
 
     let collectionRef = projectFirestore.collection(collection)
-        .orderBy('createdAt');  //TODO orden inverso
+        .orderBy('createdAt', 'desc');  // lo ordeno cronológicamente en orden inverso
 
     //onSnapshot es como creo un real time listener en mi BBDD
     const subscription = collectionRef.onSnapshot((snap) => {
