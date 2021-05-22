@@ -79,7 +79,7 @@
             name="image"
           />
           <div class="mb-3 text-warning">
-            <p v-if="imageError">{{ imageError }}</p>
+            <p v-if="imageError">{{ $t('error.filetype') }}</p>
           </div>
         </div>
 
@@ -171,18 +171,17 @@ export default {
     const contactMail = ref("");
 
     const image = ref(null);
-    const imageError = ref(null);
+    const imageError = ref(false);
     const imageTypes = ["image/png", "image/jpeg", "image/jpg", "image/gif"];
     const handleImage = (e) => {
       let imageFile = e.target.files[0];
 
       if (imageFile && imageTypes.includes(imageFile.type)) {
-        //TODO literales error
         image.value = imageFile;
-        imageError.value = null;
+        imageError.value = false;
       } else {
         image.value = null;
-        imageError.value = "Error! Wrong file type.";
+        imageError.value = true;
       }
     };
 

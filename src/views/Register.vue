@@ -118,8 +118,6 @@ export default {
       }
     };
 
-    //TODO falta adaptar a sendVerificationEmail https://firebase.google.com/docs/auth/web/manage-users#send_a_password_reset_email
-
     return { displayName, email, password, password2, error, register };
   },
 };

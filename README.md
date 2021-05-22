@@ -106,6 +106,10 @@ El proyecto está desplegado en: https://streetcats-f248d.web.app
 # Resultados y conclusiones
 //TODO
 
+Entre las tareas que no se han acabado para este proyecto (que por lo demás está muy completo) destacan las siguientes:
+1. Desarrollo de la funcionalidad de donaciones, a la espera de ver si finalmente la asociación quiere enlazar con *paypal*, con *bizum*, o simplemente mantener una página informativa en esta sección.
+2. Desarrollo del envío de e-mail de verificación al registrar un usuario: dado que la asociación no ha indicado si desea permitir que cualquiera se registre o si quiere verificar los e-mails por sí misma, la funcionalidad de registro queda utilizable pero no detallada. Sí que se han desarrollado, no obstante, pantallas separadas de login, registro y *reset* de contraseña.
+
 # Bibliografía y webgrafía
 Para la elaboración de este proyecto se han consultado los siguientes recursos:
 * [Vue 3 Cheat Sheet](https://www.vuemastery.com/pdf/Vue-3-Cheat-Sheet.pdf)
