@@ -5,6 +5,7 @@
       <div class="p-3">
         <p class="content">{{ $t("home.help") }}</p>
       </div>
+      <!-- //TODO google api para mapa a la casa -->
     </div>
     <SidePortraits class="d-none d-md-block col-2 p1 py-md-2" />
   </div>

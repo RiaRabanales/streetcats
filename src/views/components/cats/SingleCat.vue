@@ -11,27 +11,27 @@
           </div>
           <div class="cat-details flex-grow-1 d-flex flex-column justify-content-between">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">{{ $t('cats.name') }}: {{ cat.name }}</li>
-              <li class="list-group-item">{{ $t('cats.gender') }}: 
+              <li class="list-group-item"><span class="text-secondary">{{ $t('cats.name') }}:</span> <span class="fw-bold">{{ cat.name }}</span></li>
+              <li class="list-group-item"><span class="text-secondary">{{ $t('cats.gender') }}: </span>
                 <span v-if="cat.gender=='male'"> {{ $t('cats.male') }} </span>
                 <span v-if="cat.gender=='female'"> {{ $t('cats.female') }} </span>
               </li>
-              <li class="list-group-item" v-if="cat.breed">{{ $t('cats.breed') }}: {{ cat.breed }}</li>
-              <li class="list-group-item">{{ $t('cats.neutered') }}: 
+              <li class="list-group-item" v-if="cat.breed"><span class="text-secondary">{{ $t('cats.breed') }}:</span> {{ cat.breed }}</li>
+              <li class="list-group-item"><span class="text-secondary">{{ $t('cats.neutered') }}: </span>
                 <CheckIcon v-if="cat.neutered" class="text-primary" />
                 <XIcon v-else class="text-dark" />
               </li>
-              <li class="list-group-item">{{ $t('cats.status') }}: 
+              <li class="list-group-item"><span class="text-secondary">{{ $t('cats.status') }}: </span>
                 <span v-if="cat.state=='streetcat'"> {{ $t('cats.statusstreet') }} </span>
                 <span v-if="cat.state=='atcenter'"> {{ $t('cats.statuscenter') }} </span>
                 <span v-if="cat.state=='fostered'"> {{ $t('cats.statusfostered') }} </span>
                 <span v-if="cat.state=='adopted'"> {{ $t('cats.statusadopted') }} </span>
               </li>
-              <li v-if="cat.state!=='adopted'" class="list-group-item">{{ $t('cats.statuslooking') }}: 
+              <li v-if="cat.state!=='adopted'" class="list-group-item"><span class="text-secondary">{{ $t('cats.statuslooking') }}: </span>
                 <CheckIcon v-if="cat.toBeAdopted" class="text-primary" />
                 <XIcon v-else class="text-dark" />
               </li>
-              <li class="list-group-item" v-if="cat.observations">{{ $t('cats.comments') }}: {{ cat.observations }}</li>
+              <li class="list-group-item" v-if="cat.observations"><span class="text-secondary">{{ $t('cats.comments') }}:</span> {{ cat.observations }}</li>
             </ul>
             <p class="cat-contact mt-2 mt-md-3 mx-1 mx-md-2 small text-dark">
               {{ $t('cats.contact') }} {{ cat.poster }}

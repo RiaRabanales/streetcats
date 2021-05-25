@@ -1,5 +1,4 @@
 import { createI18n } from 'vue-i18n'
-//TODO el error de dev https://stackoverflow.com/questions/66140411/you-are-running-the-esm-bundler-build-of-vue-i18n-it-is-recommended-to-configur
 
 /**
  * Load locale messages
