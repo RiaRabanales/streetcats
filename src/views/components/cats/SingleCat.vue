@@ -93,7 +93,7 @@ export default {
     const deleteCat = async () => {
       let catRef = projectFirestore.collection("cats").doc(props.id);
       await deleteImage(cat.value.imageUrl);
-      //TODO revisar por q no me borra la imagen
+      // Primero borro la imagen de storage y luego borro la referencia del gato de la base de datos
       await catRef.delete()
         .then(router.push({ name: "Cats" }))
         .catch((err) => {

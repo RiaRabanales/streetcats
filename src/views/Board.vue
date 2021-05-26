@@ -1,7 +1,7 @@
 <template>
   <div class="p-0 m-0 d-flex justify-content-between">
     <div class="mt-1 mt-md-2 mt-lg-3 p-md-1 col-12 col-md-9 col-lg-10">
-      <h3>{{ $t("nav.board") }}</h3>
+      <h3 class="px-2 px-md-3">{{ $t("nav.board") }}</h3>
 
       <transition name="postSwitch" mode="out-in">
         <div v-if="documents">

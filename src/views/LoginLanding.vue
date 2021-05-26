@@ -1,7 +1,7 @@
 <template>
   <div class="p-0 m-0 d-flex justify-content-between">
     <div class="mt-1 mt-md-2 mt-lg-3 p-md-1 d-flex flex-column col-12 col-md-9 col-lg-10">
-      <h3>{{ $t("auth.greeting") }}, {{ user.displayName }}!</h3>
+      <h3 class="px-2 px-md-3">{{ $t("auth.greeting") }}, {{ user.displayName }}!</h3>
       <p class="pb-0 mb-0">{{ $t("auth.landing") }}</p>
       <img src="@/assets/img/cat00.png" alt="Login Cats!" class="p-1 pt-lg-2 col-10 col-md-8 align-self-center" />
     </div>

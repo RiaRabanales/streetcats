@@ -111,11 +111,13 @@ Al emplear vue-i18n en su última versión, en varios entornos (siempre en desar
 
 Teniendo el diseño anterior claramente establecido y un framework básico funcional ha sido relativamente sencillo desarrollar la aplicación. Se han desarrollado las funcionalidades de forma secuencial, empezando por el proceso de autenticación (del que dependen los detalles de varias de las funcionalidades) y procurando desarrollar primero el esqueleto de la funcionalidad y luego ir añadiéndole los detalles.
 
-Para gestionar los estados se ha empleado Vuex (4). Esto es particularmente relevante en el proceso de login, ya que al guardar los accesos existoso a Firebase en la *store* de Vuex ha permitido mantener la información de usuario en continua posibilidad de acceso y uso. 
+Para gestionar los estados se ha empleado Vuex (v4). Esto es particularmente relevante en el proceso de login, ya que al guardar los accesos existoso a Firebase en la *store* de Vuex ha permitido mantener la información de usuario en continua posibilidad de acceso y uso. 
 
 Por otro lado, la gestión de rutas se ha realizado en el archivo routes/index. Se ha incluido tanto una página *default* 404 como un guardarrutas con redirecciones que impide que usuarios sin las autorizaciones necesarias puedan acceder a las páginas concretas que las requieren. También se busca impedir que los usuarios que ya han hecho login puedan acceder a las pantallas de login, registro, o recuperación de contraseña.
 
 Tan pronto como la aplicación ha resultado funcional se ha comenzado a subir a Firebase, actualizando el despliegue con cada nueva funcionalidad.
+
+Ya avanzada la aplicación se ha decidido incluir un mapa interactivo de Google Maps que marca la casa de acogida de la Asociación; por el momento el componente de mapa se ha incluido en el apartado 'donaciones', aunque es muy sencillo, gracias al funcionamiento de los componentes de Vue, moverlo a cualquier otro apartado de la aplicación. 
 
 # Despliegue
 El proyecto se ha desplegado en Firebase Hosting, completando los sistemas de almacenamiento, autorización y bases de datos. La estructura general de todo esto se planteó al empezar el proyecto, cuando inicié el proyecto en Firebase con el comando 'firebase init' en el front.

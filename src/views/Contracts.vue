@@ -1,7 +1,7 @@
 <template>
   <div class="p-0 m-0 d-flex">
     <div class="mt-1 mt-md-2 mt-lg-3 p-md-1 col-12 col-md-9 col-lg-10">
-      <h3>{{ $t("contracts.title") }}</h3>
+      <h3 class="px-2 px-md-3">{{ $t("contracts.title") }}</h3>
       <p>{{ $t("contracts.message") }}</p>
       <div class="accordion" id="accordionExample">
         <div class="accordion-item">
@@ -138,18 +138,17 @@ export default {
         await addDocument(contract);
 
         if (!error.value) {
-          //todo revisar este error.value aquí y en NewCat
+          // Vacío los errores valores si no hay errores.
           contractParty.value = "";
           contractCat.value = "";
           file.value = null;
           url.value = null;
         }
       } else {
-        fileError.value = "ERROR! Must upload a file.";
+        fileError.value = "ERROR! Must upload a file.";     //Cuando llegue el momento, añadir este literal a los demás de errores.
       }
     };
 
-    //TODO unificar con el de docs si hay tiempo
     const handleDownload = async (filename) => {
       projectStorage.ref('contracts/' + filename).getDownloadURL()
         .then((url) => {

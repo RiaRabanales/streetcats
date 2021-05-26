@@ -1,10 +1,10 @@
 <template>
   <div class="p-0 m-0 d-flex justify-content-between">
     <div class="m-1 mt-md-2 mt-lg-3 p-md-1 col-12 col-md-9 col-lg-10">
-      <h3>{{ $t("nav.about") }}</h3>
+      <h3 class="px-2 px-md-3">{{ $t("nav.about") }}</h3>
       <div class="home p-3">
         <p class="content">{{ $t("home.content") }}</p>
-        <p class="content call text-uppercase fw-bolder pb-lg-3">{{ $t("home.call") }}</p>
+        <p class="call text-uppercase fw-bolder pb-lg-3">{{ $t("home.call") }}</p>
 
         <div class="border-top border-3 border-primary my-3"></div>
 
@@ -58,5 +58,8 @@ export default {
 <style scoped>
 .content {
   text-align: justify;
+}
+.call {
+  text-align: center;
 }
 </style>
