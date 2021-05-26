@@ -1,8 +1,9 @@
 <template>
-  <div
-    class="m-0 p-3 bg-light border-bottom border-3 border-primary d-flex justify-content-between"
-  >
-    <p class="d-none d-sm-block h3 ms-3 ps-md-3 text-dark">Streetcats Artà</p>
+  <div class="m-0 px-3 py-2 bg-light border-bottom border-3 border-primary d-flex justify-content-between">
+    <div class="d-flex flex-row">
+      <img src="@/assets/img/paw.png" alt="Login Cats!" style="max-height:44px;" />
+      <p class="d-none d-sm-block h3 ms-1 py-1 text-dark">Streetcats Artà</p>
+    </div>
     <div class="d-flex p-0 m-0 justify-content-end">
       <LocaleSelector />
       <div v-if="logged">

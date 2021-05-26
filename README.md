@@ -126,7 +126,7 @@ Antes de desplegar ha sido necesario preparar el proyecto en la carpeta /dist; e
 
 Por seguridad he establecido requisitos de acceso en bases de datos y storages, y he limitado el acceso a la API key a llamadas provenientes del dominio de mi aplicación a través de [la consola de Google APIs](http://console.developers.google.com/), como se recomienda para los proyectos desplegados en Firebase Hosting.
 
-El proyecto está desplegado en: https://streetcats-f248d.web.app
+El proyecto, con favicon específico, está desplegado en: https://streetcats-f248d.web.app
 
 # Resultados y conclusiones
 Estoy satisfecha tanto con el trabajo realizado como con el resultado obtenido, aunque considero que esta aplicación todavía requiere bastante trabajo antes de poder ser donada a y utilizada por la Asociación.
@@ -134,6 +134,7 @@ Estoy satisfecha tanto con el trabajo realizado como con el resultado obtenido, 
 Entre las tareas que no se han acabado para este proyecto (que por lo demás está muy completo) destacan las siguientes:
 1. Desarrollo de la funcionalidad de donaciones, a la espera de ver si finalmente la asociación quiere enlazar con *paypal*, con *bizum*, o simplemente mantener una página informativa en esta sección.
 2. Desarrollo del envío de e-mail de verificación al registrar un usuario: dado que la asociación no ha indicado si desea permitir que cualquiera se registre o si quiere verificar los e-mails por sí misma, la funcionalidad de registro queda utilizable pero no detallada. Sí que se han desarrollado, no obstante, pantallas separadas de login, registro y *reset* de contraseña.
+3. Análisis y desarrollo de la aceptación de la 'política de cookies'.
 
 # Bibliografia y webgrafia
 Para la elaboración de este proyecto se han consultado los siguientes recursos:
@@ -147,4 +148,5 @@ Para la elaboración de este proyecto se han consultado los siguientes recursos:
 * [Vue 3 Animations by The Net Ninja](https://www.youtube.com/watch?v=RIApQjn9fvw)
 * [Vuex Auth](https://www.smashingmagazine.com/2020/10/authentication-in-vue-js/)
 * [Hooks en Vue3](https://learnvue.co/2020/12/how-to-use-lifecycle-hooks-in-vue3/#composition-api)
-* [ Animación 'shake' básica](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_shake)
+* [Animación 'shake' básica](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_shake)
+* [PNG de pata de gato](https://www.hiclipart.com/free-transparent-background-png-clipart-invyb/download)

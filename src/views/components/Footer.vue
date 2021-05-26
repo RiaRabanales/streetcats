@@ -22,7 +22,7 @@
 
     <p role="button" class="d-none d-md-block">{{ $t("footer.cookies") }}</p>
 
-    <p @click="goTo('https://github.com/RiaRabanales/streetcats')" role="button" class="d-block">
+    <p @click="goTo('https://github.com/RiaRabanales/streetcats')" role="button" class="d-none d-md-block">
         &#169;2021
         <span class="fw-bolder"> Ria R. Gonzalez </span>
         <GithubIcon />
