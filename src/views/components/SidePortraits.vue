@@ -33,6 +33,7 @@ export default {
   height: auto;
   min-width: 150px;
   object-fit: contain;
+  cursor: none;
 }
 
 .cat-portrait:hover {
