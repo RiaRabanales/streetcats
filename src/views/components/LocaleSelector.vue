@@ -1,6 +1,4 @@
 <template>
-  <!-- ver: https://vue-i18n.intlify.dev/guide/essentials/scope.html#global-scope-2  
-  //TODO -->
   
   <div class="locale-changer mt-2 me-2 me-md-3 text-dark">
     <GlobeIcon class="me-1" />

@@ -4,10 +4,19 @@
     "img": "../assets/img/ca.png"
   },
   "nav": {
+    "404": "Pàgina no trobada",
     "home": "Home",
+    "cats": "Moixos",
     "help": "Ajuda",
     "about": "Sobre Nosaltres",
+    "board": "Tauler d'anuncis",
+    "docs": "Documentació",
+    "contracts": "Contractes",
     "contact": "Contacte",
     "login": "Àrea de Col·laboradors"
+  },
+  "footer": {
+    "cookies": "Política de Cookies",
+    "findus": "Troba'ns!"
   }
 }

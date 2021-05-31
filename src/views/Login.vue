@@ -29,7 +29,7 @@
           <p v-if="error">
             <span v-if="error == 'nouser'">{{ $t("error.nouser") }}</span>
             <span v-if="error == 'nopassword'">{{ $t("error.nopassword") }}</span>
-            <span v-if="error == 'general'">{{ $t("error.general") }}</span>    <!-- //TODO revisar -->
+            <span v-if="error == 'general'">{{ $t("error.general") }}</span>
           </p>
         </div>
 

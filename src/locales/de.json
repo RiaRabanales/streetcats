@@ -4,10 +4,24 @@
     "img": "../assets/img/Deutsch.png"
   },
   "nav": {
+    "404": "Seite nicht gefunden",
     "home": "Home",
+    "cats": "Unsere Katzen",
     "help": "Hilfe",
     "about": "Über Uns",
+    "board": "Anschlagtafel",
+    "docs": "Unterlagen",
+    "contracts": "Verträge",
     "contact": "Kontakt",
     "login": "Helferbereich"
+  },
+  "footer": {
+    "cookies": "Cookie-Richtlinie",
+    "findus": "Finde uns!"
+  },
+  "home": {
+    "content": "STREETCATS ARTÀ hat im September 2013 mit der gleichnamigen Seite auf Facebook zunächst nur als Privatinitiative ihre Aktivitäten aufgenommen, um der stetig wachsenden Population der Strassenkatzen mit Kastrationsaktionen entgegen zu wirken, sowie ausgesetzten Katzen und gefundenen Katzenbabys ein Zuhause zu suchen. Das von Gudrun Hildebrand und Dora López begonnene Projekt, wurde ab Januar 2014 mit zwei weiteren freiwilligen Helfern, Hede Schütrumpf und Maria Isabel Deià, komplettiert und die Vereinsgründung initiiert. In Zusammenarbeit mit der VETERCLINIC ARTÀ wurde dann ab Mai 2014 mit dem kontinuierlichen Einfangen der Strassenkatzen begonnen. Bis heute sind mehr als 400 Katzen im Raum Artà sterilisiert worden. Mehr als 70 ausgesetzte Katzen und Katzenbabys konnten in liebevolle Hände vermittelt werden. Seit Januar 2015 sind wir ein eingetragener Verein mit dem Namen “ASOCIACIÓN ANIMALISTAS ARTÀ “. Unsere Aufgabe ist nicht nur das Sterilisieren, sondern auch die Betreuung von über 250 Strassenkatzen in 15 Kolonien in Artà. Diese Arbeit erfordert viel Geld für Trockenfutter, Wurmkuren, Pipetten gegen Parasiten, sowie für Tierarztrechnungen bei kranken und verletzten Tieren.",
+    "call": "HELFEN SIE UNS, DAMIT WIR DEN TIEREN HELFEN KÖNNEN !!",
+    "sponsors": "Sponsoren"
   }
 }

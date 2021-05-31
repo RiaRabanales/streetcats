@@ -194,6 +194,7 @@ export default {
         toBeAdopted.value = false;
       }
 
+      /* Nota: estas características son genéricas; la asocicación establecerá las que quieran. */
       const cat = {
         name: name.value,
         breed: breed.value,
@@ -202,7 +203,6 @@ export default {
         state: state.value,
         toBeAdopted: toBeAdopted.value,
         observations: observations.value,
-        //TODO edad, enfermedades
         poster: store.state.user.displayName,
         posterUid: store.state.user.uid,
         contactPhone: contactPhone.value,
